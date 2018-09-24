@@ -296,14 +296,14 @@ They are listed right after:
 \item OCDB data regarding runs identified through a provided list of run numbers is parsed either from the GRID OCDB or a local copy. Beam conditions, HV readings and scalers values are stored;
 \item Additional dummy runs are created, filling the periods between runs whose information is found on the OCDB;
 \item Current readings are defined "dark" switching a \code{bool} flag using the OCDB information about beam presence. See schema in figure \ref{fig:iDarkFlag};
-\item A linear interpolation of all the $i_{dark}$ values is performed. Each current reading has two floating point values corresponding to $i_{tot}$ and $i_{dark}$. For values flagged as dark the two values are equal. For all the others the value of $i_{dark}$ is set using the interpolation of dark current values. See schema in figure \ref{};
+\item A linear interpolation of all the $i_{dark}$ values is performed. Each current reading has two floating point values corresponding to $i_{tot}$ and $i_{dark}$. For values flagged as dark the two values are equal. For all the others the value of $i_{dark}$ is set using the interpolation of dark current values. See schema in figure \ref{fig:interpolation};
 \item For each \code{RunObject} the average $i_{tot}$ and $i_{dark}$ values are computed via the weighted average of all the $i_{tot}$ and $i_{dark}$ falling between the SOR and the EOR;
 \item For each run the integral over time of the $i_{net}$ values is performed and stored in the relative \code{RunObject}.
 \end{enumerate}
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/darkCurrentFlagging.pdf}
+\includegraphics[width=0.9\linewidth]{Chapters/Performance/Figs/darkCurrentFlagging.pdf}
 \caption{Cartoon representing the process of dark current readings flagging by combining OCDB and DCS data. The lines are represented on an arbitrary horizontal time axis. 
 The first line represents the current readings stored in the DCS database. 
 The frequency of those measurements is not fixed. 
@@ -317,7 +317,7 @@ They are represented in the last two lines accordingly. }
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/interpolation.pdf}
+\includegraphics[width=0.9\linewidth]{Chapters/Performance/Figs/interpolation.pdf}
 \caption{Cartoon representing the interpolation process.
 The green and blue points represent $i_{tot}$ and $i_{dark}$ readings, according to figure \ref{fig:iDarkFlag}.
 The dashed vertical lines represent the projection on the time-axis of $i_{tot}$ readings.
@@ -364,7 +364,7 @@ For this reason this work uses only cosmic runs to estimate the dark current and
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iDarkCOSMIC.pdf}
-\caption{Average dark current trend computed with the described procedure using cosmic runs only. Each point corresponds to a run. The $x$ value is obtained via the average of all the RPCs dark currents, while the $y$ value is the timestamp which corresponds to the end of run.
+\caption{Average dark current trend computed with the described procedure using cosmic runs only. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iDarkCOSMIC}
 \end{center}
 \end{figure}
@@ -372,7 +372,7 @@ For this reason this work uses only cosmic runs to estimate the dark current and
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iDarkCALIB.pdf}
-\caption{Average dark current trend computed with the described procedure using calibration runs only. Each point corresponds to a run. The $x$ value is obtained via the average of all the RPCs dark currents, while the $y$ value is the timestamp which corresponds to the end of run.
+\caption{Average dark current trend computed with the described procedure using calibration runs only. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iDarkCALIB}
 \end{center}
 \end{figure}
@@ -444,17 +444,11 @@ Given the RPCs' areas are not all the same, this procedure helps to produce resu
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iDark4Planes.pdf}
-\caption{Dark current trends for each RPC over the whole operation period. The 72 trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For each plane the average plot is shown. Each point corresponds to a run. The $x$ value is obtained via the average over time of the dark current measurements, while the $y$ value is the timestamp which corresponds to the end of run.
+\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDark4PlanesMM.pdf}
+\caption{Dark current trends for each RPC over the whole operation period. The trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average over time of the dark current measurements, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iDark4Planes}
 \end{center}
 \end{figure}
-
-A general view of the situation can be read from the trend of the black series of points, which corresponds to the average of all the RPCs reported in each panel.
-The overall average trend presents a slight increase over 8 years of operation for all the four planes of the MTR.
-This effect is imputable to two effects.
-The first is the aging of the RPCs, as described in previous sections.
-The second is the increase of the LHC luminosity over the years of operation, which causes the activation of materials which is reflected by the increase of dark current while no beam is present.
 
 Sometimes a reduction of the dark current value can be observed.
 This effect is more important and clearly noticeable at the beginning of each year.
@@ -481,8 +475,8 @@ The expected behavior is observed through the whole time range.
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iNet4Planes.pdf}
-\caption{Net current trends for each RPC over the whole operation period. The 72 trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For each plane the average plot is shown. Each point corresponds to a run. The $x$ value is the difference between the average total and dark currents, while the $y$ value is the timestamp which corresponds to the end of run.
+\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iNet4PlanesMM.pdf}
+\caption{Net current trends for each RPC over the whole operation period. The trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is the difference between the average total and dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iNet4Planes}
 \end{center}
 \end{figure}
@@ -498,9 +492,9 @@ Further monitoring and future specific tests might confirm such phenomenon.
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/ICharge4Planes.pdf}
-\caption{Integrated charge trends for each RPC over the whole operation period. The 72 trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For each plane the average plot is shown. Each point corresponds to a run. The $x$ value is the integral of net current since the beginning of the operations, while the $y$ value is the timestamp which corresponds to the end of run.
-\label{fig:ICharge4Planes}
+\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/IntCharge.pdf}
+\caption{Integrated charge trends for each RPC over the whole operation period. The 72 trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For each plane the average plot is shown. Each point corresponds to a run. The $y$ value is the integral of net current since the beginning of the operations, while the $x$ value is the timestamp which corresponds to the end of run.}
+\label{fig:ICharge4anes}
 \end{center}
 \end{figure}
 
@@ -522,8 +516,8 @@ For this reason, assuming the environmental background to be constant, any modif
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/DarkRate4Planes.pdf}
-\caption{Dark rates trends for each RPC over the whole operation period. The 72 trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For each plane the average plot is shown. Each point corresponds to a run. The $x$ value is the average rate during a given cosmic run, while the $y$ value is the timestamp which corresponds to the end of run.
+\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/DarkRate.pdf}
+\caption{Dark rates trends for each RPC over the whole operation period. The 72 trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For each plane the average plot is shown. Each point corresponds to a run. The $y$ value is the average rate during a given cosmic run, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:DarkRate4Planes}
 \end{center}
 \end{figure}
@@ -565,8 +559,8 @@ Since each point represents one of the analyzed runs, the fact that in various r
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iNetvsRate4Planes.pdf}
-\caption{Dark rates trends for each RPC over the whole operation period. The 72 trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For each plane the average plot is shown. Each point corresponds to a run. The $x$ value is the average rate during a given cosmic run, while the $y$ value is the timestamp which corresponds to the end of run.
+\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iNetRateCORR.pdf}
+\caption{Correlation plot between net current and average rate within a given run. The 72 correlation plots are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). Each point corresponds to a run. The $y$ value is the average rate during a given cosmic run, while the $x$ value is the average net current value measured during the run.}
 \label{fig:iNetvsRate4Planes}
 \end{center}
 \end{figure}
@@ -596,7 +590,8 @@ Lowering of the charge per hit allows to have smaller dead times since restoring
 Requiring a lower charge has the side effect of allowing a reduction of the operating HV, which leads to a even faster recovery time.
 The drawback of the adoption of an amplified electronics is that small noise signals, which a non-amplified electronics does not detect, might become observable and detected.
 
-One RPC currently part of the ALICE muon trigger is equipped with the new read-out electronics since 2014.
+One RPC currently part of the ALICE muon trigger is equipped with the new read-out electronics since 2015.
+In all the following plots the first part of the RPC operations is shown for the sake of comparison, despite the fact that it has been equipped with the FEERIC front end only from that date.
 While this test sample wasn't the finalized electronics, which will be instead installed on all the RPCs by the beginning of RUN3, an insight of the improved performances is already possible.
 
 After several tests the HV for the FEERIC equipped RPC has been set to $9800V$ gaining around $500V$ with respect to ADULT-equipped RPCs without modifying the detection efficiency of the detector.
@@ -605,13 +600,45 @@ The dark current measurements are reported in figure \ref{fig:FEERICiDark} and c
 The dark current of the FEERIC RPC is negligible and in average a factor $\times20$ lower with respect to the average.
 It is important to notice that while all the other RPCs show an increase of the dark current over the years of operation, the measurements of dark current performed on the RPC equipped with the amplified electronics are compatible with a constant behavior.
 
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iDarkFEERIC.pdf}
+\caption{Dark current trend for the FEERIC-equipped RPC. The $y$ value is the average dark current measured during a given cosmic run, while the $x$ value is the timestamp which corresponds to the end of run.}
+\label{fig:FEERICiDark}
+\end{center}
+\end{figure}
+
 The net current measurements shown in figure \ref{fig:FEERICiNet} present the same reduction factor already observed for the dark current measurements.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iNetFEERIC.pdf}
+\caption{Net current trend for the FEERIC-equipped RPC. The $y$ value is the difference between net and dark currents measured during a given run, while the $x$ value is the timestamp which corresponds to the end of run.}
+\label{fig:FEERICiNet}
+\end{center}
+\end{figure}
 
 The integrated charge shown in figure \ref{fig:FEERICIntCharge}, obtained from the numerical integration of the net current plot, reflects the lowering of the net current shown before.
 An integrated charge about $6$ times lower than the average for the plane has been collected by the RPC since the installation of the FEERIC electronics.
 
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/IntChargeFEERIC.pdf}
+\caption{Integrated charge trend for the FEERIC-equipped RPC. The $y$ value is the integral of net current measured during a given run, while the $x$ value is the timestamp which corresponds to the end of run.}
+\label{fig:FEERICIntCharge}
+\end{center}
+\end{figure}
+
 The dark rate trend shown in figure \ref{fig:FEERICDarkRate} shows how most of the ADULT-equipped RPCs trends are lower than the trend of the FEERIC-equipped one.
 The dark rate trend is however compatible with the average trend for the plane.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/DarkRateFEERIC.pdf}
+\caption{Dark rate trend for the FEERIC-equipped RPC. The $y$ value is the average rate measured during a given run, while the $x$ value is the timestamp which corresponds to the end of run.}
+\label{fig:FEERICDarkRate}
+\end{center}
+\end{figure}
 
 The correlation plot between net current and rate, already shown in figure \ref{fig:iNetvsRate4Planes}, highlight a great advantage of the FEERIC RPC.
 The slope of the correlation plot is much lower, representing a lower deposed charge per hit.

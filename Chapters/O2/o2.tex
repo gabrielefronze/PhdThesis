@@ -1,0 +1,57 @@
+\chapter{Development of an MID acquisition and reconstruction framework for ALICE RUN3}
+
+\section{Motivation}
+By 2020 the LHC will undergo a major upgrade concerning the luminosity achievable in Pb-Pb collisions.
+After the Long Shutdown 2 (LS2 from now on) the delivered instantaneous luminosity will reach $6\cdot10^{27} cm^{-2}s^{-1}$ in Pb-Pb collisions, feeding the ALICE detectors with up to 50 kHz of minimum bias collision rate in Pb-Pb and 200 kHz in pp.
+
+As can appear already clear from the previous chapter regarding Upsilon analysis, the physics topics addressed by ALICE are the studies of physics probes characterized by very small signal-to-background ratios.
+In order to obtain significative measurements it is important to collect very large statistics.
+The upgrade of the LHC builds up in this direction.
+In addition to the technical difficulty of collecting high rate big data, another challenge is represented by the way of triggering the acquisition of interesting events.
+Already in standard running conditions, the presence of a very large background makes standard triggering techniques very inefficient, if not impossible.
+The increased data throughput is estimated to be around two orders of magnitude higher than that ALICE experienced during LHC RUN1.
+Such increase of data size, combined with the high collision and acquisitions rates, makes standard approaches difficult to apply without an enormous (technical and economical) efforts for the upgrade of computing capabilities.
+Since the required scaling of computing infrastructure cannot cope with the data throughput increase, a new acquisition and processing paradigm has been introduced.
+The idea is to purge as much as possible useless data as close as possible to the detector.
+Adding pre-processing and reconstruction layers close to the detector acquisition logic zero suppression will be performed much sooner than what happens currently.
+This process will allow, by means of a raw reconstruction or of a minimum bias trigger, to store a subset of all data containing at least all the interesting events.
+Such fast reconstruction will be performed synchronously with the data production and will be based on preliminary calibration and alignment information.
+At this stage the detectors will operate as stand alone items and no merging of the data will be performed prior the raw reconstruction.
+A finer reconstruction step will be performed later, to improve the reconstruction quality.
+For this finer step the merging of data coming from different detectors will be possible if not needed.
+The added complexity and the cross-talk between different systems forces this step to be performed sychronously by an upgraded computing facility installed in place only during pp collisions.
+During Pb-Pb collisions part of the data processing load will be shared with Tier 0 and Tier 1 computing sites of the WLCG (Worldwide LHC Computing GRID).
+Independently from the colliding system type the archival of data will be performed by Tier 0 and Tier 1 facilities.
+
+The combination of synchronous and asychronous computing and reconstruction steps is well summarized by the name of the software/hardware upgrade project of ALICE.
+The Online Offline ($O^2$) project concerns the creation of a common computing system shared by all the ALICE systems and will include a definition of a common computing model, the development of a software framework and the planning and realization of new computing facilities.
+The $O^2$ computing facility will be a high-throughput system equipped with heterogeneous computing nodes similar to platforms currently used in several HPC and cloud computing contexts.
+The computing nodes will integrate several hardware acceleration technologies, spanning from FPGAs to GPUs.
+The $O^2$ software framework will grant an adequate abstraction level so that common code can deliver the same functionality across various platforms.
+The use of several cores and accelerators across all the involved machines will be trasparently handled.
+In order to take full advantage of HPC-like infrastructures, as well as of several laptops or standard desktops connected together, the $O^2$ framework will introduce a concurrent computing model.
+The $O^2$ project will make ALICE able to tackle the next running conditions without modifying the funding model followed during RUN1 and RUN2.
+
+\section{Physics objectives of RUN3}
+The $O^2$ project follows the upgrade of the LHC triggered by the increase of statistics necessary for new and improved measurements.
+A requirement of a total integrated luminosity of $13 np^{-1}$ was formulated with the ALICE Letter Of Intent (LOI) \ref{}, split in $10 nb^{-1}$ at nominal solenoid magnetic field and $3 nb^{-1}$ at a reduced field of $0.2T$.
+These requirements are related to specific performance figures, concerning open heavy flavours, low mass dileptons and qurkonium measurements.
+In particular the plans for $J/\psi$ ($\psi(\mathrm{2S})$) foresee to know its $R_{\mathrm{AA}}$ down to $p_{\mathrm{T}} = 0$ with statistical precision higher than $1\%$ ($10\%$) over the whole rapidity interval and its $\nu_2$ down to $p_{\mathrm{T}} = 0$ with an aboslute precision of $0.05$.
+
+\section{From Muon TRigger to Muon IDentifier}
+The name of the ALICE muon trigger will be modified from the introduction of the $O^2$ project.
+This change of nomenclature is related to a change of its functions.
+The muon trigger will see the upgrade of read-out electronics, already presented in previous chapters.
+In addition to this hardware upgrade, the online function of the muon trigger system will change.
+The muon trigger system will no longer provide an online trigger system for ALICE, since the acquisition paradigm will move to trigger-less.
+Instead the muon trigger will become a stand alone muon tracking system.
+Even if the tracking resolution of the muon trigger system is lower than that of the muon tracker and that of the future MFT (Muon Forward Tracker), the muon identification task will be achieved by the muon trigger which will then become the MID (Muon IDentifier).
+The muon identification (and hadron rejection) task will be performed combining data coming from the MFT, MCH and MID detectors.
+The tracks reconstructed with the MFT and MCH data will be identified as muons if a compatible track in the MID detector is present.
+This task will be performed online, processing and reconstructing around $300 MB/s$ of data.
+The acquisition/reconstruction workflow is represented in figure \ref{}.
+Data recorded by the FEE (Front End Electronics) will be acquired via several GBTx link by the Common Readout Units (CRU), each one processing one half of the MID (inside and outside).
+The CRUs will be installed in two dual CPU machines calle First Level Processors (FLPs) which will be placed in the cunting rooms placed over the ALICE cavern, as close as possible to the detectors.
+Zero suppression and noisy/dead channels suppression/detection will be performed by the CRU or by the FLP CPUs.
+Pruned data will be then transferred to the EPNs located in the $O^2$ facility and will be processed and reconstructed.
+At the EPN level the combination of MID data with data coming from other detectors will be possible.

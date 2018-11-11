@@ -1,8 +1,8 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-% \documentclass[a4paper,12pt,times,numbered,print,index]{PhDThesisPSnPDF}
-\documentclass[chapter,a4paper,12pt,times]{PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,times,numbered,print,index]{PhDThesisPSnPDF}
+% \documentclass[chapter,a4paper,12pt,times]{PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -105,7 +105,9 @@
 
 \ifdefineChapter
 %  \includeonly{Chapters/Analysis/analysis}
- \includeonly{Chapters/Performance/performance}
+%  \includeonly{Chapters/Performance/performance}
+%  \includeonly{Chapters/O2/o2}
+\includeonly{Chapters/Introduction/introduction}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -136,10 +138,9 @@
 \mainmatter
 
 \include{Chapters/Introduction/introduction}
-\include{Chapters/monitoring}
-\include{Chapters/Analysis/analysis}
 \include{Chapters/Performance/performance}
-\include{Chapters/upgrade}
+\include{Chapters/Analysis/analysis}
+\include{Chapters/O2/o2}
 \include{Chapters/conclusions}
 
 

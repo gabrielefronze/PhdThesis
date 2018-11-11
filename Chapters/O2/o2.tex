@@ -5,53 +5,469 @@ By 2020 the LHC will undergo a major upgrade concerning the luminosity achievabl
 After the Long Shutdown 2 (LS2 from now on) the delivered instantaneous luminosity will reach $6\cdot10^{27} cm^{-2}s^{-1}$ in Pb-Pb collisions, feeding the ALICE detectors with up to 50 kHz of minimum bias collision rate in Pb-Pb and 200 kHz in pp.
 
 As can appear already clear from the previous chapter regarding Upsilon analysis, the physics topics addressed by ALICE are the studies of physics probes characterized by very small signal-to-background ratios.
-In order to obtain significative measurements it is important to collect very large statistics.
+In order to obtain significant measurements it is important to collect very large statistics.
 The upgrade of the LHC builds up in this direction.
-In addition to the technical difficulty of collecting high rate big data, another challenge is represented by the way of triggering the acquisition of interesting events.
-Already in standard running conditions, the presence of a very large background makes standard triggering techniques very inefficient, if not impossible.
+The foreseen increase of the luminosity provided by the LHC will cause an increase of collected data rate.
 The increased data throughput is estimated to be around two orders of magnitude higher than that ALICE experienced during LHC RUN1.
-Such increase of data size, combined with the high collision and acquisitions rates, makes standard approaches difficult to apply without an enormous (technical and economical) efforts for the upgrade of computing capabilities.
-Since the required scaling of computing infrastructure cannot cope with the data throughput increase, a new acquisition and processing paradigm has been introduced.
-The idea is to purge as much as possible useless data as close as possible to the detector.
-Adding pre-processing and reconstruction layers close to the detector acquisition logic zero suppression will be performed much sooner than what happens currently.
-This process will allow, by means of a raw reconstruction or of a minimum bias trigger, to store a subset of all data containing at least all the interesting events.
+In addition to the technical difficulty of collecting high rate data avoiding bottlenecks, another challenge is represented by the way of triggering the acquisition of interesting events.
+Already in standard running conditions, the presence of a very large background makes standard triggering techniques very inefficient, and impossible in many situations.
+Such increase of data size, combined with the high collision and acquisitions rates, makes standard approaches difficult to apply without enormous (technical and economical) efforts for the upgrade of computing capabilities.
+Since the required scaling of computing infrastructure cannot cope with the data throughput increase, a new acquisition and processing paradigm had to be developed.
+The base idea is to purge as much as possible useless data as close as possible to the detector (Fig. \ref{fig:O2_sketch}).
+This goal can be achieved adding pre-processing and reconstruction layers close to the detector acquisition logic.
+By doing so zero suppression will be performed much sooner than what happens currently and a coarse reconstruction will be performed close to the detector.
 Such fast reconstruction will be performed synchronously with the data production and will be based on preliminary calibration and alignment information.
 At this stage the detectors will operate as stand alone items and no merging of the data will be performed prior the raw reconstruction.
-A finer reconstruction step will be performed later, to improve the reconstruction quality.
-For this finer step the merging of data coming from different detectors will be possible if not needed.
-The added complexity and the cross-talk between different systems forces this step to be performed sychronously by an upgraded computing facility installed in place only during pp collisions.
-During Pb-Pb collisions part of the data processing load will be shared with Tier 0 and Tier 1 computing sites of the WLCG (Worldwide LHC Computing GRID).
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width=0.95\linewidth]{Chapters/O2/Figs/O2.png}
+\caption{Sketch of the conceptual structure of the $O^2$ framework. The detectors electronics provides a continuous stream of raw data which is compressed, pre-processed and packed by the read-out logic. Partial information coming from different detectors and systems is aggregated. The full set of data is processed and reconstructed. Up to this step all the computation is performed synchronously. The processed data is then stored and retrieved later for the asynchronous reconstruction.}
+\label{fig:O2_sketch}
+\end{center}
+\end{figure}
+
+Thanks to this reconstruction procedure, the acquisition trigger will be generated based on finer decisions taken by algorithms able to evaluate the events topology and some physical measurements.
+This procedure will replace the hardware trigger, allowing one to perform precise selections focused on getting the maximum signal for rare and otherwise non-triggerable observables.
+A finer reconstruction will be performed offline to provide the best resolution possible.
+For this finer step the merging of data coming from different detectors will be possible and needed.
+The added complexity and the cross-talk between different systems forces this step to be performed synchronously only during pp collisions.
+An upgraded computing facility installed in place will store the raw data and perform such reconstruction before sending pp data to the CERN storage facility.
+Despite an upgraded private computing facility, during Pb-Pb collisions the reconstruction will be performed asynchronously and part of the data processing load will be shared with Tier 0 and Tier 1 computing sites of the WLCG (Worldwide LHC Computing GRID).
 Independently from the colliding system type the archival of data will be performed by Tier 0 and Tier 1 facilities.
 
-The combination of synchronous and asychronous computing and reconstruction steps is well summarized by the name of the software/hardware upgrade project of ALICE.
+The combination of synchronous and asynchronous computing and reconstruction steps is well summarized by the name of the software/hardware upgrade project of ALICE.
 The Online Offline ($O^2$) project concerns the creation of a common computing system shared by all the ALICE systems and will include a definition of a common computing model, the development of a software framework and the planning and realization of new computing facilities.
 The $O^2$ computing facility will be a high-throughput system equipped with heterogeneous computing nodes similar to platforms currently used in several HPC and cloud computing contexts.
 The computing nodes will integrate several hardware acceleration technologies, spanning from FPGAs to GPUs.
 The $O^2$ software framework will grant an adequate abstraction level so that common code can deliver the same functionality across various platforms.
-The use of several cores and accelerators across all the involved machines will be trasparently handled.
+This characteristic hides part of the complexity deriving from different hardware choices and specializations of machines devoted to particular tasks.
+Thanks to this approach the use of several cores and accelerators will be transparently handled.
 In order to take full advantage of HPC-like infrastructures, as well as of several laptops or standard desktops connected together, the $O^2$ framework will introduce a concurrent computing model.
+While the current WLCG is a distributed computing framework, ideally made of lots of single instruction thread machines, the future development of the ALICE computing framework requires some more tuning to take full advantage of parallel processors.
+The introduction of a MPI-like process-based framework which allows for dynamic spawning of workers, baked up with a message passing interface capable of using internal buses and network interfaces seamlessly, is the backbone of the new infrastructure.
 The $O^2$ project will make ALICE able to tackle the next running conditions without modifying the funding model followed during RUN1 and RUN2.
 
 \section{Physics objectives of RUN3}
 The $O^2$ project follows the upgrade of the LHC triggered by the increase of statistics necessary for new and improved measurements.
 A requirement of a total integrated luminosity of $13 np^{-1}$ was formulated with the ALICE Letter Of Intent (LOI) \ref{}, split in $10 nb^{-1}$ at nominal solenoid magnetic field and $3 nb^{-1}$ at a reduced field of $0.2T$.
-These requirements are related to specific performance figures, concerning open heavy flavours, low mass dileptons and qurkonium measurements.
-In particular the plans for $J/\psi$ ($\psi(\mathrm{2S})$) foresee to know its $R_{\mathrm{AA}}$ down to $p_{\mathrm{T}} = 0$ with statistical precision higher than $1\%$ ($10\%$) over the whole rapidity interval and its $\nu_2$ down to $p_{\mathrm{T}} = 0$ with an aboslute precision of $0.05$.
+These requirements are related to specific performance figures, concerning open heavy flavours, low mass dileptons and quarkonium measurements.
+In particular the plans for $J/\psi$ ($\psi(\mathrm{2S})$) foresee to know its $R_{\mathrm{AA}}$ down to $p_{\mathrm{T}} = 0$ with statistical precision higher than $1\%$ ($10\%$) over the whole rapidity interval and its $\nu_2$ down to $p_{\mathrm{T}} = 0$ with an absolute precision of $0.05$.
+
+\section{Common software efforts}
+The $O^2$ project stands on a framework commonly developed by the joint scientific community of several experiments.
+$O^2$ aims at reducing the complexity of software deployment and to simplify the exploitation of multi- and many-cores architectures and accelerators, minimizing the development effort to be put.
+The $O^2$ software does not rely only on general libraries such as Boost, ROOT and CMake, but also on other two frameworks (Fig. \ref{fig:O2_soft_tree}).
+ALFA and FairROOT are actively developed by the ALICE and GSI communities.
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Chapters/O2/Figs/O2_soft_tree.png}
+\includegraphics[width=0.8\linewidth]{Chapters/O2/Figs/ALFA.png}
+\caption{Software topology of the $O^2$ project. $O^2$ stands on several software, sets of libraries and tools. The green boxes represents the low level libraries which constitutes the basis of the software. Some of them are ZeroMQ as message passing protocol, CMake as project build and test manager, Geant4 as particles propagation engine. The orange boxes represents ALFA, developed between ALICE and FAIR. This tool contains a set of high level tools, such as data transportation routines and the dynamic deployment system for the dynamic devices management. The blue box represents FairROOT, an evolution of ROOT focused on improved usability for the end-users. It allows easy data visualization, storage, offline analysis and more. The ALICE $O^2$ stands on all these elements alongside other collaborations software (Panda, Cbm).}
+\label{fig:O2_soft_tree}
+\end{center}
+\end{figure}
+
+ALFA is a communication and concurrent computing framework.
+The handling of an heterogeneous computing system requires two fundamental aspects: communication and coordination.
+ALFA provides both aspects and has been developed with high throughput and low latency in mind.
+The communication layer is based on the ZeroMQ library and allows the passing of binary messages either across network interfaces as well as between threads within the same machine, using the passing of memory references.
+ZeroMQ is a lightweight message passing interface which is based on a POSIX socket back-end, extending the socket characteristics to make them able to concatenate several messages to optimize transfer rates and to unfold them at destination.
+The messages transferred via ZeroMQ have to be serialized as binary buffers.
+The available serialization methods are based on Boost, Google's Protocol buffers and ROOT streamers, while the ability to use user defined methods is still left as an option.
+
+The FairROOT framework is an object oriented simulation, reconstruction and data analysis framework  developed for the FAIR experiment at GSI.
+It provides core services for Monte Carlo simulations, physics analysis, event visualization and other fundamental tasks.
+All the provided functions are accessible in a simple way, in order to simplify the detectors description as well as the creation of analysis workflows.
+
+\section{Data format}
+The $O^2$ project introduces a modern approach to the packing of data.
+The storage and acquisition model is aimed at getting the highest rate capability possible.
+Each storage system pack, with the useful data, a bunch of metadata which constitute a overhead.
+Such overhead becomes important for both the transmission and for the storage of data, since part of the bandwidth and/or of the storage capacity is consumed by that.
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/TF.png}
+\caption{Sketch representing the acquisition flow with two detectors, A and B. The detector data samples are retrieved by the read-out logic in a continuous fashion, with the addition of heartbeat triggers interleaving for time stamping purposes. At the FLP level each data stream is time sliced, obtaining several patches which are compressed by fast processing and packed in sub TFs. The sub TFs are sent to the EPN farm and then aggregated into global TFs. Each TF has a full set of information regarding a given time interval. A global compression of around $\times14$ is achieved in the process.}
+\label{fig:O2_TF}
+\end{center}
+\end{figure}
+
+The solution introduced by $O^2$ is the so called Time Frame (TF).
+The TF is a container defined by two temporal boundaries which define its validity interval (Fig. \ref{fig:O2_TF}).
+It packs the data collected by the detectors within the validity interval.
+The format chosen for the TF comprehends a header which works as a summary, in order to ease the access to the contained data, and the detector data itself.
+The only constraints on the TF content regard the data header specification, while it was chosen to keep as much freedom as possible for what concerns the payload.
+The raw data format cannot be made persistent during acquisition, therefore the raw data flow will be converted in the much more compressed TF format.
+For this reason the header must provide a complete description of the whole data structure.
+Since both at FLP and EPN levels the data format is the TF to allow the interchangeable execution of tasks, $O^2$ foresees the possibility to have sub Time Frames which pack a reduced set of detector data.
+This is mainly needed at the FLP level, when the aggregation of data produced by different detectors is not possible.
+The aggregation, based on the validity intervals of the sub TF, will happen later during the reconstruction stages.
+The TF specification concerns the online part of $O^2$, and defines a standard data format for all the data processed by the reconstruction pipeline up to the stage of writing it in persistent formats.
+
+The TF data format requires all the data to be correctly time flagged, in order to be able to correctly aggregate data within the TF they belong to.
+For this reason the detectors raw data flows are interleaved with an heartbeat clock that can be used to attribute a time stamp to the detector data samples.
+At the FLP level the samples belonging to different heartbeat trigger are sliced and packed in sub TF and sent to the EPNs.
+At the EPN layer the sub TFs coming from different detectors are then aggregated in global TFs.
+
+All the translation, packing and compression steps described before allow for a strong reduction of the required bandwidth without loosing too much useful data.
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width=0.75\linewidth]{Chapters/O2/Figs/Compression.png}
+\caption{Computing infrastructure layers with quoted required input and output bandwidths. An overall factor of compression of $\times14$ is to be achieved in the process. The network topology is not yet defined by the $O^2$ Technical Design Report since the technology growth is fast enough to require a shorter term planning later during the upgrade.}
+\label{fig:O2_TF}
+\end{center}
+\end{figure}
+
+A total compression of around $\times14$ will be possible from the raw data to the storage elements and the first persistent format.
+
+The validity interval of the TF, also called duration, has to be tuned taking into account several criteria:
+\begin{itemize}
+    \item the TPC drift time causes a loss of $0.1/t_{TF}$, therefore a longer TF is better in this respect;
+    \item the calibration data produced during a TF has a fixed size and constitutes a fixed overhead which has to be sent to the CDB. A longer TF would minimize the overhead contribution to data rate and the numbe rof CDB accesses;
+    \item the TF should be a multiple of the shortest calibration update period. This value should be the TPC Space Charge Distortion one, scheduled each 5 minutes;
+    \item in order to better balance the processing at the EPN level a shorter TF would be better. For the EPNs a buffer of at leat three TFs (one receiving, one processing, one sending) is required to avoid dead times.
+\end{itemize}
+The TF duration will be between $20ms$ and $100ms$ which corresponds to a rate of $50Hz$.
+The number of events packed inside a single TF will reach $1000$ interactions in normal running conditions (Pb-Pb $50kHz$).
+The resulting TF size will be of $10GB$ on the EPN before compression and the unusable data will be the $0.5\%$ of the total.
+Since the EPN farm will be composed by $1500$ machines, each EPN will receive a new TF to process every $30s$.
+
+\section{Data Processing Layer}
+The tools provided by the default $O^2$ project are intended to be used by experts and require coding skills which are not typical for the physicists community.
+Theoretically speaking the tasks are wrappers of part of a bigger algorithm and from now on will be referred as devices.
+They are fully described by a bunch of specifications, summarized below:
+\begin{enumerate}
+    \item The specification of inputs is composed of the indication of the channel of delivery and the kind of data. It is necessary to correctly connect and feed the algorithmic item wrapped in the device. Some devices could be input-less (e.g. MC wrappers, clock generators). A complete set of inputs will be referred as "work item";
+    \item The internal state of the device, a set of variables capable of keeping information across several work items. This can be useful for distributed pseudo-random number generators, event counters, histograms and in general any kind of accumulation of results. The initialization of the internal state can be complex without hurting the online performances of the device. In addition some devices, for example those involved in pipeline computations, are "stateless devices", namely devices which do not need to keep a memory of previous computations. Such devices have no internal state;
+    \item The computation specification is the algorithm that is called and executed on each complete set of inputs. Any optimization effort has to be put to this part of the device specification, since it represents the main bottleneck being executed in a loop-like fashion. This element is required for any device;
+    \item The specification of outputs is similar to the inputs one and is made of the indication of the channel on which the data has to be written and sent and the type of data, is mandatory and the matching between inputs and outputs of different devices has to be perfect to avoid dangling outputs.
+\end{enumerate}
+
+In this approach each device has to implement one and only one basic function.
+The devices are intended to be self contained and atomic.
+This opens up to the possibility to spawn devices clones or to kill unused devices to free resources for other tasks.
+For example if a given device (or a group of homologous devices) starts starving and a loss of computing efficiency is measured, it might be killed by a manager process.
+Similarly if a group of devices cannot cope with the input rate, the manager process can add some more in order to improve the throughput of the whole set of devices using the resources freed up by the killing of starving devices.
+
+Within the FairROOT framework, several utilities and libraries have already been implemented to simplify the configuration of new devices.
+In $O^2$ the description of the devices is even more trasparent to the end user thanks to an additional framework called Data Processing Layer (DPL).
+The DPL hides much of the complexity required by the MPI-like FairROOT devices.
+After some development efforts, the residual complexity left to the programmer by the DPL is negligible.
+Using advanced C++ techniques, available in the 11, 14 and 17 standards, the description of input and output channels is similar to the initialization of a list, while implementing the initialization and data processing functions is as complex as the required algorithm itself.
+The typical complexity of concurrent computing software framework is almost completely hidden, leaving much of the coding focus to the algorithmic part.
+
+The DPL approach is being adopted by most part of the detectors and the systems included in the $O^2$ upgrade project, and the muon trigger upgrade follows this schema.
+
+\section{Previous muon tagging algorithm}
+The MTR algorithm was intended to be executed during reconstruction, in an asynchronous computing model.
+It was based on the matching between tracks reconstructed in the muon tracker and the tracklets (straight tracks) reconstructed in the MTR.
+The tracks generated and reconstructed within the muon chambers are obtained using a standard Kalman Filter algorithm.
+Since the five stations of muon chambers are placed upstream, inside and downstream of the dipole magnet, the reconstructed tracks are curved.
+The reconstructed tracks are extrapolated towards the muon trigger system.
+These informations are then matched with the tracklets generated using the MTR data.
+A tracklet is a set of crossing point and 3D slope, describing a straight segment.
+The muon chamber tracks extrapolation uses the same format.
+The muon identification function is based on the fact that only the muon chamber tracks which are found to correspond to a muon trigger one are to be considered muons, since it is unlikely for other particles to cross the $1.2m$ thick iron wall between the two stations of the muon trigger (Fig. \ref{fig:MTR_old}).
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/MTR_logic.png}
+\caption{In this picture the muon chamber and muon trigger planes are represented in yellow, the iron wall in purple and the dipole is shown in blue. The dashed line represents the true trajectory of the muon. The green line is the reconstructed track within the muon chambers, while the orange line is the tracklet reconstructed in the muon trigger.}
+\label{fig:MTR_old}
+\end{center}
+\end{figure}
+
+The generation of the tracklets in the MTR was performed using the Local Board (LB) segmentation, looking for
+aligned hits which had to be present in at least three of the four plane of the MTR.
+The starting LB were the ones belonging to the first two planes and the look-up for aligned hits was performed on the corresponding LB plus first neighbours of the following detector planes.
+A limit of the implementation of the MTR algorithm affected the most central events, when the particle multiplicity is higher.
+In this case the probability of having two muons crossing the same Local Board (LB) is higher and, if such situation happens, only one fake tracklet was extrapolated given he limitation to one tracklet per LB.
+The extrapolated tracklet parameters were not adherent to any of the two muons, and, instead, was a wrong tracklet which did not correspond even to the arithmetical average of the two tracks, as hown in figure \ref{fig:MTR_loss}.
+The inefficiency was then caused by an algorithmic feature more than by the detector itself.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.5\linewidth]{Chapters/O2/Figs/MTR_old.png}
+\caption{The MTR planes are shown in grey, while the hit local board is highlighted in yellow. Two real trajectories are represented by the blue lines (solid and dashed), while the purple line represents the extrapolated tracklet. As clearly shown the extrapolated tracklet does not correspond to any of the real muon trajectories.}
+\label{fig:MTR_loss}
+\end{center}
+\end{figure}
+
+Some development of an algorithm capable of recovering the performance loss in the most central events was performed but never put in the production code.
+Given the much higher luminosity and interaction rate foreseen for the LHC RUN3, this aspect should be fixed by the new implementation of the MID algorithm.
+The complex solution of creating a tracking algorithm in using the former MTR, excluded for RUN2, was indeed the proposed solution for RUN3 running conditions.
 
 \section{From Muon TRigger to Muon IDentifier}
-The name of the ALICE muon trigger will be modified from the introduction of the $O^2$ project.
-This change of nomenclature is related to a change of its functions.
-The muon trigger will see the upgrade of read-out electronics, already presented in previous chapters.
-In addition to this hardware upgrade, the online function of the muon trigger system will change.
-The muon trigger system will no longer provide an online trigger system for ALICE, since the acquisition paradigm will move to trigger-less.
-Instead the muon trigger will become a stand alone muon tracking system.
-Even if the tracking resolution of the muon trigger system is lower than that of the muon tracker and that of the future MFT (Muon Forward Tracker), the muon identification task will be achieved by the muon trigger which will then become the MID (Muon IDentifier).
+The name of the ALICE muon trigger (MTR) will be modified from the introduction of the $O^2$ project.
+This change of nomenclature is related to a change of its online functions.
+The muon trigger provided various online acquisition triggers based on the detection of muons and worked as a muon tagger for the muon chambers tracks.
+The MTR will see the upgrade of read-out electronics, already presented in previous chapters.
+In addition to this hardware upgrade, the online function of the MTR system will change.
+The MTR system will no longer provide an online trigger system for ALICE, since the acquisition paradigm will move to trigger-less.
+Instead the system will become a stand alone muon tracking system.
+Even if the tracking resolution of the muon trigger system is lower than that of the muon tracker and that of the future MFT (Muon Forward Tracker), the muon identification task will be achieved by the MTR which will then become the MID (Muon IDentifier).
 The muon identification (and hadron rejection) task will be performed combining data coming from the MFT, MCH and MID detectors.
 The tracks reconstructed with the MFT and MCH data will be identified as muons if a compatible track in the MID detector is present.
 This task will be performed online, processing and reconstructing around $300 MB/s$ of data.
-The acquisition/reconstruction workflow is represented in figure \ref{}.
+The acquisition/reconstruction workflow is represented in figure \ref{fig:O2_sketch}.
 Data recorded by the FEE (Front End Electronics) will be acquired via several GBTx link by the Common Readout Units (CRU), each one processing one half of the MID (inside and outside).
-The CRUs will be installed in two dual CPU machines calle First Level Processors (FLPs) which will be placed in the cunting rooms placed over the ALICE cavern, as close as possible to the detectors.
-Zero suppression and noisy/dead channels suppression/detection will be performed by the CRU or by the FLP CPUs.
+The CRUs are implemented as PCI express boards equipped with two external GBTx ports and an on-board Altera Arria X FPGA.
+The CRUs will be installed in two dual CPU machines called First Level Processors (FLPs) which will be placed in the counting rooms placed over the ALICE cavern, as close as possible to the detectors.
+The CRUs will perform the coding of the input stream in a binary format which can be sent and processed by the FLP (Fig. \ref{fig:O2_TF}).
+Zero suppression and noisy/dead channels suppression/detection will be performed either by the CRU or by the FLP CPUs.
 Pruned data will be then transferred to the EPNs located in the $O^2$ facility and will be processed and reconstructed.
 At the EPN level the combination of MID data with data coming from other detectors will be possible.
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/CRU.png}
+\caption{Detailed sketch of a generic Common Readout Unit (CRU). The Front End Electronics (FEE) are connected to the CRU through 24 embedded GBT links. The green boxes are connected to the Central trigger Processor (CTP) and deliver timing information to time tag the raw data flow, performed by the detector specific logic. The raw data is translated in a binary format which can be processed by the FLP CPUs. The ouput of the CRU is performed by a standard PCI Express link.}
+\label{fig:O2_TF}
+\end{center}
+\end{figure}
+
+\section{MID raw data format}
+The MID electronics will serialize the particles' hits in a compressed data format, sent through a GBTx link to the 4 CRUs installed in the two FLPs.
+Such data format follows the directives of $O^2$ for what concerns the description of the payload.
+An top level header defines the binary intervals at which what kind of information is found constitutes a constant size overhead.
+The management of data inside the binary blob follows a tree pattern.
+At each branching of the pattern a description (header) describes the positions of the following branches.
+In turn each branch provides a own description needed to deserialize and decode the content.
+The data format requires a sequential access in order to correctly map its content to meaningful variables and structures.
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/MID_format_2.png}
+\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/MID_format_1.png}
+\caption{Two CRU data format proposals. 
+In the first option only one non bending pattern is sent from the CRU to the FLP, while the FEE sends to the CRU several copies of the same pattern since the horizontal strips are read by several local boards each. The CRU has to perform some operation in order to combine the multiple non bending plane patterns into a single one.
+The second format foresees to send to the FLP several non bending plane patterns, which are combined by the FLP itself.}
+\label{fig:MID_CRU_DF}
+\end{center}
+\end{figure}
+
+Each side of the MID serializes the information using as top level header the number of fired RPCs, which corresponds to the number of following branches.
+Each branch representing an RPC provides an header which quotes the RPC ID and the number of columns fired within that RPC.
+Another branch level represents each of the fired columns and for each column both the column ID and the number of fired Local Boards (LB).
+The deepest branch level represents the LBs by giving the LB ID and the bit patterns of the LB.
+The patterns correspond to bending and non-bending strip directions and each pattern is coded in 16 bits, which are not always completely filled.
+In fact some LBs are equipped in a given direction with less than 16 strips.
+In that case the pattern gets filled accordingly to the hits and the exceeding bits are set to 0.
+
+As already stated, the MID RPCs require to perform two kinds of calibration runs in order to detect problematic channels.
+The issues can be either channels which starts to count continuously because of a discharge in the chamber or channels which stops counting because of detector or electronics failures.
+The characteristics of the two kinds of calibration runs are intended to address the detection of both issues.
+The first kind of calibration run is performed when no collision is happening (e.g. between two interactions).
+In such situation the noisy channels can be detected since they would be the only ones counting.
+The second kind of calibration run is performed using a FEE feature which provides an independent circuitry to inject an electric charge in the strip itself.
+During this calibration run all the strips are stimulated, therefore expected to be counting.
+The dead channels can be detected by looking at the zero bits.
+The chosen MID raw data format is not efficient for the second kind of calibration run.
+In fact, since the dead channels are expected to be a small part of the total, during such runs the bit patterns of almost the whole detector should be transferred.
+In order to optimize the data delivery process, by reducing the amount of useless information being sent, an additional bit can be delivered in order to flag the message payload as "straight" or "inverted".
+In the first case nothing changes and the overhead of the data format would be increased of 1 bit.
+In the second case only the dead channels are sent as if they would have been the only channels switched on.
+Thanks to the additional bit, the decoder will be able to invert the message to obtain the correct information.
+In addition, in case of bandwidth  bottlenecks, the inversion bit could become useful in case of high MID occupancy.
+In case more than $50\%$ of the detector is switched on, the FEE could decide to deliver the inverted bit pattern flagged accordingly.
+The expected MID occupancy is however expected to be low enough to discard the usage of the inversion bit for any event but for the calibration runs of second type.
+
+The data format has an implicit zero suppression, since only the hit strips are coded in a bit pattern which is then sent.
+
+\section{MID reconstruction pipeline}
+The MID reconstruction pipeline is an algorithm which, from a global point of view, should convert the digits streams obtained from the CRUs to a stream of 3D tracks representing the detected muons.
+The digits stream coming from the CRU has to be unpacked to detect noisy and dead channels. 
+This procedure is needed for two reasons. 
+First of all one wants to keep track of problematic strips in the CDB (Condition DataBase) to be able to highlight problematic RPC chambers and to detect hot spots and/or dead zones which can both lead to a loss of efficiency. 
+Moreover, concerning the noisy channels, their reading are not significant from a tracking point of view since they simulate a particle crossing which did not happen, hence one wants to mask out noisy channels in order to help the tracking algorithm. 
+While the record of the noisy and dead channels can be performed in a relaxed way, the masking of noisy channels should be capable of sustaining the same rate of the inputs in order to avoid the introduction of delays. 
+The applied mask has to be stored in the CDB as well, alongside a temporal validity range, to allow a granular reconstruction of the MID running condition for simulationa dn efficiency evaluation purposes.
+The reconstruction steps for the MID are intended to be mainly (if not globally) executed on the detector FLPs.
+The MID will be equipped with one FLP per side (inside and outside) which won't be equipped with a cross connection, hence won't be able to exchange data.
+For this reason the MID has to be considered as a pair of independent detectors.
+Only at the EPN level data coming from both sides will be merged and combined.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=1\linewidth]{Chapters/O2/Figs/MID_workflow.pdf}
+\caption{Schema of the MID reconstruction workflow obtained from the DPL Graphic User Interface (GUI). This workflow is intended to be executed in the FLP. Each box represents a device and the arrows represent a data stream. The first device, called ColDataStreamer, is a random generator of fake CRU messages able to emulate the CRU behaviour for testing purposes. The upper branch represents the asynchronous mask computing stage of the workflow. The last device, called sink, represents the connection to the EPN nodes and the second online processing step.}
+\label{fig:MID_workflow}
+\end{center}
+\end{figure}
+
+Regarding the acquisition, some logic conversion steps have been spotted, in order to provide atomic computation items able to be packed in deployable and modular devices:
+\begin{itemize}
+    \item The digits coming from the CRU are cloned towards two branches.
+    The first branch leads to the mask generation and can be asynchronous with respect to the input data flow.
+    The second branch has to present limited latency to avoid starvation of the following tracking devices;
+    \item The mask generation branch begins with a rate computer, namely a device with an internal state which works as a per-strip counter;
+    The counters are sent to a mask generator device which reads the counters and spots the noisy channels;
+    \item  A mask generator devices reads the recorded counters and spots dead and noisy channels by looking at the scalers incremented during calibration runs.
+    Two scalers sets will be available, the first being filled by the readings of the dead channels test, the second by the noisy channels one.
+    The channels switched on when no collision is happening are marked as noisy and propagated to the mask.
+    The channels not counting during the injection of charge in the electronics are marked as dead.
+    The mask is sent to a filter device;
+    \item A filter device is capable of applying the mask to the incoming digits.
+    The application of the mask is the logic AND between the incoming patterns and the corresponding mask.
+    In case no mask is present, or the mask is empty, the digits should simply be passed through as fast as possible.
+    Achieving the lowest latency on this device is crucial;
+    \item The stream of masked digits is then processed by a clusterizer device. The binary digits are here converted to 2D clusters, computing the centroids of the hits clusters. 
+    The third coordinate of the cluster is extrapolated from the detector geometry and added to the planar coordinates.
+    This computing step is a typical high throughput stateless computation;
+    \item The 3D clusters are passed to a device capable of performing the tracking through a Kalman Filter algorithm.
+    The generated tracks are sent to the following reconstruction steps executed by the EPNs.
+\end{itemize}
+
+The MID reconstruction pipeline has been developed within the DPL framework.
+
+\section{MID algorithm performances}
+The MID algorithm has to be validate in order to provide a performance similar to the old MTR offline reconstruction, with the added rate capability.
+Two main aspects of the algorithm performances have to be studied:
+\begin{itemize}
+    \item The resolution of the algorithm has to be studied in four variables: $x$ and $y$ first crossing resolution and vertical and horizontal slope. The resolution should be studied both as a function of the detector element and of cinematic variables of the reconstructed particle. The resolution defines the difference between the real parameters of the track and the reconstructed ones;
+    \item The reconstruction efficiency of real muons has to be evaluated. This value represents the fraction of real muons which are correctly identified by the algorithm;
+    \item The fraction of misidentified particles. From this value the identification likelihood can be obtained, since the number of non-muons identified as such, divided by the total number of muons identification, is the probability of wrong identification. Such value corresponds to the statistical identification likelihood.
+\end{itemize}
+
+Some of these tests have already been performed and will be presented.
+The methodology for the additional tests, the ones not yet accomplished, will be discussed as well.
+
+\subsection{Cluster size and cluster residuals}
+The overall reconstruction resolution is related to the cluster size.
+Usually the cluster size is defined by the number of adjacent strips which are fired by a given particle.
+Since such definition is not able to take into account different strip pitches, like the ones installed in the MID, a different definition is given and adopted from now on.
+The cluster size is defined as the maximum distance between the first and the last strips of the cluster, both in $x$ and $y$ directions.
+
+Since the MID provides a digital readout, the spatial charge distribution is not available.
+For this reason the clusters' centroids cannot be computed through the average of the strips coordinates using the charge as a weight.
+Instead the centroids' coordinates are computed as the average of the coordinates of the strips.
+Since a flat distribution of crossing probability has to be assumed within the cluster extension, the resolution is directly proportional to the cluster extension via the relation $\frac{CS}{\sqrt{12}}$ where $CS$ is the cluster size.
+The cluster size has been studied using a single p-Pb run recorded during LHC RUN2.
+A sample of the cluster sizes distribution of some RPCs is shown in figure \ref{fig:MID_CS}.
+The distribution is strongly focused at low cluster sizes and over $3$ cm of displacement the fired probability drops under $5\%$.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.48\linewidth]{Chapters/O2/Figs/CS1.pdf}
+\includegraphics[width=0.48\linewidth]{Chapters/O2/Figs/CS2.pdf}
+\caption{Cluster size distributions for horizontal (non-bending, left) and vertical (bending, right) planes.
+The $y$ axis represents the number of occurrences, while the $x$ axis is the distance of the position difference between the first and the last strip of the cluster. The values are represented in logarithmic scale.}
+\label{fig:MID_CS}
+\end{center}
+\end{figure}
+
+The first test to be performed is the comparison of the updated algorithm with the old one.
+The old algorithm performed well, despite some marginal flaws.
+The new algorithm should add the online reconstruction capability performing at least as well as the old one.
+In order to evaluate the performance difference between the two algorithms, the cluster residuals between the parameters of the tracks reconstructed with the old method and the cluster positions obtained from the application of the new algorithm have been computed and represented in form of a distribution.
+The residuals distributions are generated as a function of the detection element ID (i.e. the RPC).
+Such distributions present some square shaped structures which are artifacts caused b the different strips pitches.
+In fact, while the RPCs closer to the beam line are equipped with strips $1$, $2$ and $4$ cm wide, other RPCs are equipped only with $2$ and $4$ cm or only with $4$ cm strips.
+The square shaped artifacts reflect such distribution and reflect as well the spatial quantization due to the digital read-out.
+The residuals distribution is symmetric with respect to the $0$ and the $x$ ($y$) RMS is $0.9$ ($0.8$) $cm$.
+The distribution plots of these tests are reported in figure \ref{fig:MID_CR}.
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/CRx.pdf}
+\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/CRy.pdf}
+\caption{Cluster residuals distribution as a function of the RPC ID. The $y$ bins are continuous values, while each $x$ axis bin represents a single RPC. The square shaped artifacts are related to the different strip pitches each RPC is equipped with. The RPCs equipped with strips down to $1$ cm wide present the hot spots due to the superposition of the residuals distributions of $1$, $2$ and $4$ cm wide strips. The $y$ distribution presents smaller structures since the average strip size is smaller. Each RPC distribution is not normalized on its irradiation hence the colour palette is the same for all the RPCs, leading to empty spots along the $x$ direction.}
+\label{fig:MID_CR}
+\end{center}
+\end{figure}
+
+\subsection{Track residuals}
+Another set of residuals has been computed comparing the reconstructed tracks obtained via the two methods.
+In this case all the tracks are described by couple of spatial coordinates and two slopes, one over $x$, the other over $y$.
+The residuals between such parameters have been computed and shown as a function of the position within the RPCs as well as from the cinematic parameters of the track.
+This test can be performed using tracks belonging to RUN2 runs which have been identified as muons, since the evaluation of the muon identification likelihood is measured in dedicated benchmarks.
+
+The test consists in getting a list of reconstructed tracks from RUN2 data.
+The same data file used for the cluster size and cluster residuals evaluation has been processed for this test.
+The tracking algorithm is applied to the set of digits and the reconstructed tracks are recorded in the form of a 2D crossing point on the first MID station and a 2D slope.
+Such measurements are compared to the output of the old tracking algorithm.
+The residuals distributions of cluster positions and tracks comparison are generated as a function of the detection element (i.e. the RPC) and of the momentum $p$ of the particle.
+
+The action of the Kalman filter is the reduction of the effect of the spatial segmentation typical of a stripped/padded detector.
+For this reason the tracks residuals are less affected by the strips size.
+The residuals are shown as a function of the reconstructed momentum $p$ of the particles.
+Concerning the crossing position resolution the distributions are centered on $0$ cm.
+As expected, considering the detector morphology, the vertical resolution ($0.4$ cm) is better than the horizontal one ($0.7$ cm).
+The distributions relative to the crossing point are reported in figures \ref{fig:MID_xpoint_x} and \ref{fig:MID_xpoint_y}.
+The spatial resolutions are reflected in the slopes resolutions.
+In order to better understand the angular resolution, the distribution is shown as the residual divided by the standard deviation of the residuals distribution (Fig. \ref{fig:MID_TRm}).
+Up to the $95\%$ of the distribution is within the $\pm1.96$ band in the vertical slope distribution, while the horizontal slope presents a worse resolution which crosses such band for around the $15\%$ of the cases.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/TRx.pdf}
+\caption{Track residuals distribution of the horizontal coordinate. The $y$ axis represents the residual expressed in centimeters, while the $x$ axis is the reconstructed momentum of the particle. The colour palette is in logarithmic scale.
+The core of the distribution is about $1$ cm wide and very few outliers cross the $\pm2$ cm band.}
+\label{fig:MID_xpoint_x}
+\end{center}
+\end{figure}
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/TRy.pdf}
+\caption{Track residuals distribution of the vertical coordinate. The $y$ axis represents the residual expressed in centimeters, while the $x$ axis is the reconstructed momentum of the particle. The colour palette is in logarithmic scale.
+The core of the distribution is about $0.5$ cm wide and like for the horizontal coordinate, very few outliers cross the $\pm2$ cm band.}
+\label{fig:MID_xpoint_y}
+\end{center}
+\end{figure}
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/TRmx_sigma.pdf}
+\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/TRmy_sigma.pdf}
+\caption{Residuals of the vertical and horizontal slopes evaluation between the old MTR's algorithm and the new MID's one. The values are represented as residuals ($y$) divided by sigma as a function of the reconstructed particle momentum. The colour pallette is represented in logarithmic scale. The division by sigma of the residual value allows to interpret the $y$ values as Normal Gauss variables. The $\pm1.96$ band is crossed by several outliers and shown a weaker performance at lower $p$. The distribution get narrower moving to higher $p$ particles.}
+\label{fig:MID_TRm}
+\end{center}
+\end{figure}
+
+The overall resolution presents a clear dependence with respect to the particle momentum.
+A lower resolution has been measured for low impulse particles, while the distribution spread decreases moving to higher momentum.
+
+As already observed in the clusters residuals, the two reconstruction methods are not providing the same performances.
+The measured discrepancy between the previous algorithm and the new one is of the order of the centimeter for what concerns the crossing point.
+The fine tuning of the algorithm has not yet been performed and such optimization could help solving the issue.
+
+\subsection{Algorithm resolution}
+The residuals computed between two outputs are equivalent to the resolution plots of one of the two methods if and only if the other algorithm is the perfect or ideal one.
+Since the MTR algorithm was far from being ideal, the comparison reported in the previous section is not equivalent to a resolution measurement.
+
+A proper way to determine the reconstruction resolution of a given algorithm is to use as input and control variables the information generated by a simulation whose Monte Carlo truth is accessible.
+The reconstruction algorithm is applied to the simulated data and its output is recorded.
+Since using a Monte Carlo simulation allows one to access the true particles parameters, the residuals are computed between such parameters and the reconstructed tracks' ones.
+
+The residuals distributions characteristics, such as the mean values and the standard deviation, can be used to evaluate eventual algorithmic biases leading to a polarized residuals distribution and, in general, to associate an error to the reconstructed parameters.
+
+The Monte Carlo simulation used for such tests should emulate the tracks multiplicity expected in the real events.
+In fact, the overlapping of clusters belonging to different particles might lead to worse performances caused by bad clusters selection or centroid computation.
+This benchmark has not yet been performed and is expected as future development.
+
+\subsection{Identification efficiency}
+The measurement of the algorithm resolution is not the only crucial test for a new tracking method.
+An algorithm might present exceptional resolution on a negligible fraction of the processed tracks.
+For this reason the evaluation of the identification efficiency, defined as the ratio between processed particles and reconstructed ones, is crucial.
+The study of the identification efficiency can be performed using Monte Carlo simulations as input.
+The simulations which can be used for such study are either full simulations or embedded simulations.
+While the full simulations are events completely simulated using a generator, the embedded simulations are real events which are provided with an overlapped simulation of a specific signal.
+In this case the embedded simulations are created generating a quarkonium state forced to decay in an unlike sign muon pair within the MID acceptance.
+The efficiency of the identification is the ratio between the number of reconstructed and generated muons.
+The quarkonia states identification efficiency is the product of the identification efficiencies of the two muons.
+It is important to evaluate the differential identification efficiency with respect to cinematic variables such as rapidity and (transverse) momentum.
+The measurement of the identification efficiency has not been performed yet.
+
+\subsection{Mis-identification probability}
+This measurement is performed to evaluate how many particles which are not muons are instead identified as muons.
+The mis-identification probability is then evaluated using complete Monte Carlo simulations, in order to be able to know the real identity of each identified particle.
+The probability of mis-identification is then evaluated as the ratio between the number of non-muons identified as such divided by the total number of identified particles.
+Given a particle has been tagged as muon, the mis-identification probability corresponds to the inverse of the significance of the identification itself.
+The density of non muons reaching the MID is higher closer to the beam pipe, at high rapidities.
+For this reason the differential study is necessary to be sure that the mis-identification probability is low at least in the lowest rapidity region to limit as much as possible the pollution from other particles.
+Such measurement has not been performed yet.

@@ -276,7 +276,6 @@ supported!}
   \RequirePackage{epstopdf}
   \RequirePackage[pdftex]{graphicx}
   \DeclareGraphicsExtensions{.png, .jpg, .pdf}
-  \pdfcompresslevel=9
   \graphicspath{{Figs/Raster/}{Figs/}}
 \else
   \RequirePackage{graphicx}

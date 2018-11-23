@@ -350,7 +350,7 @@ The framework internal data format contains the following information:
 % The \code{RunObject} arrays are filled by a \code{MTRShuttle} instance using data coming from OCDB and DCS database.
 % Their filling is performed using a either a local or a remote copy of the OCDB and a local copy of the DCS database.
 % Several steps are performed by the filling algorithm.
-The algorithmic steps performed to obtain the $i_{net}$ values over time are:
+The algorithmic steps performed to obtain the $i_net$ values over time are:
 \begin{enumerate}
 \item DCS $i_{tot}$ and $HV$ data points are retrieved;
 \item OCDB data regarding beam conditions, HV readings and scalers values are stored;
@@ -365,7 +365,7 @@ For all the non-dark current readings the value of $i_{dark}$ is set using the i
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.8\linewidth]{Chapters/Performance/Figs/darkCurrentFlagging.pdf}
+\includegraphics[width=0.9\linewidth]{Chapters/Performance/Figs/darkCurrentFlagging.pdf}
 \caption{Cartoon representing the process of dark current readings flagging by combining OCDB and DCS data. The lines are represented on an arbitrary horizontal time axis. 
 The first line represents the current readings stored in the DCS database. 
 The frequency of those measurements is not fixed. 
@@ -379,7 +379,7 @@ They are represented in the last two lines accordingly. }
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.8\linewidth]{Chapters/Performance/Figs/interpolation.pdf}
+\includegraphics[width=0.9\linewidth]{Chapters/Performance/Figs/interpolation.pdf}
 \caption{Cartoon representing the interpolation process.
 The green and blue points represent $i_{tot}$ and $i_{dark}$ readings, according to figure \ref{fig:iDarkFlag}.
 The dashed vertical lines represent the projection on the time-axis of $i_{tot}$ readings.
@@ -455,7 +455,7 @@ For this reason this work uses only cosmic runs to estimate the dark current and
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDarkCOSMIC.pdf}
+\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iDarkCOSMIC.pdf}
 \caption{Average dark current trend computed with the described procedure using cosmic runs only. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iDarkCOSMIC}
 \end{center}
@@ -463,7 +463,7 @@ For this reason this work uses only cosmic runs to estimate the dark current and
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDarkCALIB.pdf}
+\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iDarkCALIB.pdf}
 \caption{Average dark current trend computed with the described procedure using calibration runs only. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iDarkCALIB}
 \end{center}
@@ -488,28 +488,7 @@ More than $12000$ runs have been selected, covering $pp$, $p-Pb$ and $Pb-p$, $Pb
 
 \section{Performance analysis}
 Several aging indicators for the 72 RPCs of the ALICE muon trigger will be presented and commented, trying to highlight eventual problematic RPCs which should be replaced.
-% A particular focus on the FEERIC-equipped RPC will address the main differences between the old and new read-out electronics from the chambers operations point of view.
-In order to improve the performances and the rate capability of the current detectors a new amplified electronic read-out board has been developed.
-
-The current read-out board is called ADULT and was developed to allow for a switch between streamer and avalanche operation modes through a dual threshold discriminator with modifiable thresholds.
-Even if ADULT performed well, the streamer mode was never used in the muon trigger RPCs.
-The signal dynamics of an avalanche is much smaller than that of a streamer, since only in the latter in gas multiplication is possible.
-
-Based on these two arguments, a new single threshold electronically amplified electronic read-out board has been developed.
-This new board is called FEERIC and is specialized in reading signals coming from avalanche operation mode and adopts a mosfet amplification stage.
-The effects of an amplified electronics are various.
-First of all the required charge dynamics in the gas gap is much lower with respect to that required by an non-amplified read-out.
-The free charge of the signal is in fact collected by the electrodes and amplified out of the gap.
-Lowering of the charge per hit allows to have smaller dead times since restoring the original HV requires less energy.
-Requiring a lower charge has the side effect of allowing a reduction of the operating HV, which leads to a even faster recovery time.
-The drawback of the adoption of an amplified electronics is that small noise signals, which a non-amplified electronics does not detect, might become observable and detected.
-
-One RPC currently part of the ALICE muon trigger is equipped with the new read-out electronics since 2015.
-In all the following plots the first part of the RPC operations is shown for the sake of comparison, despite the fact that it has been equipped with the FEERIC front end only from that date.
-% While this test sample wasn't the finalized electronics, which will be instead installed on all the RPCs by the beginning of RUN3, an insight of the improved performances is already possible.
-The RPC equipped with the FEERIC read-out offered an insight of the improved performances.
-
-After several tests the HV for the FEERIC equipped RPC has been set to $9800V$ gaining around $500V$ with respect to ADULT-equipped RPCs without modifying the detection efficiency of the detector.
+A particular focus on the FEERIC-equipped RPC will address the main differences between the old and new read-out electronics from the chambers operations point of view.
 
 \subsection{Dark current trend}
 The evaluation of the dark current trend is fundamental to understand the health of the inner surfaces of the detectors.
@@ -542,18 +521,6 @@ In fact around 4/5 RPCs per plane, over a total of 18, present a dark current va
 This behavior indicates that most of the RPCs present a much more stable behavior.
 The outliers of this trend can be considered the worst case scenario and should be monitored with attention in order to promptly notice eventual worsening of performances.
 
-A detailed view of the dark current measurements for the FEERIC-equipped RPC are reported in figure \ref{fig:FEERICiDark}.
-The dark current of the FEERIC RPC is negligible and in average a factor $20$ lower with respect to the average.
-It is important to notice that while all the other RPCs show an increase of the dark current over the years of operation, the measurements of dark current performed on the RPC equipped with the amplified electronics are compatible with a constant behavior.
-
-\begin{figure}[!t]
-\begin{center}
-\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDarkFEERIC.pdf}
-\caption{Dark current as a function of time for the FEERIC-equipped RPC. The dark current is measured during cosmic runs.}
-\label{fig:FEERICiDark}
-\end{center}
-\end{figure}
-
 \subsection{Net current and integrated current trend}
 This work presents for the first time a method to combine data from OCDB and DCS databases capable of subtracting the contribution of dark current from the evaluation of the integrated current.
 In order to do so the net current should be evaluated starting from the total current and the dark current readings, through the procedure presented in the previous sections.
@@ -569,16 +536,6 @@ The expected behavior is observed through the whole time range.
 \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iNet4PlanesMM.pdf}
 \caption{Net current trends for each RPC over the whole operation period. The trends are divided by plane (from top to bottom MT11, MT12, MT22, MT21). For each plane only the trends of the RPC with the maximum and minimum current are shown. Each point corresponds to a run. The $y$ value is the difference between the average total and dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iNet4Planes}
-\end{center}
-\end{figure}
-
-Concerning the FEERIC-equipped RPC, the net current measurements shown in figure \ref{fig:FEERICiNet} present the same reduction factor already observed for the dark current measurements.
-
-\begin{figure}[!t]
-\begin{center}
-\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iNetFEERIC.pdf}
-\caption{Net current as a function of time for the FEERIC-equipped RPC. The dark current is measured during cosmic runs, while the total current is measured during physics runs.}
-\label{fig:FEERICiNet}
 \end{center}
 \end{figure}
 
@@ -606,20 +563,8 @@ Some detectors integrated charge overtakes on the one of other RPCs which presen
 While some RPCs present an integrated charge which is systematically higher than that of the rest of the RPCs of the plane, but the trend of the plot seems aligned with that of others, other RPCs present sudden variations of the trend slope.
 The RPCs which present sudden variations of the trend have to be monitored with attention as they might become the best candidates for a replacement.
 
-The time series of MT12 outside 6 shows a sudden drop of the integrated charge. 
+The in MT12 outside 6 shows a sudden drop of the integrated charge. 
 This is due to the fact that the RPC was replaced with a new one during the operations and the integrated charge has been therefore consistently reset to $0\mu~C/cm^2$.
-
-A detailed view of the FEERIC integrated charge is shown in figure \ref{fig:FEERICIntCharge}.
-The shape reflects the lowering of the net current shown before (see Fig. \ref{fig:FEERICiNet}).
-An integrated charge about $6$ times lower than the average for the plane has been collected by the RPC since the installation of the FEERIC electronics.
-
-\begin{figure}[!t]
-\begin{center}
-\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/IntChargeFEERIC.pdf}
-\caption{Integrated charge as a function of time for the FEERIC-equipped RPC. The $y$ value is the integral of net current shown in \ref{fig:FEERICiNet}.}
-\label{fig:FEERICIntCharge}
-\end{center}
-\end{figure}
 
 \subsection{Dark rate trend}
 The dark rate trend is shown in figure \ref{fig:DarkRate4Planes}.
@@ -648,19 +593,6 @@ The chambers which show such behavior are the same that present an higher dark c
 It is worth mentioning that, even if some outliers are found, most of the RPCs are still operating at the original level of dark rate after around 8 years of continuous operation.
 In that sense the dark rate trend is a good cross-check of the symptoms already detected with the dark current studies and the integrated charge ones.
 The affected RPCs have to be monitored to check their efficiency and to constantly ensure that their effectiveness as detectors is not being affected by the increase of the dark rate.
-
-The dark rate trend for FEERIC shown in figure \ref{fig:FEERICDarkRate}.
-% shows how most of the ADULT-equipped RPCs trends are lower than the trend of the FEERIC-equipped one.
-The dark rate trend is compatible with the average trend for the plane.
-This aspect confirms that the chamber's efficiency is not modified by the lowering of the working point and the displacement of the amplification process to the electronics.
-
-\begin{figure}[!t]
-\begin{center}
-\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/DarkRateFEERIC.pdf}
-\caption{Dark rate trend for the FEERIC-equipped RPC. The $y$ value is the average rate measured during a given run, while the $x$ value is the timestamp which corresponds to the end of run.}
-\label{fig:FEERICDarkRate}
-\end{center}
-\end{figure}
 
 \subsection{Correlations between rates and net current}
 The possibility to study correlations of different parameters was introduced with the new analysis framework.
@@ -705,51 +637,81 @@ An RPC which receives constantly a given rate will have a correlation plot with 
 Following this argument it is interesting how most part of the RPCs which show a derive to higher charge per hit are also the ones with the largest rate spans.
 This observation suggests that RPCs are affected by rates variations, more than from the integrated rate.
 More measurements could help better addressing this argument.
-The FEERIC-equipped RPC, located in MT22, shows a systematically smaller charge per hit.
-The slope of its correlation plot is much lower than that of the other RPCs of MT22 and results, as expected, in a lower deposed charge per hit.
-The transverse size of the distribution is smaller than that of ADULT RPCs.
 
-% \subsection{The FEERIC RPC}
+One RPC in the MT22 shows a systematically smaller charge per hit.
+This RPC is equipped with a different kind of electronic readout board and will be discussed in the next section.
 
+\subsection{The FEERIC RPC}
+In order to improve the performances and the rate capability of the current detectors a new amplified electronic read-out board has been developed.
 
+The current read-out board is called ADULT and was developed to allow for a switch between streamer and avalanche operation modes through a dual threshold discriminator with modifiable thresholds.
+Even if ADULT performed well, the streamer mode was never used in the muon trigger RPCs.
+The signal dynamics of an avalanche is much smaller than that of a streamer, since only in the latter in gas multiplication is possible.
 
+Based on these two arguments, a new single threshold electronically amplified electronic read-out board has been developed.
+This new board is called FEERIC and is specialized in reading signals coming from avalanche operation mode and adopts a mosfet amplification stage.
+The effects of an amplified electronics are various.
+First of all the required charge dynamics in the gas gap is much lower with respect to that required by an non-amplified read-out.
+The free charge of the signal is in fact collected by the electrodes and amplified out of the gap.
+Lowering of the charge per hit allows to have smaller dead times since restoring the original HV requires less energy.
+Requiring a lower charge has the side effect of allowing a reduction of the operating HV, which leads to a even faster recovery time.
+The drawback of the adoption of an amplified electronics is that small noise signals, which a non-amplified electronics does not detect, might become observable and detected.
 
-% The net current measurements shown in figure \ref{fig:FEERICiNet} present the same reduction factor already observed for the dark current measurements.
+One RPC currently part of the ALICE muon trigger is equipped with the new read-out electronics since 2015.
+In all the following plots the first part of the RPC operations is shown for the sake of comparison, despite the fact that it has been equipped with the FEERIC front end only from that date.
+% While this test sample wasn't the finalized electronics, which will be instead installed on all the RPCs by the beginning of RUN3, an insight of the improved performances is already possible.
+The RPC equipped with the FEERIC read-out offered an insight of the improved performances.
 
-% \begin{figure}[!t]
-% \begin{center}
-% \includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iNetFEERIC.pdf}
-% \caption{Net current as a function of time for the FEERIC-equipped RPC. The dark current is measured during cosmic runs, while the total current is measured during physics runs.}
-% \label{fig:FEERICiNet}
-% \end{center}
-% \end{figure}
+After several tests the HV for the FEERIC equipped RPC has been set to $9800V$ gaining around $500V$ with respect to ADULT-equipped RPCs without modifying the detection efficiency of the detector.
 
-% The integrated charge shown in figure \ref{fig:FEERICIntCharge}, obtained from the numerical integration of the net current plot, reflects the lowering of the net current shown before.
-% An integrated charge about $6$ times lower than the average for the plane has been collected by the RPC since the installation of the FEERIC electronics.
+The dark current measurements are reported in figure \ref{fig:FEERICiDark} and compared with the average of the RPCs installed in the same plane.
+The dark current of the FEERIC RPC is negligible and in average a factor $20$ lower with respect to the average.
+It is important to notice that while all the other RPCs show an increase of the dark current over the years of operation, the measurements of dark current performed on the RPC equipped with the amplified electronics are compatible with a constant behavior.
 
-% \begin{figure}[!t]
-% \begin{center}
-% \includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/IntChargeFEERIC.pdf}
-% \caption{Integrated charge as a function of time for the FEERIC-equipped RPC. The $y$ value is the integral of net current shown in \ref{fig:FEERICiNet}.}
-% \label{fig:FEERICIntCharge}
-% \end{center}
-% \end{figure}
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iDarkFEERIC.pdf}
+\caption{Dark current as a function of time for the FEERIC-equipped RPC. The dark current is measured during cosmic runs.}
+\label{fig:FEERICiDark}
+\end{center}
+\end{figure}
 
-% The dark rate trend shown in figure \ref{fig:FEERICDarkRate} shows how most of the ADULT-equipped RPCs trends are lower than the trend of the FEERIC-equipped one.
-% The dark rate trend is however compatible with the average trend for the plane.
+The net current measurements shown in figure \ref{fig:FEERICiNet} present the same reduction factor already observed for the dark current measurements.
 
-% \begin{figure}[!t]
-% \begin{center}
-% \includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/DarkRateFEERIC.pdf}
-% \caption{Dark rate trend for the FEERIC-equipped RPC. The $y$ value is the average rate measured during a given run, while the $x$ value is the timestamp which corresponds to the end of run.}
-% \label{fig:FEERICDarkRate}
-% \end{center}
-% \end{figure}
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/iNetFEERIC.pdf}
+\caption{Net current as a function of time for the FEERIC-equipped RPC. The dark current is measured during cosmic runs, while the total current is measured during physics runs.}
+\label{fig:FEERICiNet}
+\end{center}
+\end{figure}
 
-% The correlation plot between net current and rate, already shown in figure \ref{fig:iNetvsRate4Planes}, highlights a great advantage of the FEERIC RPC.
-% The slope of the correlation plot is much lower, representing a lower deposed charge per hit.
-% The transversal size of the distribution is smaller than that of ADULT RPCs.
-% % It is important to notice that the range of rates the measurements cover is compatible with the largest ones for the ADULT RPCs, hence the resilience of the FEERIC-equipped one to rate changes appears to be much stronger.
+The integrated charge shown in figure \ref{fig:FEERICIntCharge}, obtained from the numerical integration of the net current plot, reflects the lowering of the net current shown before.
+An integrated charge about $6$ times lower than the average for the plane has been collected by the RPC since the installation of the FEERIC electronics.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/IntChargeFEERIC.pdf}
+\caption{Integrated charge as a function of time for the FEERIC-equipped RPC. The $y$ value is the integral of net current shown in \ref{fig:FEERICiNet}.}
+\label{fig:FEERICIntCharge}
+\end{center}
+\end{figure}
+
+The dark rate trend shown in figure \ref{fig:FEERICDarkRate} shows how most of the ADULT-equipped RPCs trends are lower than the trend of the FEERIC-equipped one.
+The dark rate trend is however compatible with the average trend for the plane.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/DarkRateFEERIC.pdf}
+\caption{Dark rate trend for the FEERIC-equipped RPC. The $y$ value is the average rate measured during a given run, while the $x$ value is the timestamp which corresponds to the end of run.}
+\label{fig:FEERICDarkRate}
+\end{center}
+\end{figure}
+
+The correlation plot between net current and rate, already shown in figure \ref{fig:iNetvsRate4Planes}, highlights a great advantage of the FEERIC RPC.
+The slope of the correlation plot is much lower, representing a lower deposed charge per hit.
+The transversal size of the distribution is smaller than that of ADULT RPCs.
+% It is important to notice that the range of rates the measurements cover is compatible with the largest ones for the ADULT RPCs, hence the resilience of the FEERIC-equipped one to rate changes appears to be much stronger.
 
 
 

@@ -1,18 +1,18 @@
 \chapter{Conclusions}
 
-The present work allowed for a deep understanding of all the systems and methodologies involved in the study of quarkonium production with ALICE at the LHC.
-
-In order to ensure the correct behaviour of the ALICE muon trigger system, a detailed study of the MTR performances has been performed.
-From such measurements the good shape of the muon trigger system has been verified, with the exception of some outliers which by the way are not yet affected by performances issues.
+In order to ensure the correct functioning of the ALICE muon trigger system, a detailed study of the MTR performances has been performed.
+From the measurements of the integrated charge, the dark current evolution and the charge per hit evaluation, the good shape of the muon trigger system has been verified, with the exception of some detection elements.
 The measurements that have been performed allowed for a verification of the expected performances of the new electronics, FEERIC, whose installation is planned for the next long shutdown of the LHC.
+In fact the RPC equipped with FEERIC reaches a high efficiency at lower HV values with respect to the other RPCs ($\approx400\ V$ less), with a significant reduction of the drawn currents ($\approx10\times$ lower).
 
 The study of the performances of the MTR lead to the development of a framework able to combine several sources of data regarding the detector functionality and the LHC status.
-Such tool, called \code{MTRShuttle} might be extended to other systems in the future and constitutes a valuable help for the study of the variations and distributions of the main working parameters of the systems installed in the ALICE apparatus.
+It has been developed as an extension of the \code{AliROOT} \code{Shuttle}, the default framework for the combination and correlation of data from the Detector Control System (DCS) and the Offline Condition Database (OCDB).
+The new tool, called \code{MTRShuttle}, might be extended to other systems in the future and constitutes a valuable help for the study of the variations and distributions of the main working parameters of the systems installed in the ALICE apparatus.
 
 
-After ensuring the expected performances of the MTR were satisfied during the data taking period, the study of the Upsilon production at forward rapidity in Pb-Pb collisions at $\sqrt{S_{\mathrm{NN}}}=5.02TeV$ has been performed.
+After ensuring the expected performances of the MTR were satisfied during the data taking period, the study of the Upsilon production at forward rapidity in Pb-Pb collisions at $\sqrt{s_{\mathrm{NN}}}=5.02\ TeV$ has been performed.
 
-The measured abundance of $\Upsilon(1S)$ and $(2S)$ allowed for the computation of double ratios which values are aligned with the hypothesis of a binding-energy dependent sequential suppression in the QGP.
+The measured abundance of $\Upsilon(1S)$ and $(2S)$ allowed for the computation of double ratios whose values are compatible with the hypothesis of a binding-energy dependent sequential suppression in the QGP.
 In addition the ratios computed at several colliding energies didn't show an energy hierarchy.
 From the comparison of $J/\psi$ measured at RHIC and $\Upsilon(1S)$ obtained at the LHC a symmetry can be noticed.
 
@@ -23,22 +23,29 @@ The theoretical uncertainty bands and the statistical uncertainties on the measu
 
 
 In order to satisfy such requirement the ALICE collaboration is pursuing a complex hardware and software upgrade program called $O^2$.
-With this upgrade the data rate will pass from $1kHz$ to $50 kHz$ of minimum bias events.
-Thanks to online processing of all the $50 kHz$ of events, the limit bandwidth of $8kHz$ will be filled only of interesting events, discarding online the trivial ones.
+With this upgrade the data rate will pass from $1kHz$ to $50 kHz$ of minimum bias events in Pb-Pb collisions.
+Thanks to online processing of all the $50 kHz$ of events, the limit storage bandwidth will be filled only of interesting events, discarding online the trivial ones.
 
-The ALICE MTR will undergo a big upgrade process, involving the read out electronics and the whole software and hardware apparatus.
-In order to comply with the interaction rate expected in 2020 ($50 kHz$) the MTR will become a MID (Muon Identifier) losing its triggering purposes.
-Such evolution requires a change of paradigm necessary to use the detector as a complete tracking system.
+The ALICE MTR will undergo a big upgrade process, involving the read out electronics and the whole software apparatus.
+In order to reduce the dead time that would arise from an interaction rate of $50\ kHz$ expected in 2021, the MTR will become a MID (Muon Identifier) losing its triggering purposes.
 In the context of this work a big effort has been put to develop a fast, precise and resilient software capable of coping with the run specifications.
 As a result the ALICE MTR/MID will be able to retain most of its features and performances along with an highly improved rate capability.
 
 The development of the upgrade path is not yet completely developed, but the boost given by this work is an important fraction of the planned tasks.
+An algorithm, which allows for the transport of \code{C++} types and structures (and contiguous containers of such objects) using the ZeroMQ transport framework at the basis of $O^2$, has been implemented.
+These serialization routines, based on \code{boost} have been widely tested and are currently used in many detector- and subsystem-specific code, and was requested to be included in \code{FairROOT} core by its developers team.
+The development of the $O^2$ software for the MID involved several work items.
+An algorithm capable of deserializing the CRU data format in a $C++$ structure has been implemented.
+Such algorithm will be probably implemented directly on the CRU FPGA for timing constraints.
+In addition, the development of a full stack of devices, capable of performing an online rejection of MID noisy channels and detection of dead channels, has been accomplished.
+This chain of devices has been implemented on top of the Data Processing Layer (DPL) framework.
+The interaction with DPL developers allowed for an improvement of the whole framework by looking to the real use case of the MID detector.
 
-
-Thanks to this work a better and deeper knowledge of the RPCs of the MTR/MID has been achieved, highlighting behaviour patterns and interesting correlations between working parameters.
+Thanks to this thesis a better and deeper knowledge of the RPCs of the MTR/MID has been achieved, highlighting behaviour patterns and interesting correlations between working parameters.
 This task was of crucial importance for the study of Bottomonium production in order to correctly understand the detectors performances, hence to spot and quote all the possible sources of systematic uncertainty.
 
-The results of the Bottomonium study highlighted the need for more data to improve the results and obtain decisive measurements to better understand the QGP dynamics.
+% The results of the Bottomonium study highlighted the need for more data to improve the results and obtain decisive measurements to better understand the QGP dynamics.
 
+The present work allowed for a deep understanding of all the systems and methodologies involved in the study of quarkonium production with ALICE at the LHC.
 Taking part to the MTR/MID $O^2$ upgrade program was critical to put the right basis for the performance update which will help tackling the nowadays statistical limits in Bottomonium studies with ALICE.
 

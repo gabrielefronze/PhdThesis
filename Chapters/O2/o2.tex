@@ -25,7 +25,7 @@ At this stage the detectors will operate as stand alone items and no merging of 
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.95\linewidth]{Chapters/O2/Figs/O2.png}
+\includegraphics[width=0.95\linewidth]{Chapters/O2/Figs/O2.pdf}
 \caption{Sketch of the conceptual structure of the $O^2$ framework. The detectors electronics provides a continuous stream of raw data which is compressed, pre-processed and packed by the read-out logic. Partial information coming from different detectors and systems is aggregated. The full set of data is processed and reconstructed. Up to this step all the computation is performed synchronously. The processed data is then stored and retrieved later for the asynchronous reconstruction.}
 \label{fig:O2_sketch}
 \end{center}
@@ -69,8 +69,8 @@ ALFA and FairROOT are actively developed by the ALICE and GSI communities.
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.8\linewidth]{Chapters/O2/Figs/O2_soft_tree.png}
-\includegraphics[width=0.7\linewidth]{Chapters/O2/Figs/ALFA.png}
+\includegraphics[width=0.8\linewidth]{Chapters/O2/Figs/O2_soft_tree.pdf}
+\includegraphics[width=0.7\linewidth]{Chapters/O2/Figs/ALFA.pdf}
 \caption{Software topology of the $O^2$ project. $O^2$ stands on several software, sets of libraries and tools. The green boxes represents the low level libraries which constitutes the basis of the software. Some of them are ZeroMQ as message passing protocol, CMake as project build and test manager, Geant4 as particles propagation engine. The orange boxes represents ALFA, developed between ALICE and FAIR. This tool contains a set of high level tools, such as data transportation routines and the dynamic deployment system for the dynamic devices management. The blue box represents FairROOT, an evolution of ROOT focused on improved usability for the end-users. It allows easy data visualization, storage, offline analysis and more. The ALICE $O^2$ stands on all these elements alongside other collaborations software (Panda, Cbm).}
 \label{fig:O2_soft_tree}
 \end{center}
@@ -96,7 +96,7 @@ Such overhead becomes important for both the transmission and for the storage of
 
 \begin{figure}[!]
 \begin{center}
-\includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/TF.png}
+\includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/TF.pdf}
 \caption{Sketch representing the acquisition flow with two detectors, A and B. The detector data samples are retrieved by the read-out logic in a continuous fashion, with the addition of heartbeat triggers interleaving for time stamping purposes. At the FLP level each data stream is time sliced, obtaining several patches which are compressed by fast processing and packed in sub TFs. The sub TFs are sent to the EPN farm and then aggregated into global TFs. Each TF has a full set of information regarding a given time interval. A global compression of around $\times14$ is achieved in the process.}
 \label{fig:O2_TF}
 \end{center}
@@ -130,7 +130,7 @@ At the EPN layer the sub TFs coming from different detectors are then aggregated
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.75\linewidth]{Chapters/O2/Figs/Compression.png}
+\includegraphics[width=0.75\linewidth]{Chapters/O2/Figs/Compression.pdf}
 \caption{Computing infrastructure layers with quoted required input and output bandwidths. An overall factor of compression of $\times14$ is to be achieved in the process. The network topology is not yet defined by the $O^2$ Technical Design Report since the technology growth is fast enough to require a shorter term planning later during the upgrade.}
 \label{fig:O2_TF}
 \end{center}
@@ -177,6 +177,7 @@ The typical complexity of concurrent computing software framework is almost comp
 The DPL approach is being adopted by most part of the detectors and the systems included in the $O^2$ upgrade project, and the muon trigger upgrade follows this schema.
 
 \section{Muon tagging algorithm}
+\label{MTR_tagging}
 The MTR algorithm was intended to be executed during reconstruction, in an asynchronous computing model.
 Within the $O^2$ upgrade this algorithm will modified to be fed with information computed synchronously strongly improving the muon tagging capabilities of the system.
 It is based on the matching between tracks reconstructed in the muon tracker and the tracklets (straight tracks) reconstructed in the MTR.
@@ -190,7 +191,7 @@ The muon identification criteria is based on the fact that only the muon chamber
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/MTR_logic.png}
+\includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/MTR_logic.pdf}
 \caption{In this picture the muon chamber and muon trigger planes are represented in yellow, the iron wall in purple and the dipole is shown in blue. The dashed line represents the true trajectory of the muon. The green line is the reconstructed track within the muon chambers, while the orange line is the tracklet reconstructed in the muon trigger.}
 \label{fig:MTR_old}
 \end{center}
@@ -205,7 +206,7 @@ The inefficiency was then caused by an algorithmic feature more than by the dete
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.5\linewidth]{Chapters/O2/Figs/MTR_old.png}
+\includegraphics[width=0.5\linewidth]{Chapters/O2/Figs/MTR_old.pdf}
 \caption{The MTR planes are shown in grey, while the hit local board is highlighted in yellow. Two real trajectories are represented by the lines. The algorithm is tuned to select the less sloped track in case of ambiguity, hence only the solid blue track would be recorded.}
 \label{fig:MTR_loss}
 \end{center}
@@ -245,7 +246,7 @@ At the EPN level the combination of MID data with data coming from other detecto
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/CRU.png}
+\includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/CRU.pdf}
 \caption{Detailed sketch of a generic Common Readout Unit (CRU). The Front End Electronics (FEE) are connected to the CRU through 24 embedded GBT links. The green boxes are connected to the Central trigger Processor (CTP) and deliver timing information to time tag the raw data flow, performed by the detector specific logic. The raw data is translated in a binary format which can be processed by the FLP CPUs. The ouput of the CRU is performed by a standard PCI Express link.}
 \label{fig:O2_TF}
 \end{center}
@@ -263,8 +264,8 @@ The data format has an implicit zero suppression, since only the hit strips are 
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/MID_format_2.png}
-\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/MID_format_1.png}
+\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/MID_format_2.pdf}
+\includegraphics[width=0.99\linewidth]{Chapters/O2/Figs/MID_format_1.pdf}
 \caption{Two CRU data format proposals. 
 In the first option only one non bending pattern is sent from the CRU to the FLP, while the FEE sends to the CRU several copies of the same pattern since the horizontal strips are read by several local boards each. The CRU has to perform some operation in order to combine the multiple non bending plane patterns into a single one.
 The second format foresees to send to the FLP several non bending plane patterns, which are combined by the FLP itself.}

@@ -1115,14 +1115,12 @@ wish to left align your text}
 % \fi
 % }
 
-\newenvironment{abstractpage} {
-  {\cleardoublepage\vspace*{\fill}\thispagestyle{empty}}
-  {\vfill\cleardoublepage}
-\newenvironment{abstract}[1]
-  {\bigskip\selectlanguage{#1}%
-   \begin{center}\bfseries\abstractname\end{center}}
-  {\par\bigskip}
-}
+\newenvironment{abstract}{
+  \vspace*{\fill}
+  \begin{center}%
+    \bfseries\abstractname
+  \end{center}}%
+  {\vfill}
 
 
 % ******************** To compute empty space in title page *******************

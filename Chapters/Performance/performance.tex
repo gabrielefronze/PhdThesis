@@ -1,6 +1,6 @@
 \chapter{Measurement and monitoring of Muon Trigger System performances}
 
-\section{RPC ancestors}
+\section{History and main features of Resistive Plate chambers}
 Before the invention of the RPCs, the first gaseous detectors to operate in the streamer regime were spark and streamer chambers.
 
 \begin{figure}[!t]
@@ -74,7 +74,7 @@ RPCs are currently adopted, mainly as muon detectors, by ALICE, ATLAS and CMS at
 RPC detectors are made of several layers of different materials.
 First of all the gas gap is the innermost part of the detector and contains a gas mixture which will be discussed later.
 % The gas gap is surrounded by the high resistivity electrodes which are the HV providers and thanks to the high resistivity are able to spatially limit the discharge.
-Electrodes resistivity is of the order of $10^9 – 10^10\ \Omega \cdot cm$.
+Electrodes resistivity is of the order of $10^{9}-10^{10}\ \Omega \cdot cm$.
 The roughness of the electrodes must be as low as possible to limit the peak discharge around surface anisotropies.
 
 
@@ -90,19 +90,19 @@ The roughness of the electrodes must be as low as possible to limit the peak dis
 For this reason the resistive electrodes are frequently coated with oils in order to improve the smoothness of the inner surface and to preserve the resistivity (see Fig. \ref{fig:RPCoil}).
 Right outside the resistive electrodes an insulation layer made of plastic material is provided, in order to electrically decouple the internal electrodes and the pick-up strips.
 The readout pads or strips are installed outside the insulation layer.
-The edge of the chamber is sealed by means of plastic material walls and is equipped with pipes for the flow of the gaseous mixture are installed along the edge.
+The edge of the chamber is sealed  by means of plastic material walls and is equipped with pipes for the flow of the gaseous mixture.
 
 The gaseous mixture of a RPC is not standard and each implementation can differ from any other one.
 However, some basic ingredients can be identified:
 \begin{itemize}
-\item Donor gas: ($e.g.$ $C_2H_2F_4$) it is the gas that should be ionized by the ionizing particle and whose constituents take part in the charge drift;
+\item Donor gas: ($e.g.$ $Ar$) it is the gas that should be ionized by the ionizing particle and whose constituents take part in the charge drift;
 \item X-ray quencher: ($e.g.$ $iC_4H_{10}$) it is a gas that has an high cross section for x-rays and high energy photons. This is needed in order to absorb recombination photons that can cause a degeneration in streamer;
 \item Charge quencher: ($e.g.$ $SF_6$) it is a gas that provides high electro-negativity in order to limit the transversal development of the avalanche and reduce the probability of a streamer degeneration.
 \end{itemize}
 
 Depending on whether the RPC is chosen to operate in avalanche or streamer mode (Fig. \ref{fig:Streamer}) the gas mixture should be modified.
-For example a streamer mixture is mainly composed of Argon, which is rarely present in an avalanche mixture.
-The chosen mixture is always engineered for one of the two working modes and cannot be used in the other one.
+For example a streamer mixture is mainly composed of Argon, while in avalanche mixtures this is replaced by a gas which, along with acting as a donor, has also quenching properties ($e.g.\ C_2H_2F_4$).
+% The chosen mixture is always engineered for one of the two working modes and cannot be used in the other one.
 
 Several aspects, such as the gas mixture composition, enter the definition of an RPC HV working point.
 Typically this voltage is chosen by performing an efficiency versus voltage scan of a specific RPC, and might differ from one RPC to another.
@@ -125,20 +125,21 @@ In some applications, the usage of FEE cards with an amplification stage allows 
 
 
 \section{Ageing effects in RPC detectors}
-Likewise other gaseous detectors, the gas gap of the RPCs can undergo during long-term operation reversible and irreversible performance degradation.
+Like other gaseous detectors, the gas gap of the RPCs can undergo during long-term operation reversible and irreversible performance degradation.
 
 The most important source of performance degradation is the amount of charge generated in the gas gap during irradiation at nominal voltage.
 % In fact the charge generated in the gas gap is deposed either on the resistive electrodes or can induce the generation of chemical compounds out of the gas mixture components.
 The avalanche (or streamer) process can directly harm the electrodes or, more frequently, induce the generation of chemical compounds other than the gas mixture components.
-These compounds might depose on the inner surfaces of the gas gap, creating peaks which can affect the chamber noisiness, as well as they can chemically attack the surfaces.
+These compounds might form deposits on the inner surfaces of the gas gap, creating peaks which can affect the chamber noisiness, as well as they can chemically attack the surfaces.
 Both these situations can cause an increase of the noise rate of the chambers.
 An high noise rate causes a local inefficiency of the detector due to the recovery time after a discharge.
 % Even if one would like to avoid as much as possible these irreversible alterations, they are physiological of the RPC detectors used in such high irradiation situations.
 These processes can be mitigated by special measures.
 % For example the ALICE RPCs, and in general any other implementation of such detectors in modern experiments, are fed with a constant flux of gas in order to clean the gas from unwanted chemical compounds.
-I addition to the filtering of the gaseous mixture and the constant replacement of part of that, the gaseous mixture is humidified.
-Besides the already mentioned oiling of the inner surface of the electrodes, another common measure is the usage of a humid gas mixture. Indeed, one of the risks for bakelite-made RPCs is the bending caused by the drying of bakelite layers. 
-The humidification of the gaseous mixture allows to constantly hydrate the inner surface of the bakelite electrodes, keeping the original gas gaps shape and avoiding changes of the bakelite resistivity \ref{fig:drywet}.
+% In addition to the filtering of the gaseous mixture and the constant replacement of part of that, the gaseous mixture is humidified.
+Besides the already mentioned oiling of the inner surface  of the electrodes, another common measure is the usage of a humid gas mixture.
+Indeed, one of the risks for bakelite-made RPCs is the mechanical deformations and the resistivity variations caused by the drying of bakelite layers.
+The humidification of the gaseous mixture allows one to constantly hydrate the inner surface of the bakelite electrodes, keeping the original gas gaps shape and avoiding changes of the bakelite resistivity (see Fig. \ref{fig:drywet}).
 
 \begin{figure}[!t]
 \begin{center}
@@ -188,11 +189,11 @@ Moreover, the dark current is sensitive to ohmic effects due to non-perfect insu
 
 % The framework allows to produce distributions of the recorded values with respect to the beam conditions, hence relationships between the colliding systems and their energy and the RPCs behavior may be studied.
 
-In the second part of this chapter, the framework developed for the monitoring of the parameters mentioned above, for the RPCs of the ALICE muon trigger, will be described.
+In the second part of this chapter, the framework developed for the monitoring of the parameters mentioned above for the RPCs of the ALICE muon trigger will be described.
 
 \section{The ALICE muon trigger RPCs}
 The ALICE muon trigger system is made of four layers (MT11, MT12, MT21 and MT22) arranged in two stations spaced of $1.2m$, as shown in figure \ref{fig:ALICEmuon}.
-Each layer is divided in two half-planes, inside LHC ring and outside LHC ring, or, in brief, inside and outside.
+Each layer is divided in two half-planes, inside LHC ring and outside LHC ring (INSIDE and OUTSIDE in the following).
 Each of the four layers is composed of 18 RPCs.
 The chambers of the first two stations are slightly smaller than the ones of the third and fourth in order to cover the same pseudorapidity range.
 Three shapes of RPC are installed and correspond to long, short and cut shapes.
@@ -204,32 +205,46 @@ The strips of each side of the RPCs are reciprocally orthogonal.
 The vertical (horizontal) strips, providing $x$ ($y$) hits, are called non-bending (bending) in relation to the dipole action on charged particles paths.
 The currently installed front-end electronics is called ADULT and is not amplified \cite{Dupieux:2003bw}.
 71 RPCs are equipped with this electronics, while one RPC is equipped with a prototype of the FEERIC electronics \cite{Marchisone:2017bcb} that provides an integrated amplification stage.
-This development has been pursued to improve the performances and the rate capability of the current detectors.
-The current read-out board is called ADULT and was developed to work in streamer operation mode, thanks to a dual threshold discriminator with modifiable thresholds.
-Even if ADULT performed well, the streamer mode was never used in the muon trigger RPCs.
-Thanks to the modifiable thresholds ADULT operated in avalanche mode effectively for the last 10 years.
-However, the signal dynamics of an avalanche is much smaller than that of a streamer, since only in the latter in-gas multiplication is possible.
-Based on these two arguments, a new single threshold electronically amplified electronic read-out board has been developed.
-This new board is called FEERIC and is specialized in reading signals coming from avalanche operation mode and adopts a mosfet amplification stage.
-The effects of an amplified electronics are various.
-First of all the required charge dynamics in the gas gap is much lower with respect to that required by an non-amplified read-out.
-The free charge of the signal is in fact collected by the electrodes and amplified out of the gap.
-Lowering of the charge per hit allows to have smaller dead times since restoring the original HV requires less energy.
-Requiring a lower charge has the side effect of allowing a reduction of the operating HV, which leads to a even faster recovery time.
-The drawback of the adoption of an amplified electronics is that small noise signals, which a non-amplified electronics does not detect, might become observable and detected.
-One RPC currently part of the ALICE muon trigger is equipped with FEERIC since 2015, in order to offer an insight of the improved performances.
-FEERIC will equip the whole muon trigger system from the LHC RUN3 (2021 onward).
-The working point of the ADULT-equipped RPCs is $10200V$, while the FEERIC-equipped one requires about $9800\ V$ to operate correctly, gaining around $500V$ with respect to ADULT-equipped RPCs without modifying the detection efficiency of the detector.
+The ALICE muon trigger RPCs (and the ADULT electronics) were initially developed for streamer mode operation [51]. 
+Later on, a second operation mode (“maxi-avalanche”) was developed [52], where the signal amplitude is smaller than in streamer mode, but still compatible with the minimum threshold ($\approx7\ mV$) that can be set in ADULT. 
+The beam test performed in maxi-avalanche mode showed a rate capability ($i.e.$ the maximum irradiation rate that can be reached without efficiency degradation due to the local voltage drop) of about $80\ Hz/cm^2$. 
+Moreover, prototypes were ageing-tested at the CERN Gamma Irradiation Facility up to an integrated charge of about $50\ mC/cm^2$.
+The gas mixture corresponding to such an operation mode is:
+\begin{itemize}
+    \item $89.7\%$ Tetrafluoroethane ($C_2H_2F_4$);
+    \item $10.0\%$ iso-Buthane ($iC_4H_{10}$);
+    \item $0.3\%$ Sulfum esafluoride ($SF_6$).
+\end{itemize}
+As will be discussed in Chapter 4, the ALICE experiment will undergo a major upgrade before the LHC RUN3 (expected to start in 2021), where the instantaneous luminosity in Pb-Pb collisions will increase by almost one order of magnitude. 
+In light of this, the FEERIC electronics was developed. 
+The goal is to lower the HV and operate the detectors in pure avalanche mode, transferring the gain from the gas to the electronics, decreasing the deposited charge per hit by about a factor $\approx4$ and hence improving the rate capability and reducing the impact of ageing effects. 
+Since the beginning of the LHC RUN2 (2015) one RPC is equipped with FEERIC, in order to test in real life the expected performance improvement.
+% This development has been pursued to improve the performances and the rate capability of the current detectors.
+% The current read-out board is called ADULT and was developed to work in streamer operation mode, thanks to a dual threshold discriminator with modifiable thresholds.
+% Even if ADULT performed well, the streamer mode was never used in the muon trigger RPCs.
+% Thanks to the modifiable thresholds ADULT operated in avalanche mode effectively for the last 10 years.
+% However, the signal dynamics of an avalanche is much smaller than that of a streamer, since only in the latter in-gas multiplication is possible.
+% Based on these two arguments, a new single threshold electronically amplified electronic read-out board has been developed.
+% This new board is called FEERIC and is specialized in reading signals coming from avalanche operation mode and adopts a mosfet amplification stage.
+% The effects of an amplified electronics are various.
+% First of all the required charge dynamics in the gas gap is much lower with respect to that required by an non-amplified read-out.
+% The free charge of the signal is in fact collected by the electrodes and amplified out of the gap.
+% Lowering of the charge per hit allows to have smaller dead times since restoring the original HV requires less energy.
+% Requiring a lower charge has the side effect of allowing a reduction of the operating HV, which leads to a even faster recovery time.
+% The drawback of the adoption of an amplified electronics is that small noise signals, which a non-amplified electronics does not detect, might become observable and detected.
+% One RPC currently part of the ALICE muon trigger is equipped with FEERIC since 2015, in order to offer an insight of the improved performances.
+% FEERIC will equip the whole muon trigger system from the LHC RUN3 (2021 onward).
+The working point of the ADULT-equipped RPCs is about $10200\ V$, while for the FEERIC-equipped RPC the working point is about $9500\ V$, $i.e.$ $700\ V$ lower than with ADULT.
 During the operation the variation of the atmospheric temperature (T) and pressure (P) results in a variation of the efficiency.
-This effect can be corrected by applying an effective voltage which is dynamically adjusted according to the formula:
+This effect can be corrected for by dynamically adjusting the high voltage according to the formula:
 % The HV tuning formula is:
 
 \begin{equation}
 \label{eq:HVcorrection}
-HV_{eff} = HV_{nom}\cdot \frac{T}{T_0} \cdot \frac{P_0}{P}
+HV_{eff} = HV_{nom}\cdot \frac{T_0}{T} \cdot \frac{P}{P_0}
 \end{equation}
 
-where $HV_{nom}$ is the working point quoted above.
+where $HV_{nom}$ is the working point quoted above, $p_0 = 970\ mbar$ and $T_0 = 293.15\ K$.
 
 \begin{figure}[!t]
 \begin{center}
@@ -239,57 +254,25 @@ where $HV_{nom}$ is the working point quoted above.
 \end{center}
 \end{figure}
 
-The ALICE muon trigger RPCs were initially developed for streamer mode operation \cite{Arnaldi:2000ub}.
-Later on, a second operation mode (“maxi-avalanche”) was developed \cite{Arnaldi:2006ii}, where the signal amplitude is smaller than in streamer mode, but still compatible with the minimum threshold ($\approx7\ mV$) that can be set in  ADULT. 
-The beam test performed in maxi-avalanche mode showed a rate capability (i.e. the maximum irradiation rate that can be reached without efficiency degradation due to the local voltage drop) of about $80\ Hz/cm^2$. 
-Moreover, prototypes were ageing-tested at the CERN Gamma Irradiation Facility up to an integrated charge of about $50\ mC/cm^2$.
-
-% Muon trigger RPCs have been deeply characterized in 2003 and 2004 at the CERN Gamma Irradiation Facility (GIF) installed at SPS.
-% A detailed report on the outcome of such tests can be found in \cite{arnaldi:2004}.
-% Since the first GIF tests the results showed that while the streamer operation mode was satisfying for the $Pb-Pb$ collision rates, providing good spatial resolution and fast enough recovery, it wasn't the best option for proton-proton operation mode.
-% An issue raised from the GIF tests.
-% After a period of high irradiation, the recovery of the detectors was not complete independently from the recovery time.
-% During the tests an attempt to find the limit irradiation for which the performance worsening was still tolerable was performed, but even at the maximum irradiation provided by the GIF the performances were satisfying.
-% The maximum achieved irradiation of $100\ Mhits\cdot~cm^2$ has been taken as a safe limit for the production chambers.
-% In proton-proton collisions, considering a foreseen irradiation rate of $50\ Hz\cdot~cm^2$, the integrated irradiation over the detectors lifetime would easily pass the limit of $100\ Mhits\cdot~cm^2$.
-% The R\&D carried out by CMS and ATLAS have shown that operation in avalanche mode results in a higher detector lifetime compared to the streamer mode.
-% Even if the ADULT front end has been developed specifically for streamer operation mode, with a dual electronics threshold of $10\ mV$ and $80\ mV$ and without amplification, the modification of the thresholds (both of them at $10\ mV$) allowed for the operation of the chambers in a highly-saturated avalanche mode or "maxi avalanche".
-% % not providing an amplification stage and a dual threshold ($10mV$ and $80mV$ in streamer), the modification of the electronic thresholds allowed for the operation of the chambers and the electronics in an "highly saturated avalanche mode" or maxi avalanche (both threshold to $10mV$).
-% % 
-% The studies reported in \cite{arnaldi:2004} allowed to determine the working voltage of the chamber, which is defined as the voltage at which the chamber reaches $90\%$ of its maximum.
-% The chosen value was about $HV_{nom}\ =\ 10200\ V$ in standard atmospheric conditions ($T_0\ =\ 293K$ and $P_0\ =\ 1013.25\ mbar$).
-
-% % This correction formula is able to keep at a constant level the effective voltage inside the gas gap.
-% % In fact pressure and temperature variations might modify the chambers efficiency.
-% % The studies reported in \cite{arnaldi:2004} evaluated the efficiency plateau position and width.
-% % The operating voltage of $10200V$ in standard conditions was chosen as a voltage value setting the efficiency level above $90\%$ and higher than the plateau knee value, in order to allow the voltage to oscillate a bit without causing a massive modification of the efficiency.
-
-The gas mixture corresponding to such an operation mode is:
-\begin{itemize}
-\item 89.7\% Tetrafluoroethane ($C_2H_2F_4$)
-\item 10.0\% iso-Buthane ($iC_4H_{10}$)
-\item 0.3\% Sulfum esafluoride ($SF_6$)
-\end{itemize}
-
 \section{MTR monitoring data sources}
 The ALICE experiment is equipped with a complex safety and hardware monitoring system called Detector Control System (DCS).
-This system is the interface which that allows to remotely control the detector, modifying the value of the high voltage, power supply and electronics statuses of the detectors.
+This system is the interface that allows to remotely control the detector, modifying the value of the high voltage, power supply and electronics statuses of the detectors.
 In addition to the interface role, the DCS is connected to a database which records the readings of all the sensors related to devices handled by the DCS.
 For what concerns the MTR, the DCS is able to record, for each chamber, the current, HV and LV voltage and thresholds used for the electronics, as well as global gas flow, humidity and composition values.
 % each chamber current, voltage, gas flow , humidity and composition as well as other control parameters such as the external LV used to set the electronics threshold and the VME infrastructure working parameters.
 The read-out values are stored in a DCS database which can be accessed using custom Siemens WinCC applications in order to produce plots and trends for several variables over time.
 The data points are saved in the DCS database following two guidelines.
 First of all the values are stored in the database whenever a given threshold on percent variation, with respect to previously stored value, is passed.
-Additionally a slow clock ($5$ minutes) triggers the storage of the current lecture, in order to keep track of smaller variations as well as of the stability of a given system.
+Additionally a slow clock ($5$ minutes) triggers the storage of the current read value, in order to keep track of smaller variations as well as of the stability of a given system.
 The DCS values are accessible trhough a web interface called DARMA (formerly AMANDA) by executing database-like queries and downloading structured text file.
 
-\begin{figure}[!t]
-\begin{center}
-\includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/OCDB.pdf}
-\caption{Cartoon representing the data flow of collision data, DCS data and software infrastructure informations. At the end of the run the Experiment Control System (ECS) sends the DIM trigger to the Shuttle, which is responsible of the migration of data in the GRID storage. The shuttle receives from the Data Acquisition System (DAQ), the Detector Control System (DCS) and the High Level Trigger (HLT) the information relative to the involved detectors. The data is packed together and moved to the GRID. From \cite{Zampolli:2010zz}.}
-\label{fig:shuttle}
-\end{center}
-\end{figure}
+% \begin{figure}[!t]
+% \begin{center}
+% \includegraphics[width=0.7\linewidth]{Chapters/Performance/Figs/OCDB.pdf}
+% \caption{Cartoon representing the data flow of collision data, DCS data and software infrastructure information. At the end of the run the Experiment Control System (ECS) sends the DIM trigger to the Shuttle, which is responsible of the migration of data in the GRID storage. The shuttle receives from the Data Acquisition System (DAQ), the Detector Control System (DCS) and the High Level Trigger (HLT) the information relative to the involved detectors. The data is packed together and moved to the GRID. From \cite{Zampolli:2010zz}.}
+% \label{fig:shuttle}
+% \end{center}
+% \end{figure}
 
 Some DCS information has to be available offline in order to perform offline reconstruction and simulation of the ALICE apparatus.
 % The ALICE experiment status can be either data taking (when collecting physics data) or not.
@@ -298,11 +281,11 @@ A connection channel between the DCS infrastructure and the OCDB allows for the 
 This allows one to keep a track of the working conditions of the detectors, as well as of all of the information on the status of data taking, beam, etc. that are necessary to the reconstruction or to the realistic simulation of the detector.
 % The OCDB is not a database in the usual sense.
 All the data collected by ALICE is stored on the storage elements of the computing GRID.
-The files, in ROOT format, containing the stored data are not all stored in a single place.
-The OCDB provides a layer of access to those files, despite their geographical distribution.
+% The files, in ROOT format, containing the stored data are not all stored in a single place.
+% The OCDB provides a layer of access to those files, despite their geographical distribution.
 In order to provide this access flexibility, the OCDB uses some parameters stored as file meta-data.
 The data taking is organized in runs, periods of time of arbitrary length in which the detectors and accelerator conditions are considered to be stable.
-The storage of informations in the OCDB follows the same pattern.
+The storage of information in the OCDB follows the same pattern.
 % One of these meta-data is a validity interval defined using run numbers.
 % It appears clear, at this point, that the OCDB structure strongly depends on the run numbers and that measurements performed outside of a data taking run cannot be stored in the OCDB.
 The OCDB allows for the storage of DCS reading only during data taking runs, in which at least one of the ALICE's detectors are being read out.
@@ -310,7 +293,7 @@ The OCDB allows for the storage of DCS reading only during data taking runs, in 
 \section{MTR integrated charge measurements}
 \label{currents}
 As already stated the ageing of RPCs is assumed to be proportional to the integrated charge liberated in the gas gap, mostly via the chemical action of compounds created in the avalanche or discharge process.
-The largest damage to the detector is caused by the chemical action of the ionized gas on the RPC inner surface.
+% The largest damage to the detector is caused by the chemical action of the ionized gas on the RPC inner surface.
 % In particular the biggest part of the damages is not caused by the ionizing potential of the radiations and particles, but by the ionized gas particles inside the gas gap and their chemical action of the RPC surfaces.
 The ALICE muon trigger RPCs  have been ageing-tested up to a total integrated charge of $50 mC/cm^2$. 
 It is interesting to compare such a value with those reached after years of operation at the LHC.
@@ -318,26 +301,26 @@ The integrated charge is obtained by time-integration of the current flowing thr
 To this respect, the gas gap of an RPC sees a current flow which has four components (Eq. \ref{eq:itot}):
 \begin{itemize}
 \item Ohmic component: it is due to the low conductivity of the gas gap and of the structure of the chamber. This part of the current depends linearly on the applied voltage;
-\item Environmental irradiation: natural or activated radiation sources and cosmic rays might emit ionizing radiation and particles towards the chambers, causing an avalanche and/or a discharge;
-\item Physics-induced current (net current): caused by ionizing particles produced in physics collisions;
-\item Noise-induced current: due to spontaneous discharges in the gas gap.
+\item Environmental irradiation: natural or activated radiation sources of ionising radiation, as well as cosmic rays detected by the RPC;
+\item Noise-induced current: due to spontaneous discharges in the gas gap following electron extraction from the cathode surface;
+\item Physics-induced current: caused by ionizing particles produced in physics collisions.
 \end{itemize}
 
 \begin{equation}
 \label{eq:itot}
-i_{tot}=i_{ohm}+i_{env}+i_{net}+i_{noise}
+i_{tot}=i_{ohm}+i_{env}+i_{noise}+i_{phys}
 \end{equation}
 
 The ohmic, environmental and noise-induced components are always present, in case the detector is kept at the nominal working voltage.
-The third component of the current depends on the operations of the LHC and the collision luminosity.
+The fourth component of the current depends on the operations of the LHC and the collision luminosity.
 From an aging point of view the ohmic current won't cause any permanent modification of the RPC, then it should not be taken into account in the computation.
 The environmental current is always present and can cause aging effects, but its entity is negligible.
-The noise-induced current is responsible for aging effects and is present whenever the ohmic current is flowing.
+The noise-induced current is relevant for aging effects.
 For this reason, it is difficult to measure the noise-induced current.
 
 A detector might be switched on and fully operational when no data taking is being performed, for example, between one run and the following one or when no beam is provided by LHC and ALICE is taking cosmic data.
 In this kind of situations the amount of current flowing trough the system corresponds to the sum of the ohmic contribution and the environmental and noise-induced ones.
-Measuring the amount of current flowing in a chamber in these conditions would provide a measurement of $i_{dark}$ defined as:
+Measuring the amount of current flowing in a chamber in these conditions would provide a measurement of the dark current $i_{dark}$, defined as:
 
 \begin{equation}
 \label{eq:idark1}
@@ -355,29 +338,29 @@ Ideally, to obtain a precise evaluation of the current causing aging of an RPC, 
 
 \begin{equation}
 \label{eq:inet}
-i_{net}=i_{tot}-i_{ohm}=i_{env}+i_{net}+i_{noise}
+i_{net}=i_{env}+i_{phys}+i_{noise}
 \end{equation}
 
-Since it is not possible to extract $i_{ohm}$ from $i_{dark}$ two approaches are possible, assuming the $i_{dark}$ value can be dominated by either of its terms.
-If $i_{dark}=i_{ohm}$ the dark current contribution to $i_tot$ must be subtracted to obtain the value of $i_{net}$ which causes aging effects, hence $i_{net}=i_{tot}-i_{dark}$.
+Since it is not possible to extract $i_{ohm}$ from $i_{dark}$ two extreme approaches are possible, assuming the $i_{dark}$ value can be dominated by either of its terms.
+If $i_{dark}=i_{ohm}$ the dark current contribution to $i_{tot}$ must be subtracted to obtain the value of $i_{net}$ which causes aging effects, hence $i_{net}=i_{tot}-i_{dark}$.
 If $i_{dark}=i_{noise}$, its contribution to $i_{tot}$ may take part in aging effects, hence $i_{net}=i_{tot}$.
 
 In either cases, the integration of $i_{net}$ over time will provide the aging index that can be compared to the limit value obtained in the tests.
 The newly introduced framework allows for both approaches.
-All the integrated current shown in this thesis have been obtained assuming $i_{dark}\approx i_{ohm}$, even if the framework allows for both approaches.
-A doubling of the integrated charge value has been observed using the assumption of $i_{dark}\approx i_{noise}$ instead, even if the plot shape is qualitatively the same.
+All the integrated current shown in this thesis have been obtained assuming $i_{dark}\approx i_{ohm}$.
+% A doubling of the integrated charge value has been observed using the assumption of $i_{dark}\approx i_{noise}$ instead, even if the plot shape is qualitatively the same.
 
-These measurements are not possible using the OCDB as data source.
+The above-mentioned measurements are not possible using OCDB as the only data source.
 In fact the OCDB polls DCS readings and stores them permanently only when data taking is being performed.
 Even if this condition can happen both with beam collisions and during cosmic runs, the coverage of the dark periods of the MTR is partial.
 
-The work presented in this chapter was originated from the idea of combining OCDB and DCS measurements using the well established OCDB data retrieving interface and the AMANDA/DARMA DCS database (Archive DB in figure \ref{fig:shuttle}) access tool, in order to increase the working conditions coverage with respect of the OCDB-only approach.
+The work presented in this chapter was originated from the idea of combining OCDB and DCS measurements using the well established OCDB data retrieving interface and the AMANDA/DARMA DCS database access tool, in order to increase the working conditions coverage with respect of the OCDB-only approach.
 In addition the granularity provided by the DCS is much better with respect to the one of the data propagated to the OCDB, but the DCS readings have no run number, beam condition or LHC status information.
 By combining the two data sources a better understanding of the MTR performances would arise, giving the possibility to perform trend and distribution studies, as well as correlation studies between MTR parameters and external conditions such as collisions luminosity.
 
 \section{MTR performance analysis framework}
 As a subject of this thesis a brand new analysis framework for MTR performance analysis has been developed.
-This framework's main task is to combine the data coming from OCDB and AMANDA/DARMA in order to create a complete set of data which can be used for specific studies of trends and correlations concerning the MTR system.
+This framework main task is to combine the data coming from OCDB and AMANDA/DARMA in order to create a complete set of data which can be used for specific studies of trends and correlations concerning the MTR system.
 As an additional value to this project, the framework aims at providing a reliable tool which is accessible and open source.
 Having a centralized repository, with the possibility of participating to the development of the framework and to the fixing of eventual software bugs, can improve both the user experience and the number of users hence the bug detection capability.
 
@@ -389,8 +372,8 @@ The framework internal data format is filled on a per-run basis, and contains th
 \item Average $i_{tot}$: average value (weighted over time) of supplied current.  One value per each of the 72 RPCs;
 \item Average $i_{dark}$: average value (weighted over time) of dark current, extrapolated via the algorithm.  One value per each of the 72 RPCs;
 \item Integrated charge: integral of the $i_{net}$ over the run.  One value per each of the 72 RPCs;
-\item Bending scalers: total number of hits on the bending side of the chamber.  One value per each of the 72 RPCs;
-\item Non-bending scalers: total number of hits on the bending side of the chamber.  One value per each of the 72 RPCs;
+\item Bending scalers: total number of hits on the bending plane of the chamber.  One value per each of the 72 RPCs;
+\item Non-bending scalers: total number of hits on the bending plane of the chamber.  One value per each of the 72 RPCs;
 \end{itemize}
 
 % The framework is composed by two acting classes.
@@ -476,40 +459,42 @@ The framework has been extensively tested and the plots presented in the followi
 % The scalers values are not stored in the DCS database, hence it is necessary to download OCDB information for all the runs performed with beam presence and collisions in the LHC.
 % More than $12000$ runs have been selected, covering $pp$, $p-Pb$ and $Pb-p$, $Pb-Pb$ and $Xe-Xe$ colliding systems at all the center of mass energies provided by the LHC since the beginning of the operations.
 
-\section{Definition of dark current and dark rate and dark current interpolation procedure}
+\section{Determination of dark current and dark rate and dark current interpolation procedure}
 One crucial point is how to determine if a rate or a current reading are indeed "dark" readings.
 While the dark current definition has already been quoted in section \ref{currents} the dark rate definition will be given.
 
 % The dark current is the measurement of current which physiologically flows trough the detector when it is supplied with working point HV and no collision-induced irradiation is present (e.g. when no beam is present in the LHC).
 % This current has an ohmic component and an irradiation one, the second caused by environmental radioactivity and cosmic rays reaching the detector.
-The dark rate is the rate observed and measured in the same conditions, i.e. at nominal HV and when no collision is taking place in the LHC.
+The dark rate is the rate observed and measured in the same conditions as the dark current, i.e. at nominal HV and when no collision is taking place in the LHC.
 This rate should be correlated with the natural radioactivity and cosmic rays incidence, as well as intrinsic noise counts of the detectors, but may contain a contribution related to noisy read-out channels.
 % In addition, since the dark rate is read-out by the electronics, dead channels might cause blind spot which in turn makes the rate to be lower than expected.
 
 The dark runs can be defined in various ways.
-In order to opportunely flag the DCS current readings either as dark or not it was needed to select runs with no beam and nominal HV supply.
+In order to properly flag the DCS current readings either as dark or not it was needed to select runs with no beam and nominal HV supply.
 
 Selecting runs taken with physics setup without beam presence (flagged as "COSMIC") are the safest choice, but this kind of runs is less frequent and provides less coverage of the operation period.
 
-Selecting calibration runs allows to better cover the operation period, since at least two calibration runs are performed at the beginning and at the end of any physics run.
+Selecting calibration runs allows to better cover the operation period, since at least two calibration runs are performed at the end of every physics fill of the LHC.
 The CALIBRATION run refers to two kind of diagnostic run lasting for 2 minutes each.
 The first is a software-triggered read-out of the whole detector performed without collisions in the LHC, aimed at spotting noisy channels.
 During the second CALIBRATION run type the whole FEE is artificially stimulated and read-out in order to detect dead channels.
 Within a CALIBRATION run the detector is usually at nominal working voltage.
 However, they can occasionally be performed with a reduced HV and/or during the presence of beam in the LHC.
 
-Measurements of dark current trends using cosmic or calibration runs only are displayed in figures \ref{fig:iDarkCOSMIC} and \ref{fig:iDarkCALIB}.
-Assuming that the dark current should be constant without beam presence, one can observe a strange behavior for dark current computed using calibration runs only.
-In particular the dark current trend following a period with beam presence shows a non negligible slope which causes an overestimation of the $i_{dark}$.
-% Some dark current variations which aren't completely understood are present.
+% Measurements of dark current trends using cosmic or calibration runs only are displayed in figures \ref{fig:iDarkCOSMIC} and \ref{fig:iDarkCALIB}.
+% Assuming that the dark current should be constant without beam presence, one can observe a strange behavior for dark current computed using calibration runs only.
+% In particular the dark current trend following a period with beam presence shows a non negligible slope which causes an overestimation of the $i_{dark}$.
+% % Some dark current variations which aren't completely understood are present.
+The dark current trend using cosmic runs only is displayed in figure \ref{fig:iDarkCOSMIC}. 
+As for calibration runs, it was observed that the dark current measured immediately after a physics fill (which is when most calibration runs are performed) is systematically higher that that measured in “quiet” periods. 
 The understanding of this effect is the fact that after a period of operation with beam presence some impurities stay in the gas gap for a while before being fluxed by the gas system.
-Such impurities affect the chamber conductivity locally, provoking discharges that in turn induce a temporary raise of the dark current.
-For this reason this work uses only cosmic runs to estimate the dark current and dark rate values.
+% Such impurities affect the chamber conductivity locally, provoking discharges that in turn induce a temporary raise of the dark current.
+In order to avoid instabilities in the interpolation procedure due to this effect, this work uses only cosmic runs to estimate the dark current and dark rate values.
 
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDark_COSMIC_minmax.pdf}
-\caption{Average dark current trend computed with the described procedure using cosmic runs only. The trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
+\caption{Average dark current trend computed with the described procedure using cosmic runs only. The trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iDarkCOSMIC}
 \end{center}
 \end{figure}
@@ -517,14 +502,14 @@ For this reason this work uses only cosmic runs to estimate the dark current and
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDark_CALIB_minmax.pdf}
-\caption{Average dark current trend computed with the described procedure using calibration runs only. The trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
+\caption{Average dark current trend computed with the described procedure using calibration runs only. The trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iDarkCALIB}
 \end{center}
 \end{figure}
 
 A total of around $5200$ cosmic runs have been used for this analysis.
 The scalers values are not stored in the DCS database, hence for the rate computation it is necessary to download OCDB information for all the runs performed with beam presence and collisions in the LHC.
-More than $12000$ runs have been selected, covering $pp$, $p-Pb$ and $Pb-p$, $Pb-Pb$ and $Xe-Xe$ colliding systems at all the center of mass energies provided by the LHC since the beginning of the operations.
+More than $12000$ runs have been selected, covering $pp$, $p-Pb$, $Pb-Pb$ and $Xe-Xe$ colliding systems at all the center of mass energies provided by the LHC since the beginning of the operations.
 
 % At the moment of deciding which procedure to adopt to perform the dark current interpolation, in order to assign dark current values to non-dark current readings, two possibilities were spotted:
 % \begin{enumerate}
@@ -571,30 +556,30 @@ This working parameter strongly depends on the presence of irregularities on the
 The dark currents as a function of time for the 4 different RPC layers is shown in the four panels of figure \ref{fig:iDarkCOSMIC}. 
 In each panel, the average dark current of the layer as well as the trend for the RPC drawing the largest and the smaller current in that layer are shown.
 The dark current measurements are reported in $\mu A/cm^2$, since dark current values have been divided by the corresponding RPC area.
-Given the RPCs areas are not all the same, this procedure helps to produce results which can be compared.
+Given that the RPCs areas are not all the same, this procedure helps to produce results which can be compared.
 
 % \begin{figure}[!t]
 % \begin{center}
 % \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDark4PlanesMM.pdf}
-% \caption{Dark current trends for each RPC over the whole operation period. The trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average over time of the dark current measurements, while the $x$ value is the timestamp which corresponds to the end of run.}
+% \caption{Dark current trends for each RPC over the whole operation period. The trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average over time of the dark current measurements, while the $x$ value is the timestamp which corresponds to the end of run.}
 % \label{fig:iDark4Planes}
 % \end{center}
 % \end{figure}
 
 Sometimes a reduction of the dark current value can be observed.
 This effect is more important and clearly noticeable at the beginning of each year.
-It is commonly accepted that such a reduction of the dark current flow is caused by the yearly winter shutdown which undergoes for all the CERN LHC facilities.
+It is commonly accepted that such a reduction of the dark current is caused by the yearly winter shutdown which undergoes for all the CERN LHC facilities.
 In fact every year the beam operations are stopped for a winter period which typically lasts from late November to the first 3-4 months of the following year.
 During this period the irradiation caused by the beam operations is absent.
 At the same time the gas flow trough the chambers extracts impurities and eventually improves the inner surfaces smoothness.
-This recovery time causes a reduction of the dark current and can systematically be observed for all the RPCs.
+This recovery effect causes a reduction of the dark current and can systematically be observed for all the RPCs.
 
-The trend shown in figure \ref{fig:iDark4Planes} covers four years of operations and includes the first LHC long shutdown period (LS1).
+The trend shown in figure \ref{fig:iDarkCOSMIC} covers four years of operations and includes the first LHC long shutdown period (LS1).
 A different trend before LS1 has been observed with respect to the one measured during RUN2.
 The dark current seems to raise during the RUN2 operations.
 The reason of such behaviour might be related to the much higher luminosity observed in RUN2, hence the stronger irradiation of the chambers causing longer recovery times.
 Comparing the specific trends of each RPC with the average trend one can easily observe that the increase of the average trend is mostly caused by some outliers.
-In fact around 4/5 RPCs per plane, over a total of 18, present a dark current value large than the average trend.
+In fact around 4/5 RPCs per plane, over a total of 18, show a dark current value large than the average trend.
 This behavior indicates that most of the RPCs present a much more stable behavior.
 The outliers of this trend can be considered the worst case scenario and should be monitored with attention in order to promptly notice eventual worsening of performances.
 
@@ -615,7 +600,7 @@ This work presents for the first time a method to combine data from OCDB and DCS
 In order to do so the net current should be evaluated starting from the total current and the dark current readings, through the procedure presented in the previous sections.
 
 The net current measurements are reported in figure \ref{fig:iNet4Planes} as a function of time (date).
-The panels correspond to the trends of MT11, MT12, MT22 and MT21 from top to bottom.
+The panels correspond to the trends of MT11, MT12, MT21 and MT22 from top to bottom.
 In each panel, the average net current of the layer as well as the trend for the RPC drawing the largest and the smaller current in that layer are shown.
 The net current measurement represents the current related merely to the irradiation of the detectors, hence it is expected to have a baseline at $0\ \mu A/cm^2$ and increases with the intensity of the beam.
 The expected behavior is observed through the whole time range.
@@ -623,12 +608,13 @@ The expected behavior is observed through the whole time range.
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iNet4PlanesMM.pdf}
-\caption{Net current trends for each RPC over the whole operation period. The trends are divided by plane (from top to bottom MT11, MT12, MT22, MT21). For each plane only the trends of the RPC with the maximum and minimum current are shown. Each point corresponds to a run. The $y$ value is the difference between the average total and dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
+\caption{Net current trends for each RPC over the whole operation period. The trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For each plane only the trends of the RPC with the maximum and minimum current are shown. Each point corresponds to a run. The $y$ value is the difference between the average total and dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iNet4Planes}
 \end{center}
 \end{figure}
 
-Concerning the FEERIC-equipped RPC, the net current measurements shown in figure \ref{fig:FEERICiNet} present a similar improvement effect already observed for the dark current measurements.
+% Concerning the FEERIC-equipped RPC, the net current measurements shown in figure \ref{fig:FEERICiNet} present a similar improvement effect already observed for the dark current measurements.
+Concerning the FEERIC-equipped RPC, the net current measurements shown in figure \ref{fig:FEERICiNet} show a much lower current since 2015, when the RPC was equipped with FEERIC and the HV was lowered.
 
 \begin{figure}[!t]
 \begin{center}
@@ -651,8 +637,8 @@ The time interval with a constant charge corresponds to periods with no collisio
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/IntCharge.pdf}
-\caption{Integrated net charge for each RPC as a function of time. The 72 trends are divided by plane (from top to bottom MT11, MT12, MT22, MT21). For each plane the average plot is shown. Each point corresponds to a run.}
+% \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/intCharge_vertical.pdf}
+\caption{Integrated net charge for each RPC as a function of time. The 72 trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For each plane the average plot is shown. Each point corresponds to a run.}
 \label{fig:ICharge4Planes}
 \end{center}
 \end{figure}
@@ -663,7 +649,7 @@ The time interval with a constant charge corresponds to periods with no collisio
 % The RPCs which present sudden variations of the trend have to be monitored with attention as they might become the best candidates for a replacement.
 
 The time series of MT12 outside 6 shows a sudden drop of the integrated charge. 
-This is due to the fact that the RPC was replaced with a new one during the operations and the integrated charge has been therefore consistently reset to $0\mu~C/cm^2$.
+This is due to the fact that the RPC was replaced with a new one during the operations and the integrated charge has been therefore consistently reset to $0\muC/cm^2$.
 
 A detailed view of the FEERIC integrated charge is shown in figure \ref{fig:FEERICIntCharge}.
 The shape reflects the lowering of the net current shown before (see Fig. \ref{fig:FEERICiNet}).
@@ -677,9 +663,16 @@ An integrated charge about $6$ times lower than the average for the plane has be
 \end{center}
 \end{figure}
 
+The results for the integrated charge show that, at the end of the 2017 run, the average integrated charge is about $8\ mC/cm^2$ (obtained by averaging the average values of the four planes), and the charge for the most exposed RPC is about $18\ mC/cm^2$. 
+This is comfortably far from the limit of $50\ mC/cm^2$ reached in the ageing test. 
+It has to be remarked that, when the charge is integrated without subtracting the dark current (i.e.assuming that $i_dark$ = $i_noise$) the results are larger by about a factor of two. 
+Under this assumption, some RPCs may indeed be close to the end of their “certified lifetime”. 
+Specific tests are needed to disentangle the ohmic component of the dark current. 
+A possibility will be to measure the ohmic current at low voltage (where no amplification is possible in the gas, hence the noise-induced current is suppressed), and extrapolate it to the nominal voltage.
+
 \subsection{Dark rate trend}
 The dark rate trend is shown in figure \ref{fig:DarkRate4Planes}.
-The informations which can be obtained from this set of graphs is complementary to that of dark current one.
+The information which can be obtained from this set of graphs is complementary to that of dark current one.
 Observing an increase of the dark rate may be a symptom of aging.
 In fact the dark rate is defined as the rate measured when no beam is present in the LHC.
 The dark rate is then induced merely by environmental radioactive background or by spontaneous discharges in the gas gap.
@@ -688,7 +681,7 @@ For this reason, assuming the environmental background to be constant, any modif
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/DarkRate.pdf}
-\caption{Dark rates trends for each RPC over the whole operation period. The 72 trends are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). For each plane the average plot is shown. Each point corresponds to a run. The $y$ value is the average rate during a given cosmic run, while the $x$ value is the timestamp which corresponds to the end of run.}
+\caption{Dark rates trends for each RPC over the whole operation period. The 72 trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For each plane the average plot is shown. Each point corresponds to a run. The $y$ value is the average rate during a given cosmic run, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:DarkRate4Planes}
 \end{center}
 \end{figure}
@@ -699,13 +692,13 @@ For this reason a temporary increase of the dark rate is foreseen, even if the b
 The signature one should look for is not a temporary increase of the dark rate, but a not complete recovery of the dark rate back to the level measured before a period with beam presence.
 
 Analyzing the trends one can observe that some RPCs show a growth of the dark rate over the whole period of operation.
-An average of $4-5$ RPCs per plane show such trend and stand clearly over the average trend shown in black.
+An average of $4-5$ RPCs per plane (not shown in the figure) present a large dark rate, well above average.
 The chambers which show such behavior are the same that present an higher dark current with respect to the bulk of the RPCs.
 It is worth mentioning that, even if some outliers are found, most of the RPCs are still operating at the original level of dark rate after around 8 years of continuous operation.
 In that sense the dark rate trend is a good cross-check of the symptoms already detected with the dark current studies and the integrated charge ones.
 The affected RPCs have to be monitored to check their efficiency and to constantly ensure that their effectiveness as detectors is not being affected by the increase of the dark rate.
 
-The dark rate trend for FEERIC shown in figure \ref{fig:FEERICDarkRate}.
+The dark rate trend for FEERIC is shown in figure \ref{fig:FEERICDarkRate}.
 % shows how most of the ADULT-equipped RPCs trends are lower than the trend of the FEERIC-equipped one.
 The dark rate trend is compatible with the average trend for the plane.
 % This aspect confirms that the chamber's efficiency is not modified by the lowering of the working point and the displacement of the amplification process to the electronics.
@@ -734,13 +727,17 @@ The correlation of the net current as a function of the hit rate during periods 
 % One can observe that the bulk of measurements has a transversal size which is neither negligible nor compatible with a straight line.
 One can observe that for most of the measurements there is a strong correlation between the net current and the estimated rate. 
 The correlation however is not perfect, and, for a given rate, a dispersion of the net currents can be observed.
-Such deviations can be due to different energies of the crossing particles as well as different crossing angles, resulting in different path length in the gas gap.
+% Such deviations can be due to different energies of the crossing particles as well as different crossing angles, resulting in different path length in the gas gap.
+Such deviations can in principle be due to different energies of the crossing particles as well as different crossing angles, resulting in different path length in the gas gap, or to an intrinsically different response of different chambers.
+They may also simply come from a bias in the calculation of the hit rate. 
+This is calculated by summing up the rate of all strips, and no correction for the cluster size is possible. 
+Such a bias depends on the segmentation of the read-out, hence it can be different for different RPCs.
 % Deviations leading to this spread are related to different energies of the crossing particle and various crossing angles of the particle.
 % A stronger (weaker) ionizing power and longer (shorter) path inside the gas gap work together to create deviations from the average behavior.
 
 % The correlation plot of net current and rate with beam presence is shown in figure \ref{fig:iNetvsRate4Planes}.
-The behavior of the RPCs revealed by this correlation plot is aligned with previous measurements of other working parameters: while most of the chambers show a similar correlation between the two measurements, some of them clearly deviate from the bulk of points.
-In order to have a smaller dead time after a hit (the time required to recover the local HV drop) the charge released per hit should be kept as low as possible.
+% The behavior of the RPCs revealed by this correlation plot is aligned with previous measurements of other working parameters: while most of the chambers show a similar correlation between the two measurements, some of them clearly deviate from the bulk of points.
+% In order to have a smaller dead time after a hit (the time required to recover the local HV drop) the charge released per hit should be kept as low as possible.
 % A displacement the points to a zone representing lower charge deposed per hit is rarely (if not) expected, since the RPC health and status should worsen over time.
 % Points showing a displacement in this direction are rare and not grouped in clusters.
 % The absence of measurements clustering allows to suppose that the same causes of the bulk transversal spreading are responsible for these displacements.
@@ -750,20 +747,20 @@ In order to have a smaller dead time after a hit (the time required to recover t
 
 \begin{figure}[!t]
 \begin{center}
-\includegraphics[width=0.9\linewidth, angle =90]{Chapters/Performance/Figs/iNet_vs_rate.pdf}
-\caption{Correlation plot between net current and average rate within a given run. The 72 correlation plots are divided by plane (clockwise from top left MT11, MT12, MT22, MT21). Each point corresponds to a run. The $y$ value is the average rate during a given cosmic run, while the $x$ value is the average net current value measured during the run.}
+% \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iNet_vs_rate_vertical.pdf}
+\caption{Correlation plot between net current and average rate within a given run. The 72 correlation plots are divided by plane (from top to bottom MT11, MT12, MT21, MT22). Each point corresponds to a run. The $y$ value is the average rate during a given cosmic run, while the $x$ value is the average net current value measured during the run.}
 \label{fig:iNetvsRate4Planes}
 \end{center}
 \end{figure}
 
-As a side note, if we imagine to look at the correlation plot for a single RPC and to compute the distance between the extreme left and right points, we can take such value as an estimator of the variability of the rate hitting that RPC.
-An RPC which receives constantly a given rate will have a correlation plot with low span over rate axis, while an RPC with a rate which changes a lot (for example depending on the type of colliding system) will have a large span on the rates axis.
-Following this argument it is interesting how most part of the RPCs which show a derive to higher charge per hit are also the ones with the largest rate spans.
+% As a side note, if we imagine to look at the correlation plot for a single RPC and to compute the distance between the extreme left and right points, we can take such value as an estimator of the variability of the rate hitting that RPC.
+% An RPC which receives constantly a given rate will have a correlation plot with low span over rate axis, while an RPC with a rate which changes a lot (for example depending on the type of colliding system) will have a large span on the rates axis.
+% Following this argument it is interesting how most part of the RPCs which show a derive to higher charge per hit are also the ones with the largest rate spans.
 % This observation suggests that RPCs are affected by rates variations, more than from the integrated rate.
 More measurements could help better addressing this argument.
 The FEERIC-equipped RPC, located in MT22, shows a systematically smaller charge per hit.
 The slope of its correlation plot is much lower than that of the other RPCs of MT22 and results, as expected, in a lower deposed charge per hit.
-The transverse size of the distribution is smaller than that of ADULT RPCs.
+% The transverse size of the distribution is smaller than that of ADULT RPCs.
 
 \subsection{Chambers efficiency}
 The new framework has been introduced for several reasons connected to the extension of the existing ALICE DCS Shuttle to more general use cases.

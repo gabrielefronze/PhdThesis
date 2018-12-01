@@ -3,19 +3,19 @@
 %*********************************** First Chapter *****************************
 %*******************************************************************************
 
-\chapter{Study of bottomonium production in Pb-Pb collisions at$\ $ \texorpdfstring{$\sqrt[]{s_{NN}}=5.02 \rm{TeV}$}{sqrt(Snn)=5.02 \rm{TeV}}}
+\chapter{Study of bottomonium production in Pb-Pb collisions at$\ $ \texorpdfstring{$\sqrt[]{s_{NN}}=5.02 \rm{TeV}$}{sqrt(Snn)=5.02\ \rm{TeV}}}
 
 %********************************** %First Section  **************************************
-\section{Data analysis strategy}
+\section{Operative definition of nuclear modification factor}
 In order to study the modification of \upsi production in Pb-Pb collisions at $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV} the evaluation of $R_{\rm AA}$ should be performed through an expression based on the one presented in \ref{intro_glauber}:
 \begin{equation} \label{eqn:raa}
-R_{\rm{AA}} = \frac{N^{\Upsilon}}{ {\rm BR}_{\Upsilon \rightarrow \mu^{+} \mu^{-}} \cdot  (A\times\epsilon)_{\Upsilon \rightarrow \mu^{+} \mu^{-}} \cdot  N_{text{MB}} \cdot F_{\rm norm} \cdot \sigma_{\rm pp}^{\Upsilon} \cdot \langle T_{\rm AA} \rangle } ~~
+R_{\rm{AA}} = \frac{N^{\Upsilon}}{ {\rm BR}_{\Upsilon \rightarrow \mu^{+} \mu^{-}} \cdot  (A\times\epsilon)_{\Upsilon \rightarrow \mu^{+} \mu^{-}} \cdot  N_{MB} \cdot \sigma_{\rm pp}^{\Upsilon} \cdot \langle T_{\rm AA} \rangle } ~~
 \end{equation}
 where:
 \begin{itemize}
 \item $N^{\Upsilon}$ is the number of detected resonance decays to muon pairs, while ${\rm BR}_{\Upsilon \rightarrow \mu^{+} \mu^{-}}$ is the branching ratio for the dimuon decay \cite{Agashe:2014kda};
-\item The $(A\times\epsilon)_{\Upsilon \rightarrow \mu^{+} \mu^{-}}$ factor is the product of acceptance and detection efficiency, specific for the $\Upsilon$ state under study. This term implicitly corrects the number of observed yields in the $\mu^+\mu^-$ channel;
-\item The normalization factor $N_{\text{MB}} \cdot F_{\rm norm}$ is the product of the number of analyzed $\mu\mu\text{-MB}$ events, times the inverse of the probability to obtain an unlike-sign dimuon triggered event in a MB event~\cite{Adam:2016rdg};
+\item The $(A\times\epsilon)_{\Upsilon \rightarrow \mu^{+} \mu^{-}}$ factor is the product of acceptance and detection efficiency, specific for the $\Upsilon$ state under study;
+\item The normalization factor $N_{\text{MB}}$ is the number of minimum bias events used for the analysis ;
 \item $\sigma_{\rm pp}^{\Upsilon}$ is the reference \pp cross section and $\langle T_{\rm AA} \rangle$ represents the nuclear overlap function, which is evaluated in different centrality classes using the Glauber model~\cite{Abelev:2013qoq,Adam:2015ptt}.
 \end{itemize}
 
@@ -40,9 +40,12 @@ The trigger condition used for data taking is a dimuon trigger.
 % Given the extension of the muon spectrometer through a dipole magnet, the discrimination of muons charge sign can be achieved via the evaluation of their bending direction.
 Thanks to the muon spectrometer geometry and to the presence of a dipole magnet, the electric charge sign of muons can be established looking at their bending direction.
 Further details are given in section \ref{ALICE_spectrometer} of this thesis.
-The adopted trigger is then formed by the logical AND of the MB trigger and the presence in the muon trigger of a pair of muons with opposite charge sign, each with a pt larger than about 1 GeV/c.
+% The adopted trigger is then formed by the logical AND of the MB trigger and the presence in the muon trigger of a pair of muons with opposite charge sign, each with a pt larger than about 1 GeV/c.
+The adopted trigger is then formed by the logical AND of the MB trigger and the presence in the muon trigger of a pair of muons with opposite charge sign, each with a pt larger than about $1\ GeV/c$ ($\mu \mu-MB$ trigger). 
+The number of equivalent Minimum Bias events can be then obtained as $N_{\mu \mu-MB} * F_{norm}$, where $N_{\mu \mu-MB}$ is the number of analyzed dimuon triggers and $F_{norm}$ is the inverse of the probability to have an unlike-sign dimuon triggered event in a MB event \cite{Adam:2016rdg}.
+
 % The former is provided by V0, the latter by the muon trigger.
-In addition, in order to perform the event mixing procedure for background reduction, the single muon trigger has been recorded, in order to be able to combine uncorrelated like-sign muons in artificial dimuons.
+In addition, in order to perform the event mixing procedure for background reduction, the single muon trigger has been recorded, in order to be able to artificially combine uncorrelated like-sign muons into dimuons.
 
 The data used for this analysis has been collected between October and November 2015, during the first \pbpb data taking campaign of ALICE of the  LHC RUN2.
 A total of 137 runs belonging to this period has been analyzed.
@@ -77,16 +80,16 @@ Concerning the background affecting the bottomonium production measurements, it 
 % While the background can appear to be a side effect in much more abundant species, in the case of bottomonium the background needs to be treated with special care.
 Two approaches are then possible to extract the yields from the fit of an invariant mass spectrum:
 \begin{itemize}
-\item Fit of the raw invariant mass obtained from data, where the background is modeled through a phenomenological function.. In this case the fit has to be performed on the raw spectrum;
-\item Estimate the contamination of the combinatorial background through the event mixing method and subtract it from the raw yields. The remaining contribution is then fitted with a suitable function to extract the Upsilon contribution. The event-mixing technique consists in filling a dimuon invariant mass spectrum with totally uncorrelated muons ($i.e.$ from different events). Such procedure leads to an invariant mass spectrum that represents the combinatorial background one should expect to underlay in any other dimuon invariant mass spectrum.
+\item Fit of the raw invariant mass obtained from data, where the background is modeled through a phenomenological function. In this case the fit has to be performed on the raw spectrum;
+\item Estimate the contamination of the combinatorial background through the event mixing method and subtract it from the raw yields. The remaining contribution is then fitted with a suitable function to extract the Upsilon contribution. The event-mixing technique consists in filling a dimuon invariant mass spectrum with totally uncorrelated muons ($i.e.$ from different events). Such procedure leads to an invariant mass spectrum that represents the combinatorial background one should expect  to lay under the measured dimuon invariant mass spectrum.
 % Applying the event mixing method, the raw spectrum can be pre-processed, subtracting a properly scaled invariant mass spectrum which has previously been filled with dimuons composed using like-sign $\mu$ from the same collision and unlike-sign $\mu$ produced in different collisions. The ratioale of this procedure is that filling a dimuon invariant mass spectrum with totally uncorrelated muons ($i.e.$ from different events) creates an invariant mass spectrum that represents the combinatorial background one should expect when filling the signal invariant mass spectrum.
 \end{itemize}
 
 The raw \upsi$(1S,2S,3S)$ yields are modeled using the sum of three extended Crystal Ball (CB2) functions~\cite{ALICE-Quarkonia-signal-extraction}. 
 The CB2 function consists of a Gaussian core with  power-law tails, as shown in Eq. \ref{eqn:CB2}.
-The low invariant mass tail is due to non-Gaussian multiple scattering in the front absorber, while the high invariant mass one is due to alignment and calibratio biases.
+The low invariant mass tail is due to non-Gaussian multiple scattering in the front absorber, while the high invariant mass one is due to alignment and calibration biases.
 Several parameterizations of the background have been adopted.
-When fitting the raw spectrum the background has been modeled as both double exponential and double power law functions.
+When fitting the raw spectrum, the background has been modeled as both double exponential and double power law functions.
 In the case in which the raw spectrum has been processed with the event mixing technique, the residual background has been taken into account using a single exponential shape.
 
 \begin{equation}\label{eqn:CB2}
@@ -107,7 +110,7 @@ For this reason the tail parameters are fixed to values obtained from Monte-Carl
 The mass position and the width parameters of the \upsis are set free for the integrated spectrum ($i.e.$ centrality class 0--90\%, $p_{\rm T}<15$ GeV/$c$ and $2.5 < y < 4$).
 For the signal extraction as a function of centrality, the mass position  and width of the \upsis are fixed to the values obtained in the fit to the centrality-integrated (0--90\%) mass spectrum. 
 To perform studies as a function of \pt and $y$, the mass position and the width obtained for the centrality-integrated mass spectrum are scaled according to their evolutions observed in the MC.
-Due to the even smaller S/B ratio for the excited states, the mass positions of the \upsiss and \upsisss are fixed to the PDG mass differences with respect to the \upsis, and the ratio of \upsiss ($\Upsilon\text{(3S)}$) to \upsis widths is fixed to values from the MC simulation, $i.e.$ 1.03 (1.06). 
+Due to the even smaller S/B ratio for the excited states, the mass positions of the \upsiss and \upsisss are fixed to the PDG \cite{Patrignani:2016xqp} mass differences with respect to the \upsis, and the ratio of \upsiss ($\Upsilon\text{(3S)}$) to \upsis widths is fixed to values from the MC simulation, $i.e.$ 1.03 (1.06). 
 In the fit shown in Fig.~\ref{fig:mass_dist} only signals corresponding to the $\Upsilon\text{(1S)}$ and $\Upsilon\text{(2S)}$ are visible, since the $\Upsilon\text{(3S)}$ contribution turns out to be compatible with zero events.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,21 +119,22 @@ In the fit shown in Fig.~\ref{fig:mass_dist} only signals corresponding to the $
 \begin{figure}[htp]
 
 \centering
-\includegraphics[width=.3\textwidth]{Chapters/Analysis/Figs/Axe/AccEffvsCent.pdf}\hfill
-\includegraphics[width=.3\textwidth]{Chapters/Analysis/Figs/Axe/AccEffvsPt.pdf}\hfill
-\includegraphics[width=.3\textwidth]{Chapters/Analysis/Figs/Axe/AccEffvsY.pdf}
+\includegraphics[width=.5\textwidth]{Chapters/Analysis/Figs/Axe/AccEffvsCent.pdf}\hfill
+\includegraphics[width=.5\textwidth]{Chapters/Analysis/Figs/Axe/AccEffvsPt.pdf}\hfill
+\includegraphics[width=.5\textwidth]{Chapters/Analysis/Figs/Axe/AccEffvsY.pdf}
 
-\caption{$A\times\epsilon$ as a function of centrality (left), \pt (center), and $y$ (right). The values have been computed using 137 embedded Monte Carlo events based on LCH15o collisions.}
+\caption{$A\times\epsilon$ as a function of centrality (left), \pt (center), and $y$ (right). The values have been computed using 137 embedded Monte Carlo events.}
 \label{fig:Axe}
 
 \end{figure}
 
-One of the ingredients appearing in the nuclear modification factor definition reported in equation \ref{eqn:raa} is the $A\times\epsilon$ correction.
-This correction is needed to re-normalize the \upsi yields taking into account the detector efficiency and to correct the raw spectrum to the one in the analysis acceptance.
+% One of the ingredients appearing in the nuclear modification factor definition reported in equation \ref{eqn:raa} is the $A\times\epsilon$ correction.
+The extracted number of raw Upsilon must be corrected by the product of the acceptance and efficiency of the detector ($A\times\epsilon$).
+This correction is needed to turn the raw spectrum into one that contains physics information.
 Acceptance and efficiency of each detector are evaluated through custom MC simulations.
 In particular the so called "embedded" simulations are used for this studies.
 In such MC simulations, the generated \upsi is embedded in a real recorded event.
-This allows to test the efficiency of detection of the simulated signal in a real event, with the full multiplicity observed in real data.
+This allows one to test the efficiency of detection of the simulated signal in a real event, with the full multiplicity observed in real data.
 This simulation can be used for efficiency studies as well as for the acceptance ones.
 % Two kinds of simulations are performed:
 % \begin{itemize}
@@ -138,7 +142,7 @@ This simulation can be used for efficiency studies as well as for the acceptance
 % \item Embedded MC simulations: the generated \upsi is embedded in a real recorded event.  This allows to test the efficiency of detection of the simulated signal in a real event, with the full multiplicity observed in real data. This simulation can be used for efficiency studies.
 % \end{itemize}
 Some inputs have to be provided to the MC generator.
-The simulation input consists of a parameterization of the pt and y distribution obtained by interpolating existing $pp$ measurements \cite{Acosta:2001gv,LHCb:2012aa,Khachatryan:2010zg} with the procedure described in \cite{Bossu:2011qe}.
+The simulation input consists of a parameterization of the bottomonium \pt and $y$ distribution obtained by interpolating existing $pp$ measurements \cite{Acosta:2001gv,LHCb:2012aa,Khachatryan:2010zg} with the procedure described in \cite{Bossu:2011qe}.
 % In particular the \pt and $y$ distributions of the generated \upsi are obtained from existing $pp$ measurements ~\cite{Acosta:2001gv,LHCb:2012aa,Khachatryan:2010zg} using the interpolation and extrapolation procedure described in~\cite{Bossu:2011qe}. 
 The EKS98 nuclear shadowing parameterization~\cite{Eskola:1998df} is used to include an estimate of CNM effects.
 Since available data favor a small or null polarization for $\Upsilon$(1S)~\cite{Abazov:2008aa,CDF:2011ag,Chatrchyan:2012woa}, an unpolarized production was assumed. 
@@ -146,19 +150,19 @@ The variations of the performance of the muon tracker and muon trigger systems t
 
 The $A\times\epsilon$ values, for the range $p_{\rm T} < 15$ GeV/$c$, $2.5 < y < 4$ and the 0--90\% centrality class are $0.263$ and $0.264$ for the \upsis and \upsiss, respectively. 
 A decrease of $0.02$ is observed in  $A\times\epsilon$ for the 0--10\% central collisions with respect to the 50--90\%. This effect is caused by a limitation of the Muon Trigger and is caused by the higher occupancy in the most central events.
-In fact the Muon Trigger LBs can provide only one tracklet each, hence if two muons cross the same LB only one of the two particles is correctly recorded.
+In fact the Muon Trigger LBs can provide only one tracklet each, hence if two muons cross the same LB only one of the two particles is correctly reconstructed.
 Further details are given in section \ref{MTR_tagging}.
 Differential studies of $A\times\epsilon$ are presented in the plots reported in figure \ref{fig:Axe}.
 
-\section{$\sigma_{pp}$ reference}
+\section{Reference $\ $ \texorpdfstring{$\sigma_{pp}$}}
 \label{sec:ppxsection}
-The Raa requires to divide the yield measured in Pb-Pb collisions by the cross-section measured in $pp$ collisions at the same energy.
-The statistics of the ALICE measurement in $pp$ collisions at $\sqrt{s}=5.02$ in $pp$ collisions was not sufficient to provide an estimate of the \upsi cross section.
+The evaluation of \raa requires to divide the yield measured in Pb-Pb collisions by the cross-section measured in $pp$ collisions at the same energy.
+The statistics of the ALICE measurement at $\sqrt{s}=5.02$ in $pp$ collisions was not sufficient to provide an estimate of the \upsi cross section \cite{Adam:2016rdg}.
 For this reason the reference proton-proton cross sections, for \upsis and \upsiss production, have been computed by means of an interpolation procedure described below.
 The energy interpolation for the \upsi cross section, as a function of rapidity and for the \pt and $y$ integrated result, uses the measurements of \upsi production cross sections in \pp collisions at $\sqrt{s}=7$ and $8$ \rm{TeV} by ALICE \cite{Abelev:2014qha,Adam:2015rta} and at $\sqrt{s}=2.76, 7$ and $8$ \rm{TeV} by LHCb \cite{Aaij:2014nwa,Aaij:2015awa}. 
 In order to obtain the reference cross section in the same \pt and $y$ bins as the ones used for the analysis, a merging of LHCb values has been performed.
-The merged values for \pt, coming from LHCb data only, are reported in tables\ref{table:LHCbData276}, \ref{table:LHCbData7} and \ref{table:LHCbData8}.
-The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{table:LHCbY1sData276}, \ref{table:LHCbY1sData7}, \ref{table:ALICEY1sData7}, \ref{table:LHCbY1sData8} and \ref{table:ALICEY1sData8}.
+The merged values for \pt, coming from LHCb data only, are reported in tables \ref{table:LHCbData276}, \ref{table:LHCbData7} and \ref{table:LHCbData8}.
+The merged values for $y$, from both ALICE and LHCb, are reported in tables \ref{table:LHCbY1sData276}, \ref{table:LHCbY1sData7}, \ref{table:ALICEY1sData7}, \ref{table:LHCbY1sData8} and \ref{table:ALICEY1sData8}.
 
 \begin{table}[htp]
 \begin{center}
@@ -179,7 +183,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
   $6.0 < p_\mathrm{T} < 15.0 $& 153,0 & 12,4	 & 0,0 & 6,6 & 14,0 & 9,2\\
   \hline
 \end{tabular}
-\caption{Merged $p_\mathrm{T}$ bins $\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}} $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s_{pp}}=$ 2.76 TeV.}\label{table:LHCbData276}
+\caption{Merged cross sections and corresponding uncertainties in different $p_\mathrm{T}$ intervals. $\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}} $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s_{pp}}=$ 2.76 TeV.}\label{table:LHCbData276}
 \end{center}
 \end{table}
 
@@ -202,7 +206,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
   $6.0 < p_\mathrm{T} < 15.0 $& 473,720 & 1,197 & 0,936 & 14,685 & 14,764 & 3,117 \\
   \hline
 \end{tabular}
-\caption{Merged $p_\mathrm{T}$ bins $\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}} $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s_{pp}}=$ 7 TeV.}\label{table:LHCbData7}
+\caption{Merged cross sections and corresponding uncertainties in different $p_\mathrm{T}$ intervals. $\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}} $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s_{pp}}=$ 7 TeV.}\label{table:LHCbData7}
 \end{center}
 \end{table}
 
@@ -225,7 +229,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
   $6.0 < p_\mathrm{T} < 15.0 $& 609.970 & 1.022 & 0.905 & 17.079 & 17.134 & 2.809 \\
   \hline
 \end{tabular}
-\caption{Merged $p_\mathrm{T}$ bins $\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}} $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s_{pp}}=$ 8 TeV.}\label{table:LHCbData8}
+\caption{Merged cross sections and corresponding uncertainties in different $p_\mathrm{T}$ intervals. $\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}} $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s_{pp}}=$ 8 TeV.}\label{table:LHCbData8}
 \end{center}
 \end{table}
 
@@ -233,7 +237,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
 \begin{center}
 \begin{tabular}{|c||c|c|c|c|c|c|}
   \hline
-  \multicolumn{7}{|c|}{$\sqrt{s}=$ 2.76 TeV, $0<p_\mathrm{T}<15$}\\
+  \multicolumn{7}{|c|}{$\sqrt{s_{pp}}=$ 2.76 TeV, $0<p_\mathrm{T}<15$}\\
   \hline
   $y$ bin & $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ & Stat. & uncorr. Syst. & fully corr. Syst. & Total & $\%$ \\
   \hline
@@ -248,7 +252,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
   $2.5 < y < 4.0 $& 448 & 17 & 0 & 16 & 24 & 5 \\
   \hline
 \end{tabular}
-\caption{$y$ bins $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s}=$ 2,76 TeV.}\label{table:LHCbY1sData276}
+\caption{$y$ bins $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s_{pp}}=$ 2,76 TeV.}\label{table:LHCbY1sData276}
 \end{center}
 \end{table}
 
@@ -256,7 +260,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
 \begin{center}
 \begin{tabular}{|c||c|c|c|c|c|c|}
   \hline
-  \multicolumn{7}{|c|}{$\sqrt{s}=$ 2.76 TeV, $0<p_\mathrm{T}<15$}\\
+  \multicolumn{7}{|c|}{$\sqrt{s_{pp}}=$ 7 TeV, $0<p_\mathrm{T}<15$}\\
   \hline
   $y$ bin & $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ & Stat. & uncorr. Syst. & fully corr. Syst. & Total & $\%$ \\
   \hline
@@ -271,7 +275,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
   $2.5 < y < 4.0 $& 1090.45 & 4.55 & 4.17 & 33.80 & 34.36 & 3.2 \\
   \hline
 \end{tabular}
-\caption{$y$ bins $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s}=$ 7 TeV.}\label{table:LHCbY1sData7}
+\caption{$y$ bins $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s_{pp}}=$ 7 TeV.}\label{table:LHCbY1sData7}
 \end{center}
 \end{table}
 
@@ -279,7 +283,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
 \begin{center}
 \begin{tabular}{|c||c|c|c|c|c|c|}
   \hline
-  \multicolumn{7}{|c|}{$\sqrt{s}=$ 2.76 TeV, $0<p_\mathrm{T}<15$}\\
+  \multicolumn{7}{|c|}{$\sqrt{s_{pp}}=$ 8 TeV, $0<p_\mathrm{T}<15$}\\
   \hline
   $y$ bin & $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ & Stat. & uncorr. Syst. & fully corr. Syst. & Total & $\%$ \\
   \hline
@@ -294,7 +298,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
   $2.5 < y < 4.0 $& 1359.37 & 3.83 & 4.30 & 38.06 & 38.50 & 2.8 \\
   \hline
 \end{tabular}
-\caption{$y$ bins $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s}=$ 8 TeV.}\label{table:LHCbY1sData8}
+\caption{$y$ bins $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ values and uncertainties as obtained using LHCb $pp$ data at $\sqrt{s_{pp}}=$ 8 TeV.}\label{table:LHCbY1sData8}
 \end{center}
 \end{table}
 
@@ -302,7 +306,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
 \begin{center}
 \begin{tabular}{|c||c|c|c|c|c|c|}
   \hline
-  \multicolumn{7}{|c|}{$\sqrt{s}=$ 2.76 TeV, $0<p_\mathrm{T}<12$}\\
+  \multicolumn{7}{|c|}{$\sqrt{s_{pp}}=$ 7 TeV, $0<p_\mathrm{T}<12$}\\
   \hline
   $y$ bin & $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ & Stat. & uncorr. Syst. & fully corr. Syst. & Total & $\%$ \\
   \hline
@@ -317,7 +321,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
   $2.5 < y < 4.0 $& 896.11 & 82.67 & 110.77 & 44.81 & 145.30 & 17.2 \\
   \hline
 \end{tabular}
-\caption{$y$ bins $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ values and uncertainties as obtained using ALICE $pp$ data at $\sqrt{s}=$ 7 TeV.}\label{table:ALICEY1sData7}
+\caption{$y$ bins $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ values and uncertainties as obtained using ALICE $pp$ data at $\sqrt{s_{pp}}=$ 7 TeV.}\label{table:ALICEY1sData7}
 \end{center}
 \end{table}
 
@@ -325,7 +329,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
 \begin{center}
 \begin{tabular}{|c||c|c|c|c|c|c|}
   \hline
-  \multicolumn{7}{|c|}{$\sqrt{s}=$ 2.76 TeV, $0<p_\mathrm{T}<12$}\\
+  \multicolumn{7}{|c|}{$\sqrt{s_{pp}}=$ 8 TeV, $0<p_\mathrm{T}<12$}\\
   \hline
   $y$ bin & $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ & Stat. & uncorr. Syst. & fully corr. Syst. & Total & $\%$ \\
   \hline
@@ -340,7 +344,7 @@ The merged values for $y$, from both ALICE and LHCb, are reported in tables\ref{
   $2.5 < y < 4.0 $& 1173.87 & 99.20 & 115.73 & 58.69 & 163.34 & 13.9 \\
   \hline
 \end{tabular}
-\caption{$y$ bins $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ values and uncertainties as obtained using ALICE $pp$ data at $\sqrt{s}=$ 8 TeV.}\label{table:ALICEY1sData8}
+\caption{$y$ bins $d(\sigma_{pp}^{\Upsilon\rightarrow \mu^{+}\mu^{\--}})/dy $ values and uncertainties as obtained using ALICE $pp$ data at $\sqrt{s_{pp}}=$ 8 TeV.}\label{table:ALICEY1sData8}
 \end{center}
 \end{table}
 
@@ -353,9 +357,9 @@ The plots representing the data points, the interpolation functions and the inte
 
 \begin{figure}[!b]
 \begin{center}
-\includegraphics[width=0.8\linewidth]{Chapters/Analysis/Figs/sigmapp_vs_pt.pdf}
-\includegraphics[width=0.8\linewidth]{Chapters/Analysis/Figs/sigmapp_vs_y.pdf}
-\caption{Interpolation of reference $\sigma_{pp}$ in \pt (top 4 graphs) and $y$ (bottom 4 graphs) bins. The measured points are reported with an error bar which that is the quadratic sum of the statistical and systematic uncertainties.}
+\includegraphics[width=0.95\linewidth]{Chapters/Analysis/Figs/sigmapp_vs_pt.pdf}
+\includegraphics[width=0.95\linewidth]{Chapters/Analysis/Figs/sigmapp_vs_y.pdf}
+\caption{Interpolation of reference $\sigma_{pp}$ in \pt (top 4 graphs) and $y$ (bottom 4 graphs) bins. The measured points are reported with an error bar that is the quadratic sum of the statistical and systematic uncertainties.}
 \label{fig:sigmapp}
 \end{center}
 \end{figure}
@@ -367,8 +371,9 @@ One term represents the statistical uncertainty and reflects the uncertainties o
 The second term represents the systematic uncertainty related to the interpolation procedure itself.
 It corresponds to the maximum spread between the final cross section value and each single interpolation.
 The numerical values obtained from the interpolation procedure are summarized in Table~\ref{tab:ref_cs_pp} for the various kinematic ranges used in the analysis.
-The result of the interpolation procedure gives ${\rm BR}_{\Upsilon\text{(1S)} \rightarrow \mu^{+} \mu^{-}} \cdot \sigma^{\rm\Upsilon({\rm 1S})}_{\rm pp}=1221\pm77\text{(tot)}$~pb and ${\rm BR}_{\Upsilon\text{(2S)} \rightarrow \mu^{+} \mu^{-}} \cdot \sigma^{\rm\Upsilon({\rm 2S})}_{\rm pp}=302\pm23\text{(tot)}$~pb assuming unpolarized quarkonia and integrating over the
-ranges $2.5 < y < 4$ and $p_{\rm T} < 15$ GeV/$c$.
+The result of the interpolation procedure gives ${\rm BR}_{\Upsilon\text{(1S)} \rightarrow \mu^{+} \mu^{-}} \cdot \sigma^{\rm\Upsilon({\rm 1S})}_{\rm pp}=1221\pm77\text{(tot)}$~pb and ${\rm BR}_{\Upsilon\text{(2S)} \rightarrow \mu^{+} \mu^{-}} \cdot \sigma^{\rm\Upsilon({\rm 2S})}_{\rm pp}=302\pm23\text{(tot)}$~pb assuming unpolarized quarkonia and integrating over the ranges $2.5 < y < 4$ and $p_{\rm T} < 15\ GeV/c$.
+% These values differ from the sum of the differential values reported in \ref{tab:ref_cs_pp}.
+% The integrated values are 
 
 \begin{table}[!t]
 \centering
@@ -397,7 +402,7 @@ ranges $2.5 < y < 4$ and $p_{\rm T} < 15$ GeV/$c$.
 % % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Uncertainties}\label{subsec:syst_uncert}
 
-The systematic uncertainty on the signal extraction has several contributions related to the various ingredients which constitute the nuclear modification definition in equation \ref{eqn:raa}.
+The systematic uncertainty on \raa has several contributions related to the various ingredients which constitute the nuclear modification definition in equation \ref{eqn:raa}.
 % Several procedures have been performed to obtain such ingredients and the systematic uncertainty contribution of each of these procedures has to be evaluated and quoted alongside the final result.
 The estimation of the systematic uncertainties will be detailed in the following.
 
@@ -436,7 +441,7 @@ A summary of all the tests can be found in figure \ref{fig:MCsyst}.
 \begin{center}
 \includegraphics[width=\linewidth]{Chapters/Analysis/Figs/Axe/AxE_integrated.pdf}
 \includegraphics[width=0.9\linewidth]{Chapters/Analysis/Figs/input_pt_rap_dist.pdf}
-\caption{Evolution of the $N_{rec}/N_{gen}$ ratio versus simulated event number (top). Different colors refer to different input distributions for \upsis \pt and $y$ values, represented with the same color code in the bottom panel.}
+\caption{Evolution of the $N_{rec}/N_{gen}$ ratio versus run number (top). Different colors refer to different input distributions for \upsis \pt and $y$ values, represented with the same color code in the bottom panel.}
 \label{fig:MCsyst}
 \end{center}
 \end{figure}
@@ -445,13 +450,13 @@ In order to calculate the systematic uncertainty on trigger efficiency, the trig
 The two response functions are then separately applied to simulations of a \upsi sample and the difference obtained for the \upsi reconstruction efficiency is taken as systematic uncertainty (see figure \ref{fig:trigsystRF}).
 
 % In the same way as the modeled trigger response function in Monte Carlo may vary from the real situation, the muon trigger efficiency may follow the same path.
-The Muon Trigger efficiency is estimated from real data and gets plugged on the Monte Carlo simulations.
-The uncertainty on the efficiency estimation can lead to a systematic uncertainty on its effect on the trigger response.
-In order to evaluate the systematic uncertainty due to this uncertainty, two Monte Carlo productions have been performed.
+The Muon Trigger chambers efficiency is estimated from real data and gets plugged on the Monte Carlo simulations.
+The uncertainty on the efficiency estimation leads to an uncertainty on the trigger efficiency.
+In order to evaluate such uncertainty, two Monte Carlo productions have been performed.
 The first simulation is performed using the efficiency value estimated using real data.
 In the second simulation, the efficiency is artificially modified within its uncertainties.
 The systematic uncertainty induced by this variation is then evaluated as the relative difference between the two.
-The values obtained with the two efficiency sets are reported in figure \ref{fig:trigsystAxe}.
+The values obtained with the two chamber efficiency sets are reported in figure \ref{fig:trigsystAxe}.
 
 \begin{figure}[!htb]
 \begin{center}
@@ -522,23 +527,23 @@ ${\rm BR}_{\Upsilon \rightarrow \mu^{+} \mu^{-}} \cdot \sigma^{\rm pp}_{\Upsilon
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}\label{section:results}
 
-The nuclear modification factors for  inclusive $\upsis$ and $\upsiss$ production in \pbpb collisions at $\snn=5.02$ \rm{TeV} for the ranges $p_{\rm T} < 15$ GeV/$c$, $2.5 < y < 4$ and the 0--90\% centrality class are $R_{\rm{AA}}^{\Upsilon(\rm1S)}=0.37\pm0.02\text{(stat)}\pm0.03\text{(syst)}$  and $R_{\rm{AA}}^{\Upsilon(\rm2S)}=0.10\pm{0.04}\text{(stat)}\pm{0.02}\text{(syst)}$, respectively. 
+The nuclear modification factors for  inclusive $\upsis$ and $\upsiss$ production in \pbpb collisions at $\snn=5.02$ \rm{TeV} with $p_{\rm T} < 15$ GeV/$c$, $2.5 < y < 4$ and the 0--90\% centrality class are $R_{\rm{AA}}^{\Upsilon(\rm1S)}=0.37\pm0.02\text{(stat)}\pm0.03\text{(syst)}$  and $R_{\rm{AA}}^{\Upsilon(\rm2S)}=0.10\pm{0.04}\text{(stat)}\pm{0.02}\text{(syst)}$, respectively. 
 The measurements show a strong suppression for both bottomonium states.
 
-The systematic uncertainties magnitude affecting the $R_{\rm{AA}}$ is comparable to those of the statistical ones.
+The value of the systematic uncertainties affecting the $R_{\rm{AA}}$ is comparable to those of the statistical ones.
 To reduce the contribution of systematic uncertainties the ratio of the two $R_{\rm{AA}}$ can be computed.
 % Since the decay kinematics of \upsis and \upsiss states are very similar, most of the systematic uncertainty sources entering the ratio cancel out.
 However the dominant contributions to the systematic uncertainties, namely those related to signal extraction and the $pp$ cross section, are not simplified by the computation of the ratio.
 The integrated ratio $R_{\rm{AA}}^{\Upsilon(\rm2S)}/R_{\rm{AA}}^{\Upsilon(\rm1S)}$ is $0.28\pm0.12\text{(stat)}\pm0.06\text{(syst)}$. 
 A strong indication of a stronger suppression for \upsiss is present.
 
-A comparison between \upsis nuclear modification factor values at different energies might highlight a suppression (enhancement) dependence on the center of mass energy of the colliding system.
+A comparison between \upsis nuclear modification factor values at different energies might highlight a suppression dependence on the center of mass energy of the colliding system.
 The ratio between the \upsis $\raa$ at $\snn=5.02$ \rm{TeV} and $2.76$ \rm{TeV} is $1.23\pm0.21\text{(stat)}\pm0.19\text{(syst)}$. 
 The sources of systematic uncertainties entering the calculation of the ratio are considered uncorrelated, except for the \taa component, whose uncertainty cancels out. 
-The ratio is compatible with unity within uncertainties, hence no energy hierarchy is observed.
+The ratio is compatible with unity within uncertainties, hence no energy dependence is observed within the present uncertainties.
 
 %The centrality, $p_{\rm T}$- and $y$-dependences of the $\upsis \raa$ at forward rapidity at $\snn=5.02$ \rm{TeV} are shown in Fig.\ref{fig:raa_data} together with the published results by CMS at mid-rapidity at the same center-of-mass energy \cite{CMS:2017ucd}. 
-The centrality, $p_{\rm T}$ and $y$-dependences of the $\upsis$ $\raa$ at forward rapidity at $\snn=5.02$ \rm{TeV} are shown in Fig.\ref{fig:raa_data}. 
+The centrality, $p_{\rm T}$ and $y$-dependences of the $\upsis$ $\raa$ at forward rapidity at $\snn=5.02$ \rm{TeV} are shown in figure \ref{fig:raa_data}. 
 A decrease of $\raa$ with increasing centrality is observed down to $R_{\rm{AA}}^{\Upsilon(\rm1S)}=0.33\pm0.03\text{(stat)}\pm0.03\text{(syst)}$  for the 0--10\% most central collisions.
 The $p_{\rm T}$-dependence is observed to be compatible within uncertainties with a flat behaviour up to $p_{\rm T}=15$ GeV/$c$.
 The $y$-dependence shows a $\raa$ compatible within uncertainties with a flat distribution, as already observed in the measurements at $\snn=2.76$ \rm{TeV} \cite{Abelev:2014nua}.
@@ -562,15 +567,15 @@ The inclusive $\upsis$ $\raa$ measurements are compared to several theoretical p
 The set of models used for comparison is composed by two transport models (TM1 and TM2)\cite{Du:2017qkv,Zhou:2014hwa} and one hydro-dynamical model \cite{Krouppa:2017jlg}.
 While transport models follow the propagation of the free quarks in the medium the hydro-dynamical models approach the QGP as a macro state.
 Transport models use a rate-equation approach which accounts for both suppression and (re)generatio mechanisms in the QGP.
-In hydro-dynamical models, the macro state "decays" in micro states ($e.g$ quarkonium states, open heavy flavor bosons) at the freeze-out.
+In hydro-dynamical models, the macro state "decays" in micro states ($e.g$ quarkonium states, open heavy flavor hadrons) at the freeze-out.
 
 In the model quoted as TM1 \cite{Du:2017qkv}, the evolution of the thermal medium is based on a thermal-fireball expansion.
-The feed-down contribution is taken into account based on measurements from ALICE and LHCb \cite{Abelev:2014qha,Aaij:2014caa,Aaij:2014hla} are used.
+The feed-down contribution is taken into account based on measurements from ALICE and LHCb \cite{Abelev:2014qha,Aaij:2014caa,Aaij:2014hla}.
 TM1 predictions are shown as bands, obtained varying the magnitude shadowing effects, as described in ~\cite{Tuchin:2010pv}. 
 The upper limit shown in Fig.~\ref{fig:raa_models} corresponds to the extreme case of the absence of shadowing while the lower limit reflects a reduction of $30\%$ due to shadowing.
 
 TM2 \cite{Zhou:2014hwa} uses a 2+1 dimensional version of the ideal hydrodynamic equations.
-The band limits on TM2 results are given by the spread caused by two sets of feed-down fractions to \upsis ground state:
+The uncertainties on these predictions are given by the spread caused by two sets of feed-down fractions to \upsis ground state:
 \begin{itemize}
 \item $27\%$ from $\chi_{\rm b}$; $11\%$ from $\Upsilon({\rm 2S}+{\rm 3S})$
 \item $37\%$ from $\chi_{\rm b}$; $12\%$ from $\Upsilon({\rm 2S}+{\rm 3S})$
@@ -583,23 +588,23 @@ Those values deviate by about $2 \sigma$ (TM1) and $1.4 \sigma$ (TM2) from the r
 In the hydro-dynamical model \cite{Krouppa:2017jlg}, a thermal suppression of the bottomonium states is calculated using a lattice QCD-vetted complex-potential approach through a description of the medium evolution based on the 3+1d anisotropic hydro-dynamical model.
  In this recent study, no significant variation of the $\raa$ has been observed with respect to the plasma shear viscosity-to-entropy density ratio ($4\pi\eta/s$) parameter of the hydro evolution. 
 Therefore, it is set to $4\pi\eta/s$ = 2, which is consistent with particle spectra fits.
-The band of the model quantifies the heavy-quark potential uncertainty that has been estimated by including a $\pm 15\%$ variation of the Debye mass of the QCD medium.
+The uncertainties of the model come from the heavy-quark potential uncertainty that was estimated by including a $\pm 15\%$ variation of the Debye mass of the QCD medium.
 The latter is tuned by a fit to the real-part of the lattice in-medium heavy-quark potential.
 The uncertainty of the Debye mass of the heavy-quark potential implies $\sim15\%$ uncertainty on the expected bottomonium \raa. 
 Furthermore, the predictions shown are referring to the initial momentum-space anisotropy parameter $\xi_0=0$, which corresponds to a perfectly isotropic QGP at the starting point of the hydrodynamic evolution at $\tau_0=0.3$ fm/$c$.
 Finally, this model accounts for feed-down contributions but it includes neither a regeneration mechanism nor CNM effects. 
 
 The centrality dependence of the $\upsis$ $\raa$ is fairly reproduced by the model calculations, as shown in the top panel of Fig.~\ref{fig:raa_models}.
-The data is best described by TM1 when regeneratio is included and by TM2 when regeneratio is not taken into account.
-The uncertainties on the measured point do not allow for a discrimination between the two models, hence a firm conclusion on whether the regeneratio is present or not is not possible. 
+The data is best described by TM1 when regeneration is included and by TM2 when regeneration is not taken into account.
+The uncertainties on the measured point do not allow for a discrimination between the two models, hence a firm conclusion on whether the regeneration is present or not is not possible. 
 The hydro-dynamical model describes the trend of the data, even if the measurements systematically lie on the upper edge of the band uncertainty for $\npart>70$.
 This can be intended as a hint of a weaker Debye mass and thus a larger heavy-quark potential.
 
-As a function of \pt (bottom left panel of Fig.~\ref{fig:raa_models}), the data favor the regeneratio scenario of the TM1 model.
+As a function of \pt (bottom left panel of Fig.~\ref{fig:raa_models}), the data favor the regeneration scenario of the TM1 model.
 Similarly to what was observed for the centrality dependence, the hydro-dynamical model is in agreement with measurements even if the data points are systematically at the top edge of the uncertainty band.
 
 For what concerns the $y$-dependence of the $\upsis$ $\raa$ only the hydro-dynamical model provides an estimation of the expected trend.
-Even if the data points are compatible within uncertainties with the model estimation and with a flat distribution, some sort of stress can be observed between the model-suggested trend and the trend shown by measurements (bottom right panel of Fig.~\ref{fig:raa_models}).
+Even if the data points are compatible within uncertainties with the model estimation and with a flat distribution, some tension can be observed between the model-suggested trend and the trend shown by measurements (bottom right panel of Fig.~\ref{fig:raa_models}).
 
 \begin{figure}[!t]
 \begin{center}
@@ -616,12 +621,12 @@ Even if the data points are compatible within uncertainties with the model estim
 
 The nuclear modification factors of inclusive \upsis and \upsiss production was measured with the ALICE detector at forward rapidity ($2.5<y<4$) and for $p_{\rm T}<15$ GeV/$c$ in \pbpb collisions at $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV}.
 
-The computation of double ratios between \upsis and \upsiss $\raa$ at $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV} and between \upsis $\raa$ at $\sqrt{s_{_{\rm NN}}}=2.76$~\rm{TeV} and $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV}.
+% The computation of double ratios between \upsis and \upsiss $\raa$ at $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV} and between \upsis $\raa$ at $\sqrt{s_{_{\rm NN}}}=2.76$~\rm{TeV} and $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV}.
 The double ratio of the \upsis and \upsiss \raa was computed as well. 
-The observed value of $ \pm \pm $ is compatible with the hypothesis of a larger suppression for the higher-energy (more weakly bound) states.
+The observed value of $ 0.28 \pm 0.12(stat.) \pm 0.06(syst.)$ is compatible with the hypothesis of a larger suppression for the higher-energy (more weakly bound) states.
 
 Finally, the double ratio of the \upsi \raa measured in Pb-Pb collisions at $\sqrt{s_{_{\rm NN}}}=5.02$ and $2.76$~\rm{TeV} was computed as well. 
-The result shows no significant energy hierarchy at the LHC.
+The result shows no significant energy dependence at the LHC.
 
 % The ratio between \upsis and \upsiss productions is aligned  with the hypothesis of a binding-energy dependent sequential suppression, given the higher energy state is clearly more suppressed than the fundamental one.
 % The ratio computed for \upsis at different energies, however, showed no significant energy hierarchy at the LHC energies.
@@ -631,5 +636,5 @@ The result shows no significant energy hierarchy at the LHC.
 
 The results have been compared with transport and hydrodynamic models.
 The transport models are able to provide prediction with and without including recombination effects.
-Comparing the measurements with the different predictions lead to no clear conclusion on the whether the recombination is present or not has been possible yet.
-Further statistics will help both to better constrain the models and to reduce the uncertainty on bottomonium yields measurements.
+Comparing the measurements with the different predictions lead to no clear conclusion on whether recombination effects play a role has been possible yet.
+Further measurements with enhanced statistics will be needed to improve the precision and to better constrain the models.

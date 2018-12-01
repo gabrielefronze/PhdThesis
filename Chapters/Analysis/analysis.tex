@@ -6,7 +6,7 @@
 \chapter{Study of bottomonium production in Pb-Pb collisions at$\ $ \texorpdfstring{$\sqrt[]{s_{NN}}=5.02 \rm{TeV}$}{sqrt(Snn)=5.02\ \rm{TeV}}}
 
 %********************************** %First Section  **************************************
-\section{Operative definition of nuclear modification factor}
+\section{Operational definition of nuclear modification factor}
 In order to study the modification of \upsi production in Pb-Pb collisions at $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV} the evaluation of $R_{\rm AA}$ should be performed through an expression based on the one presented in \ref{intro_glauber}:
 \begin{equation} \label{eqn:raa}
 R_{\rm{AA}} = \frac{N^{\Upsilon}}{ {\rm BR}_{\Upsilon \rightarrow \mu^{+} \mu^{-}} \cdot  (A\times\epsilon)_{\Upsilon \rightarrow \mu^{+} \mu^{-}} \cdot  N_{MB} \cdot \sigma_{\rm pp}^{\Upsilon} \cdot \langle T_{\rm AA} \rangle } ~~
@@ -15,7 +15,7 @@ where:
 \begin{itemize}
 \item $N^{\Upsilon}$ is the number of detected resonance decays to muon pairs, while ${\rm BR}_{\Upsilon \rightarrow \mu^{+} \mu^{-}}$ is the branching ratio for the dimuon decay \cite{Agashe:2014kda};
 \item The $(A\times\epsilon)_{\Upsilon \rightarrow \mu^{+} \mu^{-}}$ factor is the product of acceptance and detection efficiency, specific for the $\Upsilon$ state under study;
-\item The normalization factor $N_{\text{MB}}$ is the number of minimum bias events used for the analysis ;
+\item $N_{\text{MB}}$ is the number of minimum bias events used for the analysis ;
 \item $\sigma_{\rm pp}^{\Upsilon}$ is the reference \pp cross section and $\langle T_{\rm AA} \rangle$ represents the nuclear overlap function, which is evaluated in different centrality classes using the Glauber model~\cite{Abelev:2013qoq,Adam:2015ptt}.
 \end{itemize}
 
@@ -42,7 +42,7 @@ Thanks to the muon spectrometer geometry and to the presence of a dipole magnet,
 Further details are given in section \ref{ALICE_spectrometer} of this thesis.
 % The adopted trigger is then formed by the logical AND of the MB trigger and the presence in the muon trigger of a pair of muons with opposite charge sign, each with a pt larger than about 1 GeV/c.
 The adopted trigger is then formed by the logical AND of the MB trigger and the presence in the muon trigger of a pair of muons with opposite charge sign, each with a pt larger than about $1\ GeV/c$ ($\mu \mu-MB$ trigger). 
-The number of equivalent Minimum Bias events can be then obtained as $N_{\mu \mu-MB} * F_{norm}$, where $N_{\mu \mu-MB}$ is the number of analyzed dimuon triggers and $F_{norm}$ is the inverse of the probability to have an unlike-sign dimuon triggered event in a MB event \cite{Adam:2016rdg}.
+The number of equivalent Minimum Bias events can be then obtained as $N_{\mu \mu-MB} * F_{norm}$, where $N_{\mu \mu-MB}$ is the number of analyzed dimuon triggers and $F_{norm}$ is the inverse of the probability to have an unlike-sign dimuon triggered sample in a MB event \cite{Adam:2016rdg}.
 
 % The former is provided by V0, the latter by the muon trigger.
 In addition, in order to perform the event mixing procedure for background reduction, the single muon trigger has been recorded, in order to be able to artificially combine uncorrelated like-sign muons into dimuons.
@@ -81,7 +81,7 @@ Concerning the background affecting the bottomonium production measurements, it 
 Two approaches are then possible to extract the yields from the fit of an invariant mass spectrum:
 \begin{itemize}
 \item Fit of the raw invariant mass obtained from data, where the background is modeled through a phenomenological function. In this case the fit has to be performed on the raw spectrum;
-\item Estimate the contamination of the combinatorial background through the event mixing method and subtract it from the raw yields. The remaining contribution is then fitted with a suitable function to extract the Upsilon contribution. The event-mixing technique consists in filling a dimuon invariant mass spectrum with totally uncorrelated muons ($i.e.$ from different events). Such procedure leads to an invariant mass spectrum that represents the combinatorial background one should expect  to lay under the measured dimuon invariant mass spectrum.
+\item Estimate the contamination of the combinatorial background through the event mixing method and subtract it from the raw yields. The remaining contribution is then fitted with a suitable function to extract the Upsilon contribution. The event-mixing technique consists in filling a dimuon invariant mass spectrum with totally uncorrelated muons ($i.e.$ from different events). Such procedure leads to an invariant mass spectrum that represents the combinatorial background one should expect to lay under the measured dimuon invariant mass spectrum.
 % Applying the event mixing method, the raw spectrum can be pre-processed, subtracting a properly scaled invariant mass spectrum which has previously been filled with dimuons composed using like-sign $\mu$ from the same collision and unlike-sign $\mu$ produced in different collisions. The ratioale of this procedure is that filling a dimuon invariant mass spectrum with totally uncorrelated muons ($i.e.$ from different events) creates an invariant mass spectrum that represents the combinatorial background one should expect when filling the signal invariant mass spectrum.
 \end{itemize}
 
@@ -123,7 +123,7 @@ In the fit shown in Fig.~\ref{fig:mass_dist} only signals corresponding to the $
 \includegraphics[width=.5\textwidth]{Chapters/Analysis/Figs/Axe/AccEffvsPt.pdf}\hfill
 \includegraphics[width=.5\textwidth]{Chapters/Analysis/Figs/Axe/AccEffvsY.pdf}
 
-\caption{$A\times\epsilon$ as a function of centrality (left), \pt (center), and $y$ (right). The values have been computed using 137 embedded Monte Carlo events.}
+\caption{$A\times\epsilon$ as a function of centrality (left), \pt (center), and $y$ (right). The values have been computed using embedded Monte Carlo events.}
 \label{fig:Axe}
 
 \end{figure}
@@ -154,7 +154,7 @@ In fact the Muon Trigger LBs can provide only one tracklet each, hence if two mu
 Further details are given in section \ref{MTR_tagging}.
 Differential studies of $A\times\epsilon$ are presented in the plots reported in figure \ref{fig:Axe}.
 
-\section{Reference $\ $ \texorpdfstring{$\sigma_{pp}$}}
+\section{Reference \texorpdfstring{$\ \sigma_{pp}$}}
 \label{sec:ppxsection}
 The evaluation of \raa requires to divide the yield measured in Pb-Pb collisions by the cross-section measured in $pp$ collisions at the same energy.
 The statistics of the ALICE measurement at $\sqrt{s}=5.02$ in $pp$ collisions was not sufficient to provide an estimate of the \upsi cross section \cite{Adam:2016rdg}.
@@ -399,6 +399,9 @@ The result of the interpolation procedure gives ${\rm BR}_{\Upsilon\text{(1S)} \
 \caption{\label{tab:ref_cs_pp} The interpolated branching ratio times cross section of \upsis for the \pt and $y$ bins under study.}
 \end{table}
 
+It should be noted that the integrals of the interpolated  $p_{\mathrm{T}}$-differential and $y$-differential  cross sections differ by at most $\approx3\%$ from the interpolated integrated cross sections. 
+This indicates a good consistency of the interpolation procedure across various kinematical ranges, also considering that the uncertainties on the obtained cross sections are not completely correlated.
+
 % % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Uncertainties}\label{subsec:syst_uncert}
 
@@ -527,7 +530,8 @@ ${\rm BR}_{\Upsilon \rightarrow \mu^{+} \mu^{-}} \cdot \sigma^{\rm pp}_{\Upsilon
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}\label{section:results}
 
-The nuclear modification factors for  inclusive $\upsis$ and $\upsiss$ production in \pbpb collisions at $\snn=5.02$ \rm{TeV} with $p_{\rm T} < 15$ GeV/$c$, $2.5 < y < 4$ and the 0--90\% centrality class are $R_{\rm{AA}}^{\Upsilon(\rm1S)}=0.37\pm0.02\text{(stat)}\pm0.03\text{(syst)}$  and $R_{\rm{AA}}^{\Upsilon(\rm2S)}=0.10\pm{0.04}\text{(stat)}\pm{0.02}\text{(syst)}$, respectively. 
+The nuclear modification factors for  inclusive $\upsis$ and $\upsiss$ production in \pbpb collisions at $\snn=5.02$ \rm{TeV} with $p_{\rm T} < 15$ GeV/$c$, $2.5 < y < 4$ and the 0--90\% centrality class are $R_{\rm{AA}}^{\Upsilon(\rm1S)}=0.37\pm0.02\text{(stat)}\pm0.03\text{(syst)}$  and $R_{\rm{AA}}^{\Upsilon(\rm2S)}=0.10\pm{0.04}\text{(stat)}\pm{0.02}\text{(syst)}$, respectively.
+The quantities entering the \raa for the \upsiss have been determined exactly in the same ways as those for the \upsis.
 The measurements show a strong suppression for both bottomonium states.
 
 The value of the systematic uncertainties affecting the $R_{\rm{AA}}$ is comparable to those of the statistical ones.

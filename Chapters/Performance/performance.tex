@@ -1,6 +1,6 @@
 \chapter{Measurement and monitoring of Muon Trigger System performances}
 
-\section{History and main features of Resistive Plate chambers}
+\section{History and main features of Resistive Plate Chambers}
 Before the invention of the RPCs, the first gaseous detectors to operate in the streamer regime were spark and streamer chambers.
 
 \begin{figure}[!t]
@@ -95,7 +95,7 @@ The edge of the chamber is sealed  by means of plastic material walls and is equ
 The gaseous mixture of a RPC is not standard and each implementation can differ from any other one.
 However, some basic ingredients can be identified:
 \begin{itemize}
-\item Donor gas: ($e.g.$ $Ar$) it is the gas that should be ionized by the ionizing particle and whose constituents take part in the charge drift;
+\item Donor gas: ($e.g.$ $Ar$) it is the gas that should be ionized by the ionizing particle and which provides amplification of the deposited charge via secondary ionisation;
 \item X-ray quencher: ($e.g.$ $iC_4H_{10}$) it is a gas that has an high cross section for x-rays and high energy photons. This is needed in order to absorb recombination photons that can cause a degeneration in streamer;
 \item Charge quencher: ($e.g.$ $SF_6$) it is a gas that provides high electro-negativity in order to limit the transversal development of the avalanche and reduce the probability of a streamer degeneration.
 \end{itemize}
@@ -205,8 +205,8 @@ The strips of each side of the RPCs are reciprocally orthogonal.
 The vertical (horizontal) strips, providing $x$ ($y$) hits, are called non-bending (bending) in relation to the dipole action on charged particles paths.
 The currently installed front-end electronics is called ADULT and is not amplified \cite{Dupieux:2003bw}.
 71 RPCs are equipped with this electronics, while one RPC is equipped with a prototype of the FEERIC electronics \cite{Marchisone:2017bcb} that provides an integrated amplification stage.
-The ALICE muon trigger RPCs (and the ADULT electronics) were initially developed for streamer mode operation [51]. 
-Later on, a second operation mode (“maxi-avalanche”) was developed [52], where the signal amplitude is smaller than in streamer mode, but still compatible with the minimum threshold ($\approx7\ mV$) that can be set in ADULT. 
+The ALICE muon trigger RPCs (and the ADULT electronics) were initially developed for streamer mode operation \cite{Arnaldi:2000ub}. 
+Later on, a second operation mode (“maxi-avalanche”) was developed \cite{Arnaldi:2006ii}, where the signal amplitude is smaller than in streamer mode, but still compatible with the minimum threshold ($\approx7\ mV$) that can be set in ADULT. 
 The beam test performed in maxi-avalanche mode showed a rate capability ($i.e.$ the maximum irradiation rate that can be reached without efficiency degradation due to the local voltage drop) of about $80\ Hz/cm^2$. 
 Moreover, prototypes were ageing-tested at the CERN Gamma Irradiation Facility up to an integrated charge of about $50\ mC/cm^2$.
 The gas mixture corresponding to such an operation mode is:
@@ -241,7 +241,7 @@ This effect can be corrected for by dynamically adjusting the high voltage accor
 
 \begin{equation}
 \label{eq:HVcorrection}
-HV_{eff} = HV_{nom}\cdot \frac{T_0}{T} \cdot \frac{P}{P_0}
+HV = HV_{nom}\cdot \frac{T_0}{T} \cdot \frac{P}{P_0}
 \end{equation}
 
 where $HV_{nom}$ is the working point quoted above, $p_0 = 970\ mbar$ and $T_0 = 293.15\ K$.
@@ -313,10 +313,10 @@ i_{tot}=i_{ohm}+i_{env}+i_{noise}+i_{phys}
 
 The ohmic, environmental and noise-induced components are always present, in case the detector is kept at the nominal working voltage.
 The fourth component of the current depends on the operations of the LHC and the collision luminosity.
-From an aging point of view the ohmic current won't cause any permanent modification of the RPC, then it should not be taken into account in the computation.
+From an aging point of view the ohmic current is not expected to have an effect on the detector ageing, as it is not associated to the liberation of charges in the gas, then it should not be taken into account in the computation.
 The environmental current is always present and can cause aging effects, but its entity is negligible.
 The noise-induced current is relevant for aging effects.
-For this reason, it is difficult to measure the noise-induced current.
+% For this reason, it is difficult to measure the noise-induced current.
 
 A detector might be switched on and fully operational when no data taking is being performed, for example, between one run and the following one or when no beam is provided by LHC and ALICE is taking cosmic data.
 In this kind of situations the amount of current flowing trough the system corresponds to the sum of the ohmic contribution and the environmental and noise-induced ones.
@@ -347,7 +347,7 @@ If $i_{dark}=i_{noise}$, its contribution to $i_{tot}$ may take part in aging ef
 
 In either cases, the integration of $i_{net}$ over time will provide the aging index that can be compared to the limit value obtained in the tests.
 The newly introduced framework allows for both approaches.
-All the integrated current shown in this thesis have been obtained assuming $i_{dark}\approx i_{ohm}$.
+All the integrated charge shown in this thesis have been obtained assuming $i_{dark}\approx i_{ohm}$.
 % A doubling of the integrated charge value has been observed using the assumption of $i_{dark}\approx i_{noise}$ instead, even if the plot shape is qualitatively the same.
 
 The above-mentioned measurements are not possible using OCDB as the only data source.
@@ -499,13 +499,13 @@ In order to avoid instabilities in the interpolation procedure due to this effec
 \end{center}
 \end{figure}
 
-\begin{figure}[!t]
-\begin{center}
-\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDark_CALIB_minmax.pdf}
-\caption{Average dark current trend computed with the described procedure using calibration runs only. The trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
-\label{fig:iDarkCALIB}
-\end{center}
-\end{figure}
+% \begin{figure}[!t]
+% \begin{center}
+% \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDark_CALIB_minmax.pdf}
+% \caption{Average dark current trend computed with the described procedure using calibration runs only. The trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
+% \label{fig:iDarkCALIB}
+% \end{center}
+% \end{figure}
 
 A total of around $5200$ cosmic runs have been used for this analysis.
 The scalers values are not stored in the DCS database, hence for the rate computation it is necessary to download OCDB information for all the runs performed with beam presence and collisions in the LHC.
@@ -556,7 +556,7 @@ This working parameter strongly depends on the presence of irregularities on the
 The dark currents as a function of time for the 4 different RPC layers is shown in the four panels of figure \ref{fig:iDarkCOSMIC}. 
 In each panel, the average dark current of the layer as well as the trend for the RPC drawing the largest and the smaller current in that layer are shown.
 The dark current measurements are reported in $\mu A/cm^2$, since dark current values have been divided by the corresponding RPC area.
-Given that the RPCs areas are not all the same, this procedure helps to produce results which can be compared.
+Given that the RPC areas are not all the same, this procedure helps to produce results which can be compared.
 
 % \begin{figure}[!t]
 % \begin{center}
@@ -595,8 +595,8 @@ It is important to notice that while all the other RPCs show an increase of the 
 \end{center}
 \end{figure}
 
-\subsection{Net current and integrated current trend}
-This work presents for the first time a method to combine data from OCDB and DCS databases capable of subtracting the contribution of dark current from the evaluation of the integrated current.
+\subsection{Net current and integrated charge trend}
+This work presents for the first time a method to combine data from OCDB and DCS databases capable of subtracting the contribution of dark current from the evaluation of the integrated charge.
 In order to do so the net current should be evaluated starting from the total current and the dark current readings, through the procedure presented in the previous sections.
 
 The net current measurements are reported in figure \ref{fig:iNet4Planes} as a function of time (date).
@@ -637,7 +637,7 @@ The time interval with a constant charge corresponds to periods with no collisio
 
 \begin{figure}[!t]
 \begin{center}
-% \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/intCharge_vertical.pdf}
+\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/intCharge_vertical.pdf}
 \caption{Integrated net charge for each RPC as a function of time. The 72 trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For each plane the average plot is shown. Each point corresponds to a run.}
 \label{fig:ICharge4Planes}
 \end{center}
@@ -649,7 +649,7 @@ The time interval with a constant charge corresponds to periods with no collisio
 % The RPCs which present sudden variations of the trend have to be monitored with attention as they might become the best candidates for a replacement.
 
 The time series of MT12 outside 6 shows a sudden drop of the integrated charge. 
-This is due to the fact that the RPC was replaced with a new one during the operations and the integrated charge has been therefore consistently reset to $0\muC/cm^2$.
+This is due to the fact that the RPC was replaced with a new one during the operations and the integrated charge has been therefore consistently reset to $0\mu C/cm^2$.
 
 A detailed view of the FEERIC integrated charge is shown in figure \ref{fig:FEERICIntCharge}.
 The shape reflects the lowering of the net current shown before (see Fig. \ref{fig:FEERICiNet}).
@@ -665,7 +665,7 @@ An integrated charge about $6$ times lower than the average for the plane has be
 
 The results for the integrated charge show that, at the end of the 2017 run, the average integrated charge is about $8\ mC/cm^2$ (obtained by averaging the average values of the four planes), and the charge for the most exposed RPC is about $18\ mC/cm^2$. 
 This is comfortably far from the limit of $50\ mC/cm^2$ reached in the ageing test. 
-It has to be remarked that, when the charge is integrated without subtracting the dark current (i.e.assuming that $i_dark$ = $i_noise$) the results are larger by about a factor of two. 
+It has to be remarked that, when the charge is integrated without subtracting the dark current (i.e.assuming that $i_{dark}$ = $i_{noise}$) the results are larger by about a factor of two. 
 Under this assumption, some RPCs may indeed be close to the end of their “certified lifetime”. 
 Specific tests are needed to disentangle the ohmic component of the dark current. 
 A possibility will be to measure the ohmic current at low voltage (where no amplification is possible in the gas, hence the noise-induced current is suppressed), and extrapolate it to the nominal voltage.
@@ -747,7 +747,7 @@ Such a bias depends on the segmentation of the read-out, hence it can be differe
 
 \begin{figure}[!t]
 \begin{center}
-% \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iNet_vs_rate_vertical.pdf}
+\includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iNet_vs_rate_vertical.pdf}
 \caption{Correlation plot between net current and average rate within a given run. The 72 correlation plots are divided by plane (from top to bottom MT11, MT12, MT21, MT22). Each point corresponds to a run. The $y$ value is the average rate during a given cosmic run, while the $x$ value is the average net current value measured during the run.}
 \label{fig:iNetvsRate4Planes}
 \end{center}
@@ -757,7 +757,7 @@ Such a bias depends on the segmentation of the read-out, hence it can be differe
 % An RPC which receives constantly a given rate will have a correlation plot with low span over rate axis, while an RPC with a rate which changes a lot (for example depending on the type of colliding system) will have a large span on the rates axis.
 % Following this argument it is interesting how most part of the RPCs which show a derive to higher charge per hit are also the ones with the largest rate spans.
 % This observation suggests that RPCs are affected by rates variations, more than from the integrated rate.
-More measurements could help better addressing this argument.
+% More measurements could help better addressing this argument.
 The FEERIC-equipped RPC, located in MT22, shows a systematically smaller charge per hit.
 The slope of its correlation plot is much lower than that of the other RPCs of MT22 and results, as expected, in a lower deposed charge per hit.
 % The transverse size of the distribution is smaller than that of ADULT RPCs.
@@ -766,7 +766,8 @@ The slope of its correlation plot is much lower than that of the other RPCs of M
 The new framework has been introduced for several reasons connected to the extension of the existing ALICE DCS Shuttle to more general use cases.
 One of the features that will be used in the future is the possibility to add other values to perform additional correlations.
 For example it is interesting to correlate aging effects to efficiency drops.
-Unfortunately the chambers efficiency is not yet published to the ALICE OCDB, hence this further development wasn't possible yet.
+% Unfortunately the chambers efficiency is not yet published to the ALICE OCDB, hence this further development wasn't possible yet.
+The chambers efficiency measurements are not yet integrated in the framework presented here.
 It is however possible to show some efficiency studies to look for an efficiency modification which could be qualitatively correlated with some of the aging indicators already presented.
 The efficiency trends from 2015 up to 2017 are shown in figures \ref{fig:MTR11efficiency}, \ref{fig:MTR12efficiency}, \ref{fig:MTR21efficiency} and \ref{fig:MTR22efficiency} for MT11, MT12, MT21 and MT22 respectively.
 
@@ -812,4 +813,4 @@ The efficiency trends from 2015 up to 2017 are shown in figures \ref{fig:MTR11ef
 
 % Even if from the integrated charge and dark current evaluation, some aging effects are detected ($e.g.$ the integrated charge has grown faster during RUN2, the dark current seems to grow monotonically), the performance seems not to be affected by such effects.
 The efficiency trend is measured as stable over the whole period and no worsening of the performance has been observed moving from the "relaxed" conditions of RUN1 to the RUN2 higher luminosity levels.
-This arguments allows to conclude that the RPCs of the ALICE muon trigger are performing at nominal efficiency, even if some aging effects are present and require continuous monitoring to detect possible variations.
+These arguments allow one to conclude that the RPCs of the ALICE muon trigger are performing at nominal efficiency, even if some aging effects are present and require continuous monitoring to detect possible variations.

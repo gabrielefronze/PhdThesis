@@ -848,7 +848,7 @@ wish to left align your text}
 \newcommand{\supervisor}[1]{\renewcommand{\@supervisor}{#1}\PHD@supervisortrue}
 
 % Supervisor Title (Supervisor - Default, can be changed)
-\newcommand{\@supervisorrole}{Supervisor: }
+\newcommand{\@supervisorrole}{Supervisors: }
 \newcommand{\supervisorrole}[1]{\renewcommand{\@supervisorrole}{#1}}
 
 % Supervisor width to align
@@ -861,7 +861,7 @@ wish to left align your text}
 \newcommand{\advisor}[1]{\renewcommand{\@advisor}{#1}\PHD@advisortrue}
 
 % Advisor Title (Advisor - Default, can be changed)
-\newcommand{\@advisorrole}{Advisor: }
+\newcommand{\@advisorrole}{Co-supervisor: }
 \newcommand{\advisorrole}[1]{\renewcommand{\@advisorrole}{#1}}
 
 % Advisor width to align
@@ -869,7 +869,7 @@ wish to left align your text}
 \newcommand{\advisorlinewidth}[1]{\renewcommand{\@advisorlinewidth}{#1}}
 
 % Submission Text
-\newcommand{\submissiontext}{This dissertation is submitted for the degree of }
+\newcommand{\submissiontext}{Dottorato di Ricerca in fisica e Astrofisica - XXXI ciclo}
 
 % keywords (These keywords will appear in the PDF meta-information
 % called `pdfkeywords`.)
@@ -1097,22 +1097,31 @@ wish to left align your text}
 \fi
 
 
-\newenvironment{abstract} {
-\ifPHD@abstract
-% Separate abstract as per Student Registry guidelines
-  \thispagestyle{empty}
-  \setsinglecolumn
-  \begin{center}
-    { \Large {\bfseries {\@title}} \par}
-    {{\large \vspace*{1em} \@author} \par}
-  \end{center}
-\else
-% Normal abstract in the thesis
-  \cleardoublepage
-  \setsinglecolumn
-  \chapter*{\centering \Large Abstract}
-  \thispagestyle{empty}
-\fi
+% \newenvironment{abstractpage} {
+% \ifPHD@abstract
+% % Separate abstract as per Student Registry guidelines
+%   \thispagestyle{empty}
+%   \setsinglecolumn
+%   \begin{center}
+%     { \Large {\bfseries {\@title}} \par}
+%     {{\large \vspace*{1em} \@author} \par}
+%   \end{center}
+% \else
+% % Normal abstract in the thesis
+%   \cleardoublepage
+%   \setsinglecolumn
+%   \chapter*{\centering \Large Abstract}
+%   \thispagestyle{empty}
+% \fi
+% }
+
+\newenvironment{abstractpage} {
+  {\cleardoublepage\vspace*{\fill}\thispagestyle{empty}}
+  {\vfill\cleardoublepage}
+\newenvironment{abstract}[1]
+  {\bigskip\selectlanguage{#1}%
+   \begin{center}\bfseries\abstractname\end{center}}
+  {\par\bigskip}
 }
 
 

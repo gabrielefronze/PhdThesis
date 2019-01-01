@@ -25,7 +25,7 @@
 %********************************** %First Section  **************************************
 \section{The physics of QGP} %Section - 1.1 
 \subsection{The strong interaction}
-Since the discovery of atoms and their apparently smallest constituents (protons and neutrons) at least two topics have been deeply discussed by physicists for decades: are such particles fundamental (and if not how are they formed) and how do they interact?
+Since the discovery of atomic nuclei and their apparently smallest constituents (protons and neutrons), at least two topics have been deeply discussed by physicists for decades: are such particles fundamental (and if not how are they formed) and how do they interact?
 The first big jump ahead towards the answer was performed in 1961 independently by Gell-Mann and Ne'eman with the eight-fold theory, later developed further as the baryons octet and hyperions decuplet, represented in figure\ref{fig:gelmann}.
 The organization of the particles was related to a symmetry group called $SU(3)$ which provides a triplet fundamental representation not observed in nature.
 This hint, combined with the speculation that 8 or 10 particles were not likely all fundamental, lead to the introduction of more fundamental particles.
@@ -64,7 +64,7 @@ Bjorken demonstrated that the functions which describe the structure of the nucl
 \end{equation}
 
 where $M$ is the mass of the target.
-The $x$ variable has no dimension and stands for the ratio between the total momentum of the target and the fraction of that transported by the point-like constituent.
+The $x$ variable has no dimension and stands for the ratio between the fraction of the 4-momentum that is transported by the point-like constituent and the total 4-momentum of the target.
 
 
 \begin{figure}[!t]
@@ -248,7 +248,7 @@ The modified Woods-Saxon distribution, also called 2-parameter Fermi distributio
 where:
 \begin{itemize}
 \item $r$ is the radial position at which one wants to compute the nucleons density;
-\item $\rho_0$ is the density value at $r=0$;
+\item $\rho_0$ is the normalization factor needed to provide the correct density value at $r=0$;
 \item $\omega$ is a parameter which can represent a density bump right before the distribution tail;
 \item $R$ is the radius at which $\rho/\rho_0=\frac{1+\omega}{2}$, similar to a half-width half maximum if $\omega=0$;
 \item $a$ describes the steepness of the distribution's tail.
@@ -286,7 +286,7 @@ This assumption is legitimate for Pb nuclei.
 \end{center}
 \end{figure}
 
-The probability of finding a nucleon in a nucleon flux tube posed at $s$ from target A is defined as:\
+The probability of finding a nucleon in a nucleon flux tube positioned at $s$ from target A is defined as:
 \begin{equation}
 \label{eq:TAs}
 \hat{T}_A(s) = \int{\rho}_A(s,z_A)dz_a
@@ -370,7 +370,7 @@ An example is given in figure \ref{fig:GlauberVZERO}.
 \end{figure}
 
 \subsection{Nuclear modification factor}\label{RAA}
-In general the study of the modifications of the production of probes in heavy nuclei collisions, with respect to proton--proton collisions, makes use of the nuclear modification factor which is defined as:
+In general the study of the modifications of the production of hard probes in heavy nuclei collisions, with respect to proton--proton collisions, makes use of the nuclear modification factor which is defined as:
 
 \begin{equation}
 \label{eq:RAA}
@@ -520,7 +520,7 @@ The data can be consistently described by models that implement statistical rege
 Such models suggested that for \upsis production the regeneration effects would be negligible, even at LHC energies conditions, hence the bottomonium production studies were performed as well on the same data set.
 As one can notice by performing a comparison between figures \ref{fig:LHC_RHIC_jpsi} and \ref{fig:LHC_upsi} the \upsi $R_{\rm{AA}}$ at $\sqrt{s_{_{\rm NN}}}=2.76\ TeV$ appears to be similar to the $J/\psi$ one, measured at RHIC.
 This observation is in agreement with the fact that the estimations of the total number of bottom quark pairs at the LHC is similar to the number of charm quark pairs at RHIC.
-A strong suppression of the \upsis state in \pbpb collisions at $\sqrt{s_{_{\rm NN}}}=2.76\ TeV$ was measured by ALICE using properly scaled measurements from pp collisions by ALICE \cite{Abelev:2014nua} and CMS \cite{Chatrchyan:2012lxa,Khachatryan:2016xxp}, in the rapidity ranges $2.5<y<4$ and $|y|<2.4$, respectively (see Fig. \ref{fig:ALICE_CMS_upsi}). 
+A strong suppression of the \upsis state in \pbpb collisions at $\sqrt{s_{_{\rm NN}}}=2.76\ TeV$ was measured by ALICE using properly scaled measurements from pp collisions by ALICE \cite{Abelev:2014nua} and CMS \cite{Chatrchyan:2012lxa,Khachatryan:2016xxp}, in the rapidity ranges $2.5<y<4.0$ and $|y|<2.4$, respectively (see Fig. \ref{fig:ALICE_CMS_upsi}). 
 
 \begin{figure}[!t]
 \begin{center}
@@ -724,14 +724,15 @@ It is located on the bottom of the ALICE experimental apparatus, covering the ps
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[width=0.5\linewidth]{Chapters/Introduction/Figs/phos.pdf}
-\caption{The PHOS layout.}
+\caption{The PHOS layout (brown) along with the DCal detector arrays (blue and light blue).}
 \label{fig:PHOS}
 \end{center}
 \end{figure}
 
-\subsubsection{ElectroMagnetic Calorimeter (EMCal)}
+\subsubsection{ElectroMagnetic Calorimeter (EMCal) and Di-jet Calorimeter (DCal)}
 Positioned on the top and bottom of the ALICE structure, close to the solenoid coils, EMCal is designed to study jet quenching and it is used for triggering on photons, electrons and jets.
 It is composed towers of lead scintillators with photomultiplier readout and it covers a pseudo-rapidity range of $|\eta| < 0.7$ (Fig. \ref{fig:EMCAL}).
+The Di-jet calorimeter is an additional array of electromagnetic calorimeter which expands the acceptance of EMCal, allowing for back-to-back correlations (Fig. \ref{fig:PHOS}).
 
 \begin{figure}[!h]
 \begin{center}
@@ -745,7 +746,8 @@ It is composed towers of lead scintillators with photomultiplier readout and it 
 \label{ALICE_spectrometer}
 The Muon Spectrometer is designed to measure muon production from the decays of quarkonia ($J/\psi$ , $\psi(2S)$ , $\Upsilon(1S)$, $\Upsilon(2S)$ and $\Upsilon(3S)$), low mass vector mesons ($\rho$, $\omega$ and $\phi$) and heavy flavor hadrons.
 In addition it also allows for the measurement of $W^\pm$ and $Z^0$ bosons. 
-The detector is located in the pseudorapidity region $-4.0 < \eta < -2.5$ and it has a total length of $\simeq 17\ m$. 
+The detector is covers the pseudorapidity region $-4.0 < \eta < -2.5$ and it has a total length of $\simeq 17\ m$.
+For the sake of readability, the rapidity acceptance of the spectrometer and the rapidity ranges quoted in this thesis will be reported as positive ranges instead (\textit{e.g.} $2.5 < y < 4.0$).
 It is composed by a system of passive absorbers, a dipole magnet, a muon tracker, an iron wall and a muon trigger system. 
 The main components of the Muon Spectrometer will be discussed with more details in the following and are highlighted in figure \ref{fig:spectro}.
 
@@ -758,10 +760,10 @@ The main components of the Muon Spectrometer will be discussed with more details
 \end{figure}
 
 \subsubsection{Absorbers system}
-The Muon Spectrometer requires some shielding to reduce the otherwise large background produced expecially in nucleus-nucleus collisions.
+The Muon Spectrometer requires some shielding to reduce the otherwise large background produced especially in nucleus-nucleus collisions.
 For this reason it is equipped with a system of absorbers:
 \begin{itemize}
-    \item front absorber: this absorber is located as close as $90\ cm$ from the interaction point. The purpose of the front absorber is to filter out hadrons and to reduce the background generated by pions and kaons decays. The the front absorber materials were chosen to limit the multiple scattering of muons and leptons in general. The section of the front absorber placed closest to the interaction point is made of carbon to limit multiple scattering thanks to the low Z. The next sections of the absorber are composed of concrete to absorb secondary particles and low energy protons and neutrons. The whole absorber is coated of lead and boronated polyethilene to avoid decay products recoils in the TPC. A detailed view of the absorber can be found in figure \ref{fig:absorber};
+    \item front absorber: this absorber is located as close as $90\ cm$ from the interaction point. The purpose of the front absorber is to filter out hadrons and to reduce the background generated by pions and kaons decays. The front absorber materials were chosen to limit the multiple scattering of muons and leptons in general. The section of the front absorber placed closest to the interaction point is made of carbon to limit multiple scattering thanks to the low Z. The next sections of the absorber are composed of concrete to absorb secondary particles and low energy protons and neutrons. The whole absorber is coated of lead and boronated polyethilene to avoid decay products recoils in the TPC. A detailed view of the absorber can be found in figure \ref{fig:absorber};
     \item beam shield: the beam pipe is layered with this shielding made of tungsten, lead and stainless steel to shield the muon spectrometer from the particles produced in the interactions between low angle particles and gas residuals inside the beam pipe itself;
     \item iron wall: this $1.2\ m$ thick absorber is placed between two detector systems and acts as a filter capable of absorbing everything but muons;
     \item rear absorber: an additional passive element has been installed around the connection hole between the experiment cave with the LHC tunnel in order to further remove products of gas interaction.

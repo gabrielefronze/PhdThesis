@@ -23,7 +23,7 @@ where:
 \section{Experimental apparatus and data sample}
 
 An extensive description of the ALICE apparatus can be found in section \ref{ALICE_apparatus}.
-This analysis is based on muons detected at forward rapidity ($2.5<y<4$) with a combination of detectors from the central barrel and the muon spectrometer~\cite{Aamodt:2011gj}. 
+This analysis is based on muons detected at forward rapidity ($2.5<y<4.0$) with a combination of detectors from the central barrel and the muon spectrometer~\cite{Aamodt:2011gj}. 
 
 In this analysis the reconstruction of the primary vertex has been performed using the Silicon Pixel Detector \cite{Aamodt:2010aa}.
 
@@ -45,7 +45,7 @@ The adopted trigger is then formed by the logical AND of the MB trigger and the 
 The number of equivalent Minimum Bias events can be then obtained as $N_{\mu \mu-MB} * F_{norm}$, where $N_{\mu \mu-MB}$ is the number of analyzed dimuon triggers and $F_{norm}$ is the inverse of the probability to have an unlike-sign dimuon triggered sample in a MB event \cite{Adam:2016rdg}.
 
 % The former is provided by V0, the latter by the muon trigger.
-In addition, in order to perform the event mixing procedure for background reduction, the single muon trigger has been recorded, in order to be able to artificially combine uncorrelated like-sign muons into dimuons.
+In addition, in order to perform the event mixing procedure for background reduction, the single muon trigger has been recorded, in order to be able to artificially combine uncorrelated unlike-sign muons into dimuons.
 
 The data used for this analysis has been collected between October and November 2015, during the first \pbpb data taking campaign of ALICE of the  LHC RUN2.
 A total of 137 runs belonging to this period has been analyzed.
@@ -87,7 +87,7 @@ Two approaches are then possible to extract the yields from the fit of an invari
 
 The raw \upsi$(1S,2S,3S)$ yields are modeled using the sum of three extended Crystal Ball (CB2) functions~\cite{ALICE-Quarkonia-signal-extraction}. 
 The CB2 function consists of a Gaussian core with  power-law tails, as shown in Eq. \ref{eqn:CB2}.
-The low invariant mass tail is due to non-Gaussian multiple scattering in the front absorber, while the high invariant mass one is due to alignment and calibration biases.
+The low invariant mass tail is due to non-Gaussian energy loss in the front absorber, while the high invariant mass one is due to alignment and calibration biases.
 Several parameterizations of the background have been adopted.
 When fitting the raw spectrum, the background has been modeled as both double exponential and double power law functions.
 In the case in which the raw spectrum has been processed with the event mixing technique, the residual background has been taken into account using a single exponential shape.
@@ -359,7 +359,7 @@ The plots representing the data points, the interpolation functions and the inte
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/Analysis/Figs/sigmapp_vs_pt.pdf}
 \includegraphics[width=0.95\linewidth]{Chapters/Analysis/Figs/sigmapp_vs_y.pdf}
-\caption{Interpolation of reference $\sigma_{pp}$ in \pt (top 4 graphs) and $y$ (bottom 4 graphs) bins. The measured points are reported with an error bar that is the quadratic sum of the statistical and systematic uncertainties.}
+\caption{Interpolation of reference $\sigma_{pp}$ in \pt (top 4 graphs) and $y$ (bottom 4 graphs) bins. The measured points are reported with an error bar that is the quadratic sum of the statistical and systematic uncertainties. The "positive" and "negative exponential" functions refer to $e^{|x|}$ and $e^{-|x|}$ respectively, hence the sign reported in the name corresponds to the the sign of the exponent.}
 \label{fig:sigmapp}
 \end{center}
 \end{figure}
@@ -444,7 +444,7 @@ A summary of all the tests can be found in figure \ref{fig:MCsyst}.
 \begin{center}
 \includegraphics[width=\linewidth]{Chapters/Analysis/Figs/Axe/AxE_integrated.pdf}
 \includegraphics[width=0.9\linewidth]{Chapters/Analysis/Figs/input_pt_rap_dist.pdf}
-\caption{Evolution of the $N_{rec}/N_{gen}$ ratio versus run number (top). Different colors refer to different input distributions for \upsis \pt and $y$ values, represented with the same color code in the bottom panel.}
+\caption{Evolution of the $N_{rec}/N_{gen}$ ratio versus run number (top). Different colors refer to different input distributions for \upsis \pt and $y$ values, represented with the same color code in the bottom panel. Please note that the systematic study as a function of rapidity adopts an inverted convention for rapidity values, with respect to that adopted in this thesis, hence rapidity values are quoted as negative.}
 \label{fig:MCsyst}
 \end{center}
 \end{figure}
@@ -616,14 +616,14 @@ Even if the data points are compatible within uncertainties with the model estim
 \end{center}
 \includegraphics[width=0.5\linewidth]{Chapters/Analysis/Figs/RAA_Pt_ALICE2015_Rapp_Strickland_style3.pdf}
 \includegraphics[width=0.5\linewidth]{Chapters/Analysis/Figs/RAA_Y_ALICE2015_Strickland_style3.pdf}
-\caption{Inclusive $\upsis$ $\raa$ compared to predictions from two transport models \cite{Du:2017qkv,Zhou:2014hwa} and one hydro-dynamical model \cite{Krouppa:2017jlg} as a function of centrality (top), $\pt$ (left) and $y$ (right). See text for details on the models.}
+\caption{Inclusive $\upsis$ $\raa$ compared to predictions from two transport models \cite{Du:2017qkv,Zhou:2014hwa} and one hydro-dynamical model \cite{Krouppa:2017jlg} as a function of centrality (top), $\pt$ (left) and $y$ (right). See text for details on the models. While all models provide centrality dependence predictions, some of them do not furnish $p_{\mathrm{T}}$ and/or $y$ estimations. The plots report all the available information at the moment of writing.}
 \label{fig:raa_models}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Summary}
 
-The nuclear modification factors of inclusive \upsis and \upsiss production was measured with the ALICE detector at forward rapidity ($2.5<y<4$) and for $p_{\rm T}<15$ GeV/$c$ in \pbpb collisions at $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV}.
+The nuclear modification factors of inclusive \upsis and \upsiss production was measured with the ALICE detector at forward rapidity ($2.5<y<4.0$) and for $p_{\rm T}<15$ GeV/$c$ in \pbpb collisions at $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV}.
 
 % The computation of double ratios between \upsis and \upsiss $\raa$ at $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV} and between \upsis $\raa$ at $\sqrt{s_{_{\rm NN}}}=2.76$~\rm{TeV} and $\sqrt{s_{_{\rm NN}}}=5.02$~\rm{TeV}.
 The double ratio of the \upsis and \upsiss \raa was computed as well. 

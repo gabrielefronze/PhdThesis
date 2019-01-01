@@ -494,7 +494,7 @@ In order to avoid instabilities in the interpolation procedure due to this effec
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDark_COSMIC_minmax.pdf}
-\caption{Average dark current trend computed with the described procedure using cosmic runs only. The trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
+\caption{Average dark current trend computed with the described procedure using cosmic runs only. The trends are shown in four panels corresponding to the four detection planes (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iDarkCOSMIC}
 \end{center}
 \end{figure}
@@ -502,7 +502,7 @@ In order to avoid instabilities in the interpolation procedure due to this effec
 % \begin{figure}[!t]
 % \begin{center}
 % \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDark_CALIB_minmax.pdf}
-% \caption{Average dark current trend computed with the described procedure using calibration runs only. The trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
+% \caption{Average dark current trend computed with the described procedure using calibration runs only. The trends are shown in four panels corresponding to the four detection planes (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average of all the RPCs dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 % \label{fig:iDarkCALIB}
 % \end{center}
 % \end{figure}
@@ -561,7 +561,7 @@ Given that the RPC areas are not all the same, this procedure helps to produce r
 % \begin{figure}[!t]
 % \begin{center}
 % \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iDark4PlanesMM.pdf}
-% \caption{Dark current trends for each RPC over the whole operation period. The trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average over time of the dark current measurements, while the $x$ value is the timestamp which corresponds to the end of run.}
+% \caption{Dark current trends for each RPC over the whole operation period. The trends are shown in four panels corresponding to the four detection planes (from top to bottom MT11, MT12, MT21, MT22). For improved readability for each plane only the maximum and minimum trends and the average plot are shown. Each point corresponds to a run. The $y$ value is obtained via the average over time of the dark current measurements, while the $x$ value is the timestamp which corresponds to the end of run.}
 % \label{fig:iDark4Planes}
 % \end{center}
 % \end{figure}
@@ -608,7 +608,7 @@ The expected behavior is observed through the whole time range.
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iNet4PlanesMM.pdf}
-\caption{Net current trends for each RPC over the whole operation period. The trends are divided by plane (from top to bottom MT11, MT12, MT21, MT22). For each plane only the trends of the RPC with the maximum and minimum current are shown. Each point corresponds to a run. The $y$ value is the difference between the average total and dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
+\caption{Net current trends for each RPC over the whole operation period. The trends are shown in four panels corresponding to the four detection planes (from top to bottom MT11, MT12, MT21, MT22). For each plane only the trends of the RPC with the maximum and minimum current are shown. Each point corresponds to a run. The $y$ value is the difference between the average total and dark currents, while the $x$ value is the timestamp which corresponds to the end of run.}
 \label{fig:iNet4Planes}
 \end{center}
 \end{figure}
@@ -748,7 +748,7 @@ Such a bias depends on the segmentation of the read-out, hence it can be differe
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/Performance/Figs/iNet_vs_rate_vertical.pdf}
-\caption{Correlation plot between net current and average rate within a given run. The 72 correlation plots are divided by plane (from top to bottom MT11, MT12, MT21, MT22). Each point corresponds to a run. The $y$ value is the average rate during a given cosmic run, while the $x$ value is the average net current value measured during the run.}
+\caption{Correlation plot between net current and average rate within a given run. The 72 correlation plots are divided by plane (from top to bottom MT11, MT12, MT21, MT22). Each point corresponds to a run. The $y$ value is the average rate during a given run, while the $x$ value is the average net current value measured during the run.}
 \label{fig:iNetvsRate4Planes}
 \end{center}
 \end{figure}
@@ -764,6 +764,8 @@ The slope of its correlation plot is much lower than that of the other RPCs of M
 
 \subsection{Chambers efficiency}
 The new framework has been introduced for several reasons connected to the extension of the existing ALICE DCS Shuttle to more general use cases.
+The ALICE Shuttle is a framework capable of exporting data from the ALICE detectors and systems to the storage facilities.
+The conditions data may be parameters monitored and archived in the DCS and retrieved via a dedicated protocol, or outputs of dedicated detector-specific procedures \cite{aliceshuttle}.
 One of the features that will be used in the future is the possibility to add other values to perform additional correlations.
 For example it is interesting to correlate aging effects to efficiency drops.
 % Unfortunately the chambers efficiency is not yet published to the ALICE OCDB, hence this further development wasn't possible yet.
@@ -813,4 +815,5 @@ The efficiency trends from 2015 up to 2017 are shown in figures \ref{fig:MTR11ef
 
 % Even if from the integrated charge and dark current evaluation, some aging effects are detected ($e.g.$ the integrated charge has grown faster during RUN2, the dark current seems to grow monotonically), the performance seems not to be affected by such effects.
 The efficiency trend is measured as stable over the whole period and no worsening of the performance has been observed moving from the "relaxed" conditions of RUN1 to the RUN2 higher luminosity levels.
+Some delay in the application of the effective voltage correction (described in equation \ref{eq:HVcorrection}) is the main cause of the efficiency variations observed in the figures, while smaller modifications of the chambers efficiency are caused by the changes of running conditions.
 These arguments allow one to conclude that the RPCs of the ALICE muon trigger are performing at nominal efficiency, even if some aging effects are present and require continuous monitoring to detect possible variations.

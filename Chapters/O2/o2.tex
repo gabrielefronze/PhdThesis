@@ -3,8 +3,11 @@
 \section{Motivation}
 % By 2021 ALICE will undergo a major upgrade concerning the luminosity achievable in Pb-Pb collisions.
 The second phase of data taking, called Run 2, will be over by the end of 2018. 
-After that, the LHC will stop for two years (long shutdown), during which an upgrade that will increase the luminosity reach in $Pb-Pb$ from $\approx 1\ Hz/mb$ (corresponding to a hadronic interaction rate of $\approx8\ kHz$) to $\approx6\ Hz/mb (\approx50\ kHz)$ will be performed.
-At the same time, ALICE will undergo a major upgrade of detectors, electronics and readout that will allow the experiment to cope with the increased Pb-Pb interaction rate, and to also take pp interactions up to $\approx1\ MHz$ (vs the current $\approx100 kHz$) \cite{Abelev:1625842, CERN-LHCC-2013-020, CERN-LHCC-2015-001, Antonioli:1603472, Buncic:2011297}.
+After that, the LHC will stop for two years (long shutdown), during which an upgrade that will increase the luminosity reach in $Pb-Pb$ from $\approx 1\ Hz/mb$ to $\approx6\ Hz/mb$ will be performed.
+At the same time, ALICE will undergo a major upgrade of detectors, electronics and readout that will allow the experiment to cope with the increased Pb-Pb interaction rate, and to also take pp interactions up to $\approx1\ MHz$ \cite{Abelev:1625842, CERN-LHCC-2013-020, CERN-LHCC-2015-001, Antonioli:1603472, Buncic:2011297}.
+In addition to the machine development of the LHC, a massive upgrade of the acquisition logic for the whole ALICE apparatus will increase by a factor of $\approx50$ the read-out rate.
+In order to fit in the throughput limitations of the permanent storage the read-out events will be trimmed down to a value similar to the current $1kHz$.
+Such selection will be performed online using specific algorithms, rather than hardware triggers and flat down-sampling.
 % After the Long Shutdown 2 (LS2 from now on) the delivered instantaneous luminosity will reach $6\cdot10^{27} cm^{-2}s^{-1}$ in Pb-Pb collisions, feeding the ALICE detectors with up to 50 kHz of minimum bias collision rate in Pb-Pb and 200 kHz in pp.
 
 % The $O^2$ project follows the upgrade of the LHC triggered by the increase of statistics necessary for new and improved measurements.
@@ -25,7 +28,7 @@ Since the required scaling of computing infrastructure cannot cope with the data
 The basic idea is to reduce the data size as early as possible in the stream that goes from the detector to the storage and reconstruction (Fig. \ref{fig:O2_sketch}).
 This goal can be achieved adding pre-processing and reconstruction layers close to the detector acquisition logic.
 For example some detectors will be equipped with a zero suppression algorithm to reduce the volume of data without losing useful information.
-Such fast reconstruction will be performed synchronously with the data production and will be based on preliminary calibration and alignment information.
+Such fast reconstruction will be performed synchronously with the data acquisition and will be based on preliminary calibration and alignment information.
 At this stage the detectors will operate as stand alone items and no merging of the data will be performed prior to the raw reconstruction.
 
 \begin{figure}[!t]
@@ -141,7 +144,7 @@ For this reason the detectors raw data flows are interleaved with an heartbeat c
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.75\linewidth]{Chapters/O2/Figs/Compression.pdf}
+\includegraphics[width=0.75\linewidth]{Chapters/O2/Figs/Compression_2.pdf}
 \caption{Computing infrastructure layers with quoted required input and output bandwidths. An overall factor of compression of $\approx8$ is to be achieved in the process. The network topology is not yet defined by the $O^2$ Technical Design Report since the technology growth is fast enough to require a shorter term planning later during the upgrade.}
 \label{fig:O2_Compression}
 \end{center}
@@ -151,12 +154,12 @@ A total compression of around $\approx14$ \cite{o2compression} will be possible 
 
 The validity interval of the TF, also called duration, has to be tuned taking into account several criteria:
 \begin{itemize}
-    \item the TPC drift time causes a loss of $0.1/t_{TF}$, therefore a longer TF is better in this respect;
+    \item the TPC drift time causes a loss of $0.1/t_{TF}$, with $t_{TF}$ expressed in $ms$, therefore a longer TF is better in this respect;
     \item the calibration data produced during a TF has a fixed size and constitutes a fixed overhead which has to be sent to the Condition Database (CDB). A longer TF would minimize the overhead contribution to data rate and the number of CDB accesses;
-    \item the TF should be a multiple of the shortest calibration update period. This value should be the TPC Space Charge Distortion one, scheduled each 5 minutes;
+    \item the TF should be a multiple of the shortest calibration update period. This value should be the TPC Space Charge Distortion one, scheduled each $5\ ms$;
     \item in order to better balance the processing at the EPN level a shorter TF would be better. For the EPNs a buffer of at least three TFs (one receiving, one processing, one sending) is required to avoid dead times.
 \end{itemize}
-The TF duration will be between $20\ ms$ and $100\ ms$ which corresponds to a rate of $50\ Hz$ to $10\ Hz$.
+The TF duration will be between limited to $\approx23\ ms$ from above.
 The number of events packed inside a single TF will reach $1000$ interactions in normal running conditions (Pb-Pb $50\ kHz$).
 The resulting TF size will be of $10GB$ on the EPN before compression and the data unusable because of the TPC drift time will be the $0.5\%$ of the total.
 Since the EPN farm will be composed by $1500$ machines, each EPN will receive a new TF to process every $30\ s$.
@@ -169,7 +172,7 @@ They are fully described by a bunch of specifications, summarized below:
     \item The specification of inputs is composed of the indication of the channel of delivery and the kind of data. It is necessary to correctly connect and feed the algorithmic item wrapped in the device. Some devices could be input-less (e.g. MC wrappers, clock generators). A complete set of inputs will be referred as "work item";
     \item The internal state of the device, a set of variables capable of keeping information across several work items. This can be useful for distributed pseudo-random number generators, event counters, histograms and in general any kind of accumulation of results. The initialization of the internal state can be complex without affecting the online performances of the device. In addition some devices, for example those involved in pipeline computations, are "stateless devices", namely devices which do not need to keep a memory of previous computations. Such devices have no internal state;
     \item The computation specification is the algorithm that is called and executed on each complete set of inputs. Any optimization effort has to be put to this part of the device specification, since it represents the main bottleneck being executed in a loop-like fashion. This element is required for any device;
-    \item The specification of outputs is similar to the inputs one and consists of the indication of the channel on which the data has to be sent as well as the type of data. The outputs specification is mandatory and the matching between inputs and outputs of different devices has to be perfect to avoid dangling outputs.
+    \item The specification of outputs is similar to the inputs one and consists of the indication of the channel on which the data has to be sent as well as the type of data.
 \end{enumerate}
 
 In this approach each device has to implement one and only one basic function.
@@ -214,7 +217,7 @@ The generation of the tracklets in MTR was based on the MTR trigger algorithm, w
 When a particle fires a strip in the first chamber, the local board searches for aligned strips in the other chambers, combining the information of the adjacent  local boards in the bending plane. From this information the algorithm computes a hit position in the first chamber and a deviation, i.e. a tracklet.
 This algorithm, however, provides at most 1 response (and therefore one tracklet) per local board. In the case where more than one tracks crosses the same local board, the algorithm is tuned to chose the combination of hits providing the minimum deviation (i.e. largest $p_\mathrm{T}$) in order to keep the highest trigger efficiency. 
 This however might result in a reconstruction of just one track, as shown in figure \ref{fig:MTR_loss}, or of a fake track that does not match any of the two real tracks.
-This limitation affects the most central heavy-ion collisions, where the large particle multiplicity results in a larger probability of having to muons crossing the same LB.
+This limitation affects the most central heavy-ion collisions, where the large particle multiplicity results in a larger probability of having two muons crossing the same LB.
 The inefficiency was then caused by an algorithmic feature more than by the detector itself.
 
 \begin{figure}[!ht]

@@ -12,8 +12,8 @@ Before the invention of the RPCs, the first gaseous detectors to operate in the 
 \end{figure}
 
 Spark chambers (see Fig. \ref{fig:SparkChamber}) are detectors composed of a stack of metal plates put in a sealed box filled with an opportune gaseous mixture \cite{wenzel:1966}.
-The metal plates are kept at high voltage, with an electrical field of at least $70 kV/cm$.
-An ionizing particle which travels through the detector causes the ionization of the gas, after which the primary electron avalanche develops in $(10^{-8}-10^{-7})s$ and then the secondary ionization and the streamer development happens in $(10^{-10}-10^{-9})s$ after the avalanche \cite{wenzel:1966}.
+The metal plates are kept at high voltage, providing an electrical field of at least $70 kV/cm$.
+An ionizing particle which travels through the detector causes the ionization of the gas, then the primary electron avalanche develops in $10^{-8}\div10^{-7}\ s$ and subsequently the secondary ionization and the streamer development happens in $10^{-10}\div10^{-9}\ s$ after the avalanche \cite{wenzel:1966}.
 In the presence of a sufficiently high voltage, the ionized gas can drift causing a trail of sparks that allow one to reveal the ionizing particle path.
 % This ionization is typically invisible, but, if enough voltage is applied to the plates, it can cause the drift of the ionized gas which can cause a trail of sparks revealing the ionizing particle path.
 The application of the high voltage cannot be permanent, because in this case the creation of a electric arcs would lead to discharge of the whole system.
@@ -21,15 +21,15 @@ For this reason an additional detector is needed in order to trigger the applica
 Typically the high voltage trigger detectors are scintillators. 
 In addition whenever a ionizing event happens, the whole interested plates get discharged due to the local conductivity change of the gaseous mixture.
 After a full discharge the recovery time is macroscopic, around $10ms$, due the capacitor-like behavior of the plates stack.
-In addition, only particles crossing two electrodes caused a spark.
+In addition, only particles crossing two electrodes can cause a spark.
 
 The high dead time due to electrical recovery and the need of an external HV trigger of the spark chambers caused the development of another kind of gaseous detector.
 In the past the model for spark growth has prompted several groups \cite{chicovani:1964} to investigate the possibilities of arresting the discharge before the streamers have developed into a spark channel.
 The most important consequence of this work is that the isotropic streamer chamber has been invented, in which particle trajectories at all angles to the applied electric field may be recorded.
 In addition the streamer chamber allowed one for the recording of more than $30$ tracks at a time.
 In this case the electric field is not strong enough to cause an electric arc between the electrodes, but the gradient of the electric field stays strong enough to cause visible streamers around the particle path (see Fig. \ref{fig:Streamer}).
-While the HV was still externally triggered by fast detectors, the much lower energy required to develop streamers allowed one to reduce the pulse width to down to $60-100\ ns$.
-The typical way of recording a streamer chamber event was by a visible light photo of the streamer cavity.
+While the HV was still externally triggered by fast detectors, the much lower energy required to develop streamers allowed one to reduce the pulse width down to $60-100\ ns$.
+The typical way of recording a streamer chamber event was by a visible light snapshot of the streamer cavity.
 For this reason the cavity walls required to be transparent.
 The streamer mode helped in this task: while the sparks need to reach the electrodes to form, the streamer can be operated with electrodes which are either integrated in the chamber glass walls or external to the glass box.
 
@@ -96,7 +96,7 @@ The gaseous mixture of a RPC is not standard and each implementation can differ 
 However, some basic ingredients can be identified:
 \begin{itemize}
 \item Donor gas: ($e.g.$ $Ar$) it is the gas that should be ionized by the ionizing particle and which provides amplification of the deposited charge via secondary ionisation;
-\item X-ray quencher: ($e.g.$ $iC_4H_{10}$) it is a gas that has an high cross section for x-rays and high energy photons. This is needed in order to absorb recombination photons that can cause a degeneration in streamer;
+\item X-ray quencher: ($e.g.$ $i-C_4H_{10}$) it is a gas that has an high cross section for x-rays and high energy photons. This is needed in order to absorb recombination photons that can cause a degeneration in streamer;
 \item Charge quencher: ($e.g.$ $SF_6$) it is a gas that provides high electro-negativity in order to limit the transversal development of the avalanche and reduce the probability of a streamer degeneration.
 \end{itemize}
 
@@ -110,7 +110,7 @@ Apart from the detection efficiency, other aspects are important and should be c
 A dependence between the supplied HV and the distribution of the cluster sizes (namely the number of adjacent strips fired by a single particle) has been observed, hence while the efficiency arises when raising the HV, the spatial resolution might be affected.
 Another aspect related to the HV value is the signal amplitude and the total charge deposed in the gas gap by a ionizing particle.
 The choice  of the RPC gas mixture and HV is strictly connected to the characteristics of the front-end electronics (FEE) used for the read-out. 
-The signal amplitude required is defined by the minimum threshold that can be set in the FEE, which in turn depends on the FEE’s noise level. 
+The required signal amplitude is defined by the minimum threshold that can be set in the FEE, which in turn depends on the FEE’s noise level. 
 In some applications, the usage of FEE cards with an amplification stage allows for low-gain operation \cite{Marchisone:2017bcb}.
 % In the end the working point choice is related to the kind of read-out electronics, since it is defined as the high voltage at which the chamber can provide enough detection efficiency for a specific application.
 
@@ -137,7 +137,7 @@ An high noise rate causes a local inefficiency of the detector due to the recove
 These processes can be mitigated by special measures.
 % For example the ALICE RPCs, and in general any other implementation of such detectors in modern experiments, are fed with a constant flux of gas in order to clean the gas from unwanted chemical compounds.
 % In addition to the filtering of the gaseous mixture and the constant replacement of part of that, the gaseous mixture is humidified.
-Besides the already mentioned oiling of the inner surface  of the electrodes, another common measure is the usage of a humid gas mixture.
+Besides the already mentioned oiling of the inner surface  of the electrodes, another common practice is the usage of a humid gas mixture.
 Indeed, one of the risks for bakelite-made RPCs is the mechanical deformations and the resistivity variations caused by the drying of bakelite layers.
 The humidification of the gaseous mixture allows one to constantly hydrate the inner surface of the bakelite electrodes, keeping the original gas gaps shape and avoiding changes of the bakelite resistivity (see Fig. \ref{fig:drywet}).
 
@@ -162,7 +162,7 @@ The humidification of the gaseous mixture allows one to constantly hydrate the i
 % If the integrated charge crosses the limit the chamber behavior might become unstable.
 % For this reason RPCs getting closer to the tests limit have to be replaced at the first possible occasion.
 
-The “age” of a RPC detector is frequently quantified by means of the integrated charge ($mC/cm^2$). 
+The “age” of a RPC detector is frequently quantified by means of the integrated charge per unit surface ($mC/cm^2$). 
 Detectors are ageing tested at high-intensity photon sources to simulate the effect of long-term operation.
 
 % In addition to the evaluation of the integrated charge some others aging indicators can be spotted.
@@ -196,7 +196,7 @@ The ALICE muon trigger system is made of four layers (MT11, MT12, MT21 and MT22)
 Each layer is divided in two half-planes, inside LHC ring and outside LHC ring (INSIDE and OUTSIDE in the following).
 Each of the four layers is composed of 18 RPCs.
 The chambers of the first two stations are slightly smaller than the ones of the third and fourth in order to cover the same pseudorapidity range.
-Three shapes of RPC are installed and correspond to long, short and cut shapes.
+Three types of RPC with different shapes are installed and correspond to long, short and cut shapes.
 The short and cut shapes are intended to leave the necessary clearance for the beam pipe.
 The muon trigger RPCs are made of $2mm$ wide gas gaps with $2mm$ thick bakelite resistive electrodes and polyammide insulation layers.
 The readout strips are copper made and their pitch can vary among three values: $1cm$, $2cm$ or $4cm$.
@@ -212,12 +212,12 @@ Moreover, prototypes were ageing-tested at the CERN Gamma Irradiation Facility u
 The gas mixture corresponding to such an operation mode is:
 \begin{itemize}
     \item $89.7\%$ Tetrafluoroethane ($C_2H_2F_4$);
-    \item $10.0\%$ iso-Buthane ($iC_4H_{10}$);
+    \item $10.0\%$ iso-Buthane ($i-C_4H_{10}$);
     \item $0.3\%$ Sulfum esafluoride ($SF_6$).
 \end{itemize}
 As will be discussed in Chapter 4, the ALICE experiment will undergo a major upgrade before the LHC RUN3 (expected to start in 2021), where the instantaneous luminosity in Pb-Pb collisions will increase by almost one order of magnitude. 
 In light of this, the FEERIC electronics was developed. 
-The goal is to lower the HV and operate the detectors in pure avalanche mode, transferring the gain from the gas to the electronics, decreasing the deposited charge per hit by about a factor $\approx4$ and hence improving the rate capability and reducing the impact of ageing effects. 
+The goal is to lower the HV and operate the detectors in pure avalanche mode, transferring the gain from the gas to the electronics, decreasing the deposited charge per hit by about a factor $4$ and hence improving the rate capability and reducing the impact of ageing effects. 
 Since the beginning of the LHC RUN2 (2015) one RPC is equipped with FEERIC, in order to test in real life the expected performance improvement.
 % This development has been pursued to improve the performances and the rate capability of the current detectors.
 % The current read-out board is called ADULT and was developed to work in streamer operation mode, thanks to a dual threshold discriminator with modifiable thresholds.
@@ -244,7 +244,7 @@ This effect can be corrected for by dynamically adjusting the high voltage accor
 HV = HV_{nom}\cdot \frac{T_0}{T} \cdot \frac{P}{P_0}
 \end{equation}
 
-where $HV_{nom}$ is the working point quoted above, $p_0 = 970\ mbar$ and $T_0 = 293.15\ K$.
+where $HV_{nom}$ is the working point quoted above, $P_0 = 970\ mbar$ and $T_0 = 293.15\ K$.
 
 \begin{figure}[!t]
 \begin{center}
@@ -264,7 +264,7 @@ The read-out values are stored in a DCS database which can be accessed using cus
 The data points are saved in the DCS database following two guidelines.
 First of all the values are stored in the database whenever a given threshold on percent variation, with respect to previously stored value, is passed.
 Additionally a slow clock ($5$ minutes) triggers the storage of the current read value, in order to keep track of smaller variations as well as of the stability of a given system.
-The DCS values are accessible trhough a web interface called DARMA (formerly AMANDA) by executing database-like queries and downloading structured text file.
+The DCS values are accessible trough a web interface called DARMA (formerly AMANDA) by executing database-like queries and downloading structured text file.
 
 % \begin{figure}[!t]
 % \begin{center}
@@ -362,7 +362,7 @@ By combining the two data sources a better understanding of the MTR performances
 As a subject of this thesis a brand new analysis framework for MTR performance analysis has been developed.
 This framework main task is to combine the data coming from OCDB and AMANDA/DARMA in order to create a complete set of data which can be used for specific studies of trends and correlations concerning the MTR system.
 As an additional value to this project, the framework aims at providing a reliable tool which is accessible and open source.
-Having a centralized repository, with the possibility of participating to the development of the framework and to the fixing of eventual software bugs, can improve both the user experience and the number of users hence the bug detection capability.
+Having a centralized repository, with the possibility for any collaborator to participate to the development of the framework and to the fixing of eventual software bugs, can improve both the user experience and the number of users hence the bug detection capability.
 
 The framework internal data format is filled on a per-run basis, and contains the following information:
 \begin{itemize}
@@ -461,7 +461,7 @@ The framework has been extensively tested and the plots presented in the followi
 
 \section{Determination of dark current and dark rate and dark current interpolation procedure}
 One crucial point is how to determine if a rate or a current reading are indeed "dark" readings.
-While the dark current definition has already been quoted in section \ref{currents} the dark rate definition will be given.
+While the dark current definition has already been quoted in section \ref{currents}, the dark rate definition is to be given.
 
 % The dark current is the measurement of current which physiologically flows trough the detector when it is supplied with working point HV and no collision-induced irradiation is present (e.g. when no beam is present in the LHC).
 % This current has an ohmic component and an irradiation one, the second caused by environmental radioactivity and cosmic rays reaching the detector.
@@ -472,12 +472,12 @@ This rate should be correlated with the natural radioactivity and cosmic rays in
 The dark runs can be defined in various ways.
 In order to properly flag the DCS current readings either as dark or not it was needed to select runs with no beam and nominal HV supply.
 
-Selecting runs taken with physics setup without beam presence (flagged as "COSMIC") are the safest choice, but this kind of runs is less frequent and provides less coverage of the operation period.
+Selecting runs taken with physics setup without beam presence (flagged as "COSMIC") is the safest choice, but this kind of runs is less frequent and provides less coverage of the operation period.
 
 Selecting calibration runs allows to better cover the operation period, since at least two calibration runs are performed at the end of every physics fill of the LHC.
 The CALIBRATION run refers to two kind of diagnostic run lasting for 2 minutes each.
 The first is a software-triggered read-out of the whole detector performed without collisions in the LHC, aimed at spotting noisy channels.
-During the second CALIBRATION run type the whole FEE is artificially stimulated and read-out in order to detect dead channels.
+During the second type of CALIBRATION run, the whole FEE is artificially stimulated and read-out in order to detect dead channels.
 Within a CALIBRATION run the detector is usually at nominal working voltage.
 However, they can occasionally be performed with a reduced HV and/or during the presence of beam in the LHC.
 
@@ -487,9 +487,9 @@ However, they can occasionally be performed with a reduced HV and/or during the 
 % % Some dark current variations which aren't completely understood are present.
 The dark current trend using cosmic runs only is displayed in figure \ref{fig:iDarkCOSMIC}. 
 As for calibration runs, it was observed that the dark current measured immediately after a physics fill (which is when most calibration runs are performed) is systematically higher that that measured in “quiet” periods. 
-The understanding of this effect is the fact that after a period of operation with beam presence some impurities stay in the gas gap for a while before being fluxed by the gas system.
+The interpretation of this effect is that after a period of operation with beam presence some impurities stay in the gas gap for a while before being fluxed by the gas system.
 % Such impurities affect the chamber conductivity locally, provoking discharges that in turn induce a temporary raise of the dark current.
-In order to avoid instabilities in the interpolation procedure due to this effect, this work uses only cosmic runs to estimate the dark current and dark rate values.
+In order to avoid instabilities in the interpolation procedure due to this effect, only cosmic runs have been used to estimate the dark current and dark rate values.
 
 \begin{figure}[!t]
 \begin{center}
@@ -551,7 +551,7 @@ A particular focus on the FEERIC-equipped RPC will address the main differences 
 
 \subsection{Dark current trend}
 The evaluation of the dark current trend is fundamental to understand the health of the inner surfaces of the detectors.
-This working parameter strongly depends on the presence of irregularities on the boundary surfaces of the RPCs, hence can be used as a diagnosis tool.
+This working parameter strongly depends on the presence of irregularities on the boundary surfaces of the RPCs, hence can be used as a diagnostic tool.
 % In figure \ref{fig:iDark4Planes} a view of the trends of the dark current measurements as a function of time (date) is presented, each panel corresponds to the trends of the RPCs installed in MT11, MT12, MT22 and MT21 from top to bottom.
 The dark currents as a function of time for the 4 different RPC layers is shown in the four panels of figure \ref{fig:iDarkCOSMIC}. 
 In each panel, the average dark current of the layer as well as the trend for the RPC drawing the largest and the smaller current in that layer are shown.
@@ -579,7 +579,7 @@ A different trend before LS1 has been observed with respect to the one measured 
 The dark current seems to raise during the RUN2 operations.
 The reason of such behaviour might be related to the much higher luminosity observed in RUN2, hence the stronger irradiation of the chambers causing longer recovery times.
 Comparing the specific trends of each RPC with the average trend one can easily observe that the increase of the average trend is mostly caused by some outliers.
-In fact around 4/5 RPCs per plane, over a total of 18, show a dark current value large than the average trend.
+In fact 4 to 5 RPCs per plane, over a total of 18, show a dark current value large than the average trend.
 This behavior indicates that most of the RPCs present a much more stable behavior.
 The outliers of this trend can be considered the worst case scenario and should be monitored with attention in order to promptly notice eventual worsening of performances.
 
@@ -597,7 +597,7 @@ It is important to notice that while all the other RPCs show an increase of the 
 
 \subsection{Net current and integrated charge trend}
 This work presents for the first time a method to combine data from OCDB and DCS databases capable of subtracting the contribution of dark current from the evaluation of the integrated charge.
-In order to do so the net current should be evaluated starting from the total current and the dark current readings, through the procedure presented in the previous sections.
+In order to do that the net current should be evaluated starting from the total current and the dark current readings, through the procedure presented in the previous sections.
 
 The net current measurements are reported in figure \ref{fig:iNet4Planes} as a function of time (date).
 The panels correspond to the trends of MT11, MT12, MT21 and MT22 from top to bottom.
@@ -648,12 +648,12 @@ The time interval with a constant charge corresponds to periods with no collisio
 % While some RPCs present an integrated charge which is systematically higher than that of the rest of the RPCs of the plane, but the trend of the plot seems aligned with that of others, other RPCs present sudden variations of the trend slope.
 % The RPCs which present sudden variations of the trend have to be monitored with attention as they might become the best candidates for a replacement.
 
-The time series of MT12 outside 6 shows a sudden drop of the integrated charge. 
+The time series of the FEERIC-equipped RPC shows a sudden drop of the integrated charge. 
 This is due to the fact that the RPC was replaced with a new one during the operations and the integrated charge has been therefore consistently reset to $0\mu C/cm^2$.
 
 A detailed view of the FEERIC integrated charge is shown in figure \ref{fig:FEERICIntCharge}.
 The shape reflects the lowering of the net current shown before (see Fig. \ref{fig:FEERICiNet}).
-An integrated charge about $6$ times lower than the average for the plane has been collected by the RPC since the installation of the FEERIC electronics.
+An integrated charge about $6$ times lower than the average for the MT22 plane has been collected since the installation of the FEERIC electronics.
 
 \begin{figure}[!t]
 \begin{center}
@@ -665,7 +665,7 @@ An integrated charge about $6$ times lower than the average for the plane has be
 
 The results for the integrated charge show that, at the end of the 2017 run, the average integrated charge is about $8\ mC/cm^2$ (obtained by averaging the average values of the four planes), and the charge for the most exposed RPC is about $18\ mC/cm^2$. 
 This is comfortably far from the limit of $50\ mC/cm^2$ reached in the ageing test. 
-It has to be remarked that, when the charge is integrated without subtracting the dark current (i.e.assuming that $i_{dark}$ = $i_{noise}$) the results are larger by about a factor of two. 
+It is worth remarking that, when the charge is integrated without subtracting the dark current (i.e.assuming that $i_{dark}$ = $i_{noise}$) the results are larger by about a factor of two. 
 Under this assumption, some RPCs may indeed be close to the end of their “certified lifetime”. 
 Specific tests are needed to disentangle the ohmic component of the dark current. 
 A possibility will be to measure the ohmic current at low voltage (where no amplification is possible in the gas, hence the noise-induced current is suppressed), and extrapolate it to the nominal voltage.
@@ -692,7 +692,7 @@ For this reason a temporary increase of the dark rate is foreseen, even if the b
 The signature one should look for is not a temporary increase of the dark rate, but a not complete recovery of the dark rate back to the level measured before a period with beam presence.
 
 Analyzing the trends one can observe that some RPCs show a growth of the dark rate over the whole period of operation.
-An average of $4-5$ RPCs per plane (not shown in the figure) present a large dark rate, well above average.
+Once again an average of 4 to 5 RPCs per plane (not shown in the figure) present a large dark rate, well above average.
 The chambers which show such behavior are the same that present an higher dark current with respect to the bulk of the RPCs.
 It is worth mentioning that, even if some outliers are found, most of the RPCs are still operating at the original level of dark rate after around 8 years of continuous operation.
 In that sense the dark rate trend is a good cross-check of the symptoms already detected with the dark current studies and the integrated charge ones.
@@ -714,7 +714,7 @@ The dark rate trend is compatible with the average trend for the plane.
 \subsection{Correlations between rates and net current}
 The possibility to study correlations of different parameters was introduced with the new analysis framework.
 The correlations are valuable tools to provide a deeper understanding of the RPC.
-The correlation plot which allows to better understand the health of a detector is the one representing net current values correlated with measured rate.
+The correlation plot which allows to better understand the health of a detector is the one representing net current values correlated with measured rates.
 
 The estimated net current of an RPC is expected to be proportional to the hit rate of the chamber itself.
 This proportionality is related to the charge deposited in the detector per each hit.

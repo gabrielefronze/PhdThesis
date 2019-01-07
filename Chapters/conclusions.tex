@@ -1,6 +1,6 @@
 \chapter{Conclusions}
-The aim of this thesis is to contribute to the study of quarkonium production in heavy-ion collisions, as performed with the muon spectrometer of the ALICE experiment at  the Large Hadron Collider. 
-Three different aspects have been dealt with in the thesis.
+The aim of this thesis is the study of quarkonium production in heavy-ion collisions, as performed with the muon spectrometer of the ALICE experiment at  the Large Hadron Collider. 
+Three different aspects have been tackled within the thesis.
 First, a study has been performed of the long-term evolution during the LHC RUN1 and RUN2 of a few relevant parameters for aging effects in the muon trigger detectors (Resistive Plate Chambers): the integrated charge, the dark current and the dark rate. 
 In order to do this, a new framework was developed, able to combine several sources of data. It has been developed as an extension of the AliROOT \code{Shuttle}, which is in charge of transferring parameters related to the detector and the accelerator to the Offline Condition Database (OCDB). 
 The new tool, called \code{MTRShuttle}, allows one to combine the OCDB information with the data from the Detector Control System (DCS). 
@@ -17,11 +17,12 @@ For the $\Upsilon(1S)$, the measurement was also performed as a function of cent
 While the suppression increases with the collision centrality, no significant trend as a function rapidity and transverse momentum is observed within the present uncertainties. 
 The measured nuclear modification factors are also compatible with those measured during the LHC Run1 at $\sqrt{s_{\mathrm{NN}}}=2.76\ TeV$.
 The results were compared to transport and dynamical model calculations, which qualitatively reproduce the centrality, rapidity and transverse momentum dependence.
+The paper "$\Upsilon$ suppression at forward rapidity in Pb-Pb collisions at $\sqrt{s_{\mathrm{NN}}} = 5.02 TeV$"\cite{MINE} was drawn up and is currently undergoing the publication \textit{iter} for the Physics Letters B journal.
 Third, a new muon identification software has been developed in light of the RUN3 upgrade of ALICE, and the associated software upgrade program called $O^2$.
 With this upgrade the data rate will go from $8\ kHz$ to $50\ kHz$ of minimum bias events in Pb-Pb collisions.
-Thanks to online processing of all the $50\ kHz$ of events, the limit storage bandwidth will be filled only of interesting events, discarding online the trivial ones.
+Thanks to online processing of all the $50\ kHz$ of events, the limit storage bandwidth will be saturated with interesting events.
 The ALICE muon trigger (MTR) system will undergo a big upgrade process, involving the read out electronics and the whole software apparatus, allowing it to efficiently serve as a muon identifier (MID).
-In the context of this work a big effort has been put to develop a fast, precise and resilient software capable of coping with the run specifications. 
+In the context of this work a big effort has been put to develop a fast, precise and resilient software capable of coping with the RUN 3. 
 As a result the ALICE MTR/MID will be able to retain most of its features and performances along with a highly improved rate capability. 
 The development is still work in progress, but the boost given by this work is an important fraction of the planned tasks.
 A library, which allows for the transport of \code{C++} types and structures (and contiguous containers of such objects) using the ZeroMQ transport framework at the basis of $O^2$, has been implemented.

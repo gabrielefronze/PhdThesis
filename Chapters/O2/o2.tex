@@ -28,7 +28,7 @@ The basic idea is to reduce the data size as early as possible in the stream tha
 This goal can be achieved adding pre-processing and reconstruction layers close to the detector acquisition logic.
 For example some detectors will be equipped with a zero suppression algorithm to reduce the volume of data without losing useful information.
 Such fast reconstruction will be performed synchronously with the data acquisition and will be based on preliminary calibration and alignment information.
-At this stage the detectors will operate as stand-alone items and no merging of the data will be performed prior to the raw reconstruction.
+% At this stage the detectors will operate as stand-alone items and no merging of the data will be performed prior to the raw reconstruction.
 
 \begin{figure}[!t]
 \begin{center}
@@ -144,7 +144,7 @@ For this reason the detectors raw data flows are interleaved with an heartbeat c
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=0.75\linewidth]{Chapters/O2/Figs/Compression_2.pdf}
-\caption{Computing infrastructure layers with quoted required input and output bandwidths. An overall factor of compression of $\approx8$ is to be achieved in the process. The network topology is not yet defined by the $O^2$ Technical Design Report since the technology growth is fast enough to require a shorter term planning later during the upgrade.}
+\caption{Computing infrastructure layers with quoted required input and output bandwidths. An overall factor of compression of $\approx14$ is to be achieved in the process. The network topology is not yet defined by the $O^2$ Technical Design Report since the technology growth is fast enough to require a shorter term planning later during the upgrade.}
 \label{fig:O2_Compression}
 \end{center}
 \end{figure}
@@ -154,11 +154,12 @@ A total compression of around $\approx14$ \cite{o2compression} will be possible 
 The validity interval of the TF, also called duration, has to be tuned taking into account several criteria:
 \begin{itemize}
     \item the TPC drift time causes a loss of $0.1/t_{TF}$, with $t_{TF}$ expressed in $ms$, therefore a longer TF is better in this respect;
-    \item the calibration data produced during a TF has a fixed size and constitutes a fixed overhead which has to be sent to the Condition Database (CDB). A longer TF would minimize the overhead contribution to data rate and the number of CDB accesses;
+    % \item the calibration data produced during a TF has a fixed size and constitutes a fixed overhead which has to be sent to the Condition Database (CDB). A longer TF would minimize the overhead contribution to data rate and the number of CDB accesses;
     \item the TF should be a multiple of the shortest calibration update period. This value should be the TPC Space Charge Distortion one, scheduled each $5\ ms$;
     \item in order to better balance the processing at the EPN level a shorter TF would be better. For the EPNs a buffer of at least three TFs (one receiving, one processing, one sending) is required to avoid dead times.
 \end{itemize}
-The TF duration will be between limited to $\approx23\ ms$ from above.
+% The TF duration will be between limited to $\approx23\ ms$ from above.
+Given these requirements, the current understanding is that the TF will be limited to $\approx23 ms$ which corresponds to $256$ beam orbits.
 The number of events packed inside a single TF will reach $1000$ interactions in normal running conditions (Pb-Pb $50\ kHz$).
 The resulting TF size will be of $10GB$ on the EPN before compression and the unusable data because of the TPC drift time will be the $0.5\%$ of the total.
 Since the EPN farm will be composed by $1500$ machines, each EPN will receive a new TF to process every $30\ s$.
@@ -249,7 +250,12 @@ Its name will be changed accordingly to reflect the change of functionality, thu
 The muon identification (and hadron rejection) task will be performed combining data coming from the MCH and MID detectors.
 The addition of the Muon Forward Tracker (MFT) \cite{CERN-LHCC-2015-001} will improve the tracks resolution closer to the interaction point and make it possible to resolve secondary vertexes.
 The tracks reconstructed with MCH data will be identified as muons if a compatible track in the MID detector is present.
-This task will be performed online, processing and reconstructing around $300\ MB/s$ \cite{Buncic:2011297} of data in Pb-Pb collisions.
+% This task will be performed online, processing and reconstructing around $300\ MB/s$ \cite{Buncic:2011297} of data in Pb-Pb collisions.
+Even if the original idea at the base of the $O^2$ project was to perform an online reconstruction for all detectors and systems, the paradigm has been changed since the efforts needed for such implementation were difficult to sustain.
+Nowadays the common approach is to perform online computations only if they can lead to a compression of output data.
+Given the MID is a fast detector, the presence (absence) of detected particles could be evaluated online and used to decide to keep (discard) MCH data.
+Such decision would both avoid the CPU-heavy task of performing the tracking algorithm on MCH data and reduce the throughput of the MCH.
+For obvious reasons this MCH data rejection technique must be hot-plugable, in order to allow to perform systematic tests without this selection at the beginning of the data taking.
 The acquisition/reconstruction workflow is represented in figure \ref{fig:O2_sketch}.
 Data recorded by the FEE will be acquired via several GBTx link by the Common Readout Units (CRU), each one processing one half of the MID (inside and outside).
 The CRUs are implemented as PCI express boards equipped with two external GBTx ports and an on-board Altera Arria X FPGA.

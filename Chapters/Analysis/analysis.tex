@@ -76,7 +76,8 @@ The effect of this cut on the reconstruction efficiency is marginal;
 An additional cut on the rapidity of each reconstructed $\mu$ pair is applied, rejecting the dimuons whose rapidity fell off the $2.5 < y < 4$ range, in order to remove dimuons at the edge of the acceptance region.
 
 One of the most limiting factors for rare probes analysis is the signal-to-background ratio.
-Concerning the background affecting the bottomonium production measurements, it is mainly due to the decay in muon pairs of other species as well as to the combinatorial background caused by the decay of uncorrelated $c\bar{c}$ and $b\bar{b}$ pairs.
+% Concerning the background affecting the bottomonium production measurements, it is mainly due to the decay in muon pairs of other species as well as to the combinatorial background caused by the decay of uncorrelated $c\bar{c}$ and $b\bar{b}$ pairs.
+The background affecting the bottomonium production measurement mainly consists of $\mu^+$ and $\mu^+$ pairs from the decay of uncorrelated particles (combinatorial background) and from the correlated decay of $c\bar{c}$ and $b\bar{b}$ pairs.
 % While the background can appear to be a side effect in much more abundant species, in the case of bottomonium the background needs to be treated with special care.
 Two approaches are then possible to extract the yields from the fit to an invariant mass spectrum:
 \begin{itemize}
@@ -108,7 +109,11 @@ f(x;N;\bar{x},\sigma,t_1,t_2,p_1,p_2) = N\cdot\begin{cases} A\cdot(B-t)^{p_1} & 
 Since the signal-to-background (S/B) ratio is low in the tail regions of the extended CB functions, the CB2 tails cannot be defined using a data driven approach.
 For this reason the tail parameters are fixed to values obtained from Monte-Carlo (MC) simulations. 
 The mass position and the width parameters of the \upsis are left as free parameters in the fit to the integrated spectrum ($i.e.$ centrality class 0--90\%, $p_{\rm T}<15$ GeV/$c$ and $2.5 < y < 4$).
-For the signal extraction as a function of centrality, the mass position  and width of the \upsis are fixed to the values obtained in the fit to the centrality-integrated (0--90\%) mass spectrum. 
+For the signal extraction as a function of centrality, the mass position  and width of the \upsis are fixed to the values obtained in the fit to the centrality-integrated (0--90\%) mass spectrum.
+Some studies have been performed using the tail parameters obtained in pure MC simulation (GEANT 4) and embedded simulations (GEANT 3).
+Differential tails extractions have been performed using the simulated data, then used in the fits.
+Even if the tail parameters were found to be quite stable wrt $y$, \pt and centrality, the yield estimation variation has been measured to be of about $1\%$ and $3\%$ with respect to \pt and $y$ respectively.
+Such uncertainty has been included in the signal extraction systematic uncertainty value.
 To perform studies as a function of \pt and $y$, the mass position and the width obtained for the centrality-integrated mass spectrum are scaled according to their evolutions observed in the MC.
 Due to the even smaller S/B ratio for the excited states, the mass positions of the \upsiss and \upsisss are fixed to the PDG \cite{Patrignani:2016xqp} mass differences with respect to the \upsis, and the ratio of \upsiss ($\Upsilon\text{(3S)}$) to \upsis widths is fixed to values from the MC simulation, $i.e.$ 1.03 (1.06). 
 In the fit shown in Fig.~\ref{fig:mass_dist} only signals corresponding to the $\Upsilon\text{(1S)}$ and $\Upsilon\text{(2S)}$ are visible, since the $\Upsilon\text{(3S)}$ contribution turns out to be compatible with zero events.
@@ -349,7 +354,14 @@ The obtained values in different $y$ bins, obtained combining both ALICE and LHC
 \end{center}
 \end{table}
 
-The energy interpolation is performed fitting the experimental data using various empirical functions.
+The energy interpolation is performed fitting the experimental data using the empirical functions listed below:
+\begin{itemize}
+    \item Linear function: $p_0+p_1\cdot\sqrt{s}$
+    \item Parabola: $p_0\cdot\sqrt{s}+p_1\cdot(\sqrt{s})^2$
+    \item Positive exponential: $p_0\cdot\sqrt{s}\cdot e^{\frac{\sqrt{s}}{p_1}}$
+    \item Negative exponential: $p_0\cdot(1-e^{\frac{-\sqrt{s}}{p_1}})$
+    \item Power law: $p_0\cdot(\sqrt{s})^{p_1}$
+\end{itemize}
 The requirement for such functions is to be able to intercept the origin of the axes.
 This choice is driven by the convincing assumption that at $\sqrt{s}=0$ \rm{TeV}  the cross-section drops to $0$.
 % In addition to the functions satisfying this requirement, representing the first order Taylor expansion of any other functional form, a straight line has been added to the set of interpolating functions.
@@ -360,7 +372,7 @@ The plots representing the data points, the interpolation functions and the inte
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/Analysis/Figs/sigmapp_vs_pt.pdf}
 \includegraphics[width=0.95\linewidth]{Chapters/Analysis/Figs/sigmapp_vs_y.pdf}
-\caption{Interpolation of reference $\sigma_{pp}$ in \pt (top 4 graphs) and $y$ (bottom 4 graphs) bins. The measured points are reported with an error bar that is the quadratic sum of the statistical and systematic uncertainties. The "positive" and "negative exponential" functions refer to $e^{|x|}$ and $e^{-|x|}$ respectively, hence the sign reported in the name corresponds to the the sign of the exponent.}
+\caption{Interpolation of reference $\sigma_{pp}$ in \pt (top 4 graphs) and $y$ (bottom 4 graphs) bins. The measured points are reported with an error bar that is the quadratic sum of the statistical and systematic uncertainties.}
 \label{fig:sigmapp}
 \end{center}
 \end{figure}
@@ -617,7 +629,7 @@ Even if the data points are compatible within uncertainties with the model estim
 \end{center}
 \includegraphics[width=0.5\linewidth]{Chapters/Analysis/Figs/RAA_Pt_ALICE2015_Rapp_Strickland_style3.pdf}
 \includegraphics[width=0.5\linewidth]{Chapters/Analysis/Figs/RAA_Y_ALICE2015_Strickland_style3.pdf}
-\caption{Inclusive $\upsis$ $\raa$ compared to predictions from two transport models \cite{Du:2017qkv,Zhou:2014hwa} and one hydro-dynamical model \cite{Krouppa:2017jlg} as a function of centrality (top), $\pt$ (left) and $y$ (right). See text for details on the models. While all models provide centrality dependence predictions, some of them do not furnish $p_{\mathrm{T}}$ and/or $y$ estimations. The plots report all the available information at the moment of writing.}
+\caption{Inclusive $\upsis$ $\raa$ compared to predictions from two transport models \cite{Du:2017qkv,Zhou:2014hwa} and one hydro-dynamical model \cite{Krouppa:2017jlg} as a function of centrality (top), $\pt$ (left) and $y$ (right). See text for details on the models. While all models provide centrality dependence predictions, some of them do not provide $p_{\mathrm{T}}$ and/or $y$ estimations. The plots report all the available information at the moment of writing.}
 \label{fig:raa_models}
 \end{figure}
 

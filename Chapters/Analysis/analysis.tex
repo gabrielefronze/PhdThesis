@@ -15,13 +15,13 @@ where:
 \begin{itemize}
 \item $N^{\Upsilon}$ is the number of detected resonance decays to muon pairs, while ${\rm BR}_{\Upsilon \rightarrow \mu^{+} \mu^{-}}$ is the branching ratio for the dimuon decay \cite{Agashe:2014kda};
 \item The $(A\times\epsilon)_{\Upsilon \rightarrow \mu^{+} \mu^{-}}$ factor is the product of acceptance and detection efficiency, specific for the $\Upsilon$ state under study;
-\item $N_{\text{MB}}$ is the equivalent number of minimum bias events used for the analysis and is defined as $N_{\mu \mu-MB} * F_{norm}$, where $F_{norm}$ is the inverse probability of having an unlike-sign dimuon triggered sample in a MB event \cite{Adam:2016rdg};
+\item $N_{\text{MB}}$ is the equivalent number of minimum bias events used for the analysis, which will be extensively described in Section \ref{expapp};
 \item $\sigma_{\rm pp}^{\Upsilon}$ is the reference \pp cross section and $\langle T_{\rm AA} \rangle$ represents the nuclear overlap function, which is evaluated in different centrality classes using the Glauber model~\cite{Abelev:2013qoq,Adam:2015ptt}.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental apparatus and data sample}
-
+\label{expapp}
 An extensive description of the ALICE apparatus can be found in section \ref{ALICE_apparatus}.
 This analysis is based on muons detected at forward rapidity ($2.5<y<4.0$) with a combination of detectors from the central barrel and the muon spectrometer~\cite{Aamodt:2011gj}. 
 
@@ -439,7 +439,7 @@ The impact of such cut on signal and background can be qualitatively evaluated f
 \begin{center}
 \includegraphics[width=0.45\linewidth]{Chapters/Analysis/Figs/background.pdf}
 \includegraphics[width=0.45\linewidth]{Chapters/Analysis/Figs/signal.pdf}
-\caption{Density plot of muon pair candidates' \pt~s for background candidates (left) and signal candidates (right). The cut at $p_{\rm{T}}=2 \rm{GeV}/c$ on both muons is represented as a red box.}
+\caption{Scatter plot of muon pair candidates' \pt~s for background candidates (left) and signal candidates (right). The cut at $p_{\rm{T}}=2 \rm{GeV}/c$ on both muons is represented as a red box.}
 \label{fig:ptcut}
 \end{center}
 \end{figure}
@@ -466,7 +466,7 @@ In order to calculate the systematic uncertainty on the trigger efficiency, the 
 The two response functions are then separately applied to simulations of a \upsi sample and the difference obtained for the \upsi reconstruction efficiency is taken as systematic uncertainty (see figure \ref{fig:trigsystRF}).
 
 % In the same way as the modeled trigger response function in Monte Carlo may vary from the real situation, the muon trigger efficiency may follow the same path.
-The Muon Trigger chambers efficiency is estimated from real data and gets plugged on the Monte Carlo simulations.
+The Muon Trigger chamber efficiency is estimated from real data and gets plugged on the Monte Carlo simulations.
 The uncertainty on the efficiency estimation leads to an uncertainty on the trigger efficiency.
 In order to evaluate such uncertainty, two Monte Carlo productions have been performed.
 The first simulation is performed using the efficiency value estimated using real data.
@@ -564,7 +564,7 @@ The centrality, $p_{\rm T}$ and $y$-dependences of the $\upsis$ $\raa$ at forwar
 A decrease of $\raa$ with increasing centrality is observed down to $R_{\rm{AA}}^{\Upsilon(\rm1S)}=0.33\pm0.03\text{(stat)}\pm0.03\text{(syst)}$  for the 0--10\% most central collisions.
 The $p_{\rm T}$-dependence is observed to be compatible within uncertainties with a flat behaviour up to $p_{\rm T}=15$ GeV/$c$.
 The $y$-dependence shows a $\raa$ compatible within uncertainties with a flat distribution, as already observed in the measurements at $\snn=2.76$ \rm{TeV} \cite{Abelev:2014nua}.
-Since the uncertainties size further data is needed in order to have a stronger conclusion on the rapidity dependence of the $\raa$.
+However, since the uncertainties are large especially at low pt, further dara are needed in order to have a stronger conclusion on the rapidity dependence of the $\raa$.
 
 \begin{figure}[!t]
 \begin{center}
@@ -653,5 +653,5 @@ The result shows no significant energy dependence at the LHC.
 
 The results have been compared with transport and hydrodynamic models.
 The transport models are able to provide prediction with and without including recombination effects.
-Comparing the measurements with the different predictions lead to no clear conclusion on whether recombination effects play a role has been possible yet.
+The comparison between the measurements with the different predictions lead to no clear conclusion on whether recombination effects play a role.
 Further measurements with larger statistics will be needed to improve the precision and to better constrain the models.

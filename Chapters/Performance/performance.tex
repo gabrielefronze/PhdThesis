@@ -179,7 +179,7 @@ Along with the efficiency of the detector, two among the most important paramete
 These quantities are expected to be sensitive to the quality of the inner surface of the electrodes, as the presence of spikes or dips may enhance electron extraction from the cathode and consequent development of an avalanche or streamer.
 Moreover, the dark current is sensitive to ohmic effects due to non-perfect insulation of the HV plate from the rest of the system.
 
-% The three observables presented up to this point are studied trough the analysis of their values plotted over time.
+% The three observables presented up to this point are studied through the analysis of their values plotted over time.
 % Additional studies and observations may be performed using meaningful correlation plots.
 % Such plots, which are provided out of the box by the new MTR analysis framework, allow for the correlation of two of the stored variables.
 % For example the correlation plot between the net current and the rate observed at nominal HV during collisions can be fitted with a sloped line.
@@ -264,7 +264,7 @@ The read-out values are stored in a DCS database which can be accessed using cus
 The data points are saved in the DCS database following two guidelines.
 First of all the values are stored in the database whenever a given threshold on percent variation, with respect to previously stored value, is passed.
 Additionally a slow clock ($5$ minutes) triggers the storage of the current read value, in order to keep track of smaller variations as well as of the stability of a given system.
-The DCS values are accessible trough a web interface called DARMA (formerly AMANDA) by executing database-like queries and downloading structured text file.
+The DCS values are accessible through a web interface called DARMA (formerly AMANDA) by executing database-like queries and downloading structured text file.
 
 % \begin{figure}[!t]
 % \begin{center}
@@ -319,7 +319,7 @@ The noise-induced current is relevant for aging effects.
 % For this reason, it is difficult to measure the noise-induced current.
 
 A detector might be switched on and fully operational when no data taking is being performed, for example, between one run and the following one or when no beam is provided by LHC and ALICE is taking cosmic data.
-In this kind of situations the amount of current flowing trough the system corresponds to the sum of the ohmic contribution and the environmental and noise-induced ones.
+In this kind of situations the amount of current flowing through the system corresponds to the sum of the ohmic contribution and the environmental and noise-induced ones.
 Measuring the amount of current flowing in a chamber in these conditions would provide a measurement of the dark current $i_{dark}$, defined as:
 
 \begin{equation}
@@ -463,7 +463,7 @@ The framework has been extensively tested and the plots presented in the followi
 One crucial point is how to determine if a rate or a current reading are indeed "dark" readings.
 While the dark current definition has already been quoted in section \ref{currents}, the dark rate definition is to be given.
 
-% The dark current is the measurement of current which physiologically flows trough the detector when it is supplied with working point HV and no collision-induced irradiation is present (e.g. when no beam is present in the LHC).
+% The dark current is the measurement of current which physiologically flows through the detector when it is supplied with working point HV and no collision-induced irradiation is present (e.g. when no beam is present in the LHC).
 % This current has an ohmic component and an irradiation one, the second caused by environmental radioactivity and cosmic rays reaching the detector.
 The dark rate is the rate observed and measured in the same conditions as the dark current, i.e. at nominal HV and when no collision is taking place in the LHC.
 This rate should be correlated with the natural radioactivity and cosmic rays incidence, as well as intrinsic noise counts of the detectors, but may contain a contribution related to noisy read-out channels.
@@ -553,7 +553,7 @@ A particular focus on the FEERIC-equipped RPC will address the main differences 
 The evaluation of the dark current trend is fundamental to understand the health of the inner surfaces of the detectors.
 This working parameter strongly depends on the presence of irregularities on the boundary surfaces of the RPCs, hence can be used as a diagnostic tool.
 % In figure \ref{fig:iDark4Planes} a view of the trends of the dark current measurements as a function of time (date) is presented, each panel corresponds to the trends of the RPCs installed in MT11, MT12, MT22 and MT21 from top to bottom.
-The dark currents as a function of time for the 4 different RPC layers is shown in the four panels of figure \ref{fig:iDarkCOSMIC}. 
+The dark current as a function of time for the 4 different RPC layers is shown in the four panels of figure \ref{fig:iDarkCOSMIC}. 
 In each panel, the average dark current of the layer as well as the trend for the RPC drawing the largest and the smaller current in that layer are shown.
 The dark current measurements are reported in $\mu A/cm^2$, since dark current values have been divided by the corresponding RPC area.
 Given that the RPC areas are not all the same, this procedure helps to produce results which can be compared.
@@ -571,7 +571,7 @@ This effect is more important and clearly noticeable at the beginning of each ye
 It is commonly accepted that such a reduction of the dark current is caused by the yearly winter shutdown which undergoes for all the CERN LHC facilities.
 In fact every year the beam operations are stopped for a winter period which typically lasts from late November to the first 3-4 months of the following year.
 During this period the irradiation caused by the beam operations is absent.
-At the same time the gas flow trough the chambers extracts impurities and eventually improves the inner surfaces smoothness.
+At the same time the gas flow through the chambers extracts impurities and eventually improves the inner surfaces smoothness.
 This recovery effect causes a reduction of the dark current and can systematically be observed for all the RPCs.
 
 The trend shown in figure \ref{fig:iDarkCOSMIC} covers four years of operations and includes the first LHC long shutdown period (LS1).
@@ -597,7 +597,7 @@ It is important to notice that while all the other RPCs show an increase of the 
 
 \subsection{Net current and integrated charge trend}
 This work presents for the first time a method to combine data from OCDB and DCS databases capable of subtracting the contribution of dark current from the evaluation of the integrated charge.
-In order to do that the net current should be evaluated starting from the total current and the dark current readings, through the procedure presented in the previous sections.
+In order to do that, the net current should be evaluated starting from the total current and the dark current readings, through the procedure presented in the previous sections.
 
 The net current measurements are reported in figure \ref{fig:iNet4Planes} as a function of time (date).
 The panels correspond to the trends of MT11, MT12, MT21 and MT22 from top to bottom.

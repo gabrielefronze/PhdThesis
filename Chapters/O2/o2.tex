@@ -2,7 +2,7 @@
 
 \section{Motivation}
 % By 2021 ALICE will undergo a major upgrade concerning the luminosity achievable in Pb-Pb collisions.
-The second phase of data taking, called RUN2, will be over by the end of 2018. 
+The second LHC run (RUN2) is over at the time of writing this thesis.
 After that, the LHC will stop for two years (second long shutdown), during which an upgrade that will increase the luminosity reach in $Pb-Pb$ from $\approx 1\ Hz/mb$ to $\approx6\ Hz/mb$ will be performed.
 At the same time, ALICE will undergo its major upgrade of detectors, electronics and readout that will allow the experiment to cope with the increased Pb-Pb interaction rate, and to also take pp interactions up to $\approx1\ MHz$ \cite{Abelev:1625842, CERN-LHCC-2013-020, CERN-LHCC-2015-001, Antonioli:1603472, Buncic:2011297}.
 In addition to the machine development of the LHC, a massive upgrade of the acquisition logic for the whole ALICE apparatus will increase by a factor of $\approx50$ the read-out rate.
@@ -28,12 +28,12 @@ The basic idea is to reduce the data size as early as possible in the stream tha
 This goal can be achieved adding pre-processing and reconstruction layers close to the detector acquisition logic.
 For example some detectors will be equipped with a zero suppression algorithm to reduce the volume of data without losing useful information.
 Such fast reconstruction will be performed synchronously with the data acquisition and will be based on preliminary calibration and alignment information.
-% At this stage the detectors will operate as stand-alone items and no merging of the data will be performed prior to the raw reconstruction.
+% At this stage the detectors will operate as standalone items and no merging of the data will be performed prior to the raw reconstruction.
 
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/O2/Figs/O2.pdf}
-\caption{Sketch of the conceptual structure of the $O^2$ framework. The detectors electronics provides a continuous stream of raw data which is compressed, pre-processed and packed by the read-out logic. Partial information coming from different detectors and systems is aggregated. The full set of data is processed and reconstructed. Up to this step all the computation is performed synchronously. The processed data is then stored and retrieved later for the asynchronous reconstruction.}
+\caption{Sketch of the conceptual structure of the $O^2$ framework. The detector electronics provides a continuous stream of raw data which is compressed, pre-processed and packed by the read-out logic. Partial information coming from different detectors and systems is aggregated. The full set of data is processed and reconstructed. Up to this step all the computation is performed synchronously. The processed data is then stored and retrieved later for the asynchronous reconstruction.}
 \label{fig:O2_sketch}
 \end{center}
 \end{figure}
@@ -200,7 +200,7 @@ It is based on the matching between tracks reconstructed in the muon tracker and
 The tracks reconstructed within the muon chambers are obtained using a Kalman Filter algorithm.
 Since the five stations of muon chambers are placed upstream, inside and downstream of the dipole magnet, the reconstructed tracks are curved.
 The reconstructed tracks are extrapolated towards the muon trigger system.
-These piece of information are then matched with the tracklets generated using the MTR data.
+These pieces of information are then matched with the tracklets generated using the MTR data.
 % A tracklet is a set of crossing point and 3D slope, describing a straight segment.
 % The muon chamber tracks extrapolation uses the same format.
 The muon identification criteria is based on the fact that only the muon chamber tracks which are found to correspond to a muon trigger one are to be considered muons, since it is unlikely for other particles to cross the $1.2m$ thick iron wall between the two stations of the muon trigger (Fig. \ref{fig:MTR_old}).
@@ -392,7 +392,7 @@ The final aim is to study:
 \begin{itemize}
     \item the resolution of the algorithm in four variables: 
     \begin{itemize}
-        \item the cluster resolution\footnote{The resolution is defined as the difference between the real crossing point of the coordinates of the cluster centroid.} (along x and y);
+        \item the cluster residuals (along x and y);
         \item the track resolution, i.e. the resolution on the track position (mainly along x and y) and slopes along the bending and non bending plane;
     \end{itemize}
     % $x$ and $y$ first crossing resolution and vertical and horizontal slope. The resolution should be studied both as a function of the detector element and of cinematic variables of the reconstructed particle. 
@@ -495,7 +495,8 @@ The core of the distribution is about $0.5$ cm wide and like for the horizontal 
 \end{figure}
 
 The overall resolution presents a clear dependence with respect to the particle momentum.
-A lower resolution has been measured for low impulse particles, while the distribution spread decreases moving to higher momentum.
+% A lower resolution has been measured for low impulse particles, while the distribution spread decreases moving to higher momentum.
+The result is already rather good, but it is worth noting that the algorithm is not yet fine tuned and the resolution at very low \pt could be further improved.
 The fine tuning of the algorithm has not yet been performed and such optimization could help solving the issue.
 
 % \subsection{Algorithm resolution}
@@ -544,7 +545,10 @@ First of all the PID efficiency has to be computed.
 This characteristic of the algorithm corresponds to its matching probability.
 Such measurement can be performed evaluating how many true muons are matched with muon tracker data, hence correctly flagged.
 Using Monte Carlo simulations one can measure such fraction computing the ratio between reconstructed muons and reconstructible muons.
-A reconstructible is a muon which has been generated within the muon spectrometer acceptance and left hits in both MCH and MID.
+A reconstructible is a muon which has been generated within the muon spectrometer acceptance and produced hits in both MCH and MID.
+For what concerns MID the requirement is that a hit (both $x$ and $y$) in at least $3/4$ planes was detected.
+In case of missing bending or non-bending information on more than $1/4$ planes the tracking resolution will drop considerably.
+Concerning MCH the requirements will stay tha same as in RUN2: at least $1/2$ plane hit in each of the three inner stations (1, 2, 3) and at least $3/4$ planes hit for the two remaining stations (4, 5).
 
 Secondly the fraction of mis-identified particles should be computed as well.
 Some particles which are not muons are detected and reconstructed in the MCH.

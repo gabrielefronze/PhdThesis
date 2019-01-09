@@ -10,16 +10,16 @@ Further studies to understand the origin of the dark current are also recommende
 In view of the increased luminosity of the LHC RUN3, one RPC has been equipped with a prototype for an amplified front-end electronics, allowing for low-gain operation of the RPC. 
 The study of its parameters has shown a more stable dark rate and dark current, and a much smaller integrated charge, which is a promising result. 
 The functionalities of the developed framework may be extended to other ALICE systems in the future.
-Second, the study of bottomonium production at forward rapidity in Pb-Pb collisions at $\sqrt{s_{\mathrm{NN}}}=5.02\ TeV$, in the dimuon decay channel, has been performed.
+Second, the study of bottomonium production at forward rapidity in Pb-Pb collisions at $\sqrt{s_{\mathrm{NN}}}=5.02\ \rm TeV$, in the dimuon decay channel, has been performed.
 Data collected during the LHC RUN2 were analysed, and the nuclear modification factor of the $\Upsilon(1S)$ and $(2S)$ were measured, showing a clear suppression with respect to the properly scaled reference obtained in pp collisions. 
 The suppression is larger for the $\Upsilon(2S)$, as expected in the hypothesis of a binding-energy dependent sequential suppression in a Quark Gluon Plasma. 
 For the $\Upsilon(1S)$, the measurement was also performed as a function of centrality, rapidity and transverse momentum. 
 While the suppression increases with the collision centrality, no significant trend as a function rapidity and transverse momentum is observed within the present uncertainties. 
-The measured nuclear modification factors are also compatible with those measured during the LHC Run1 at $\sqrt{s_{\mathrm{NN}}}=2.76\ TeV$.
+The measured nuclear modification factors are also compatible with those measured during the LHC Run1 at $\sqrt{s_{\mathrm{NN}}}=2.76\ \rm TeV$.
 The results were compared to transport and dynamical model calculations, which qualitatively reproduce the centrality, rapidity and transverse momentum dependence.
-This thesis work led to an article, titled "$\Upsilon$ suppression at forward rapidity in Pb-Pb collisions at $\sqrt{s_{\mathrm{NN}}} = 5.02 TeV$"\cite{MINE}, that is currently submitted for publication to Physics Letter B journal.
+This thesis work led to an article, titled "$\Upsilon$ suppression at forward rapidity in Pb-Pb collisions at $\sqrt{s_{\mathrm{NN}}} = 5.02\ \rm TeV$"\cite{MINE}, that is currently submitted for publication to Physics Letter B journal.
 Third, a new muon identification software has been developed in light of the RUN3 upgrade of ALICE, and the associated software upgrade program called $O^2$.
-With this upgrade the data rate will go from $8\ kHz$ to $50\ kHz$ of minimum bias events in Pb-Pb collisions.
+With this upgrade the data rate will go from $8\ \rm kHz$ to $50\ \rm kHz$ of minimum bias events in Pb-Pb collisions.
 The ALICE muon trigger (MTR) system will undergo a big upgrade process, involving the read out electronics and the whole software apparatus, allowing it to efficiently serve as a muon identifier (MID).
 In the context of this work a big effort has been put to develop a fast, precise and resilient software capable of coping with the LHC RUN3 conditions. 
 As a result the ALICE MTR/MID will be able to retain most of its features and performances along with a highly improved rate capability. 
@@ -27,7 +27,7 @@ The development is still work in progress, but the boost given by this work is a
 A library, which allows for the transport of \code{C++} types and structures (and contiguous containers of such objects) using the ZeroMQ transport framework at the basis of $O^2$, has been implemented.
 These serialization routines, based on Boost have been widely tested and are currently used in many detector- and subsystem-specific code, and was requested to be included in FairROOT core by its developers team. 
 The development of the $O^2$ software for the MID involved several work items.
-An algorithm capable of de-serializing the CRU data format in a $C++$ structure has been implemented.
+An algorithm capable of de-serializing the CRU data format in a \code{C++} structure has been implemented.
 Such algorithm will be probably implemented directly on the CRU FPGA for timing constraints.
 In addition, the development of a full stack of devices, capable of performing an online rejection of MID noisy channels and detection of dead channels, has been accomplished.
 This chain of devices has been implemented on top of the Data Processing Layer (DPL) framework.

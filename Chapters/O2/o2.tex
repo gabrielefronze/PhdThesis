@@ -33,7 +33,7 @@ Such fast reconstruction will be performed synchronously with the data acquisiti
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.95\linewidth]{Chapters/O2/Figs/O2.pdf}
-\caption{Sketch of the conceptual structure of the $O^2$ framework. The detector electronics provides a continuous stream of raw data which is compressed, pre-processed and packed by the read-out logic. Partial information coming from different detectors and systems is aggregated. The full set of data is processed and reconstructed. Up to this step all the computation is performed synchronously. The processed data is then stored and retrieved later for the asynchronous reconstruction.}
+\caption{Sketch of the conceptual structure of the $O^2$ framework. The detector electronics provides a continuous stream of raw data which is compressed, pre-processed and packed by the read-out logic. Partial information coming from different detectors and systems is aggregated. The full set of data is processed and reconstructed. Up to this step all the computation is performed synchronously. The processed data is then stored and retrieved later for the asynchronous reconstruction. From \cite{Buncic:2011297}}
 \label{fig:O2_sketch}
 \end{center}
 \end{figure}
@@ -78,7 +78,7 @@ ALFA \cite{alfa} and FairROOT \cite{fairroot} are actively developed by ALICE at
 \begin{center}
 \includegraphics[width=0.8\linewidth]{Chapters/O2/Figs/O2_soft_tree.pdf}
 \includegraphics[width=0.7\linewidth]{Chapters/O2/Figs/ALFA.pdf}
-\caption{Software topology of the $O^2$ project. $O^2$ stands on several software, sets of libraries and tools. The green boxes represents the low level libraries which constitutes the basis of the software. Some of them are ZeroMQ as message passing protocol, CMake as project build and test manager, Geant4 as particles propagation engine. The orange boxes represents ALFA, developed between ALICE and FAIR. This tool contains a set of high level tools, such as data transportation routines and the dynamic deployment system for the dynamic devices management. The blue box represents FairROOT, an evolution of ROOT focused on improved usability for the end-users. It allows for easy data visualization, storage, offline analysis and more. The ALICE $O^2$ stands on all these elements alongside other collaborations software (Panda, Cbm).}
+\caption{Software topology of the $O^2$ project. $O^2$ stands on several software, sets of libraries and tools. The green boxes represents the low level libraries which constitutes the basis of the software. Some of them are ZeroMQ as message passing protocol, CMake as project build and test manager, Geant4 as particles propagation engine. The orange boxes represents ALFA, developed between ALICE and FAIR. This tool contains a set of high level tools, such as data transportation routines and the dynamic deployment system for the dynamic devices management. The blue box represents FairROOT, an evolution of ROOT focused on improved usability for the end-users. It allows for easy data visualization, storage, offline analysis and more. The ALICE $O^2$ stands on all these elements alongside other collaborations software (Panda, Cbm).  From \cite{Buncic:2011297}}
 \label{fig:O2_soft_tree}
 \end{center}
 \end{figure}
@@ -104,7 +104,7 @@ Such overhead becomes important for both the transmission and for the storage of
 \begin{figure}[!]
 \begin{center}
 \includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/TF.pdf}
-\caption{Sketch representing the acquisition flow with two detectors, A and B. The detector data samples are retrieved by the read-out logic in a continuous fashion, with the addition of heartbeat triggers interleaving for time stamping purposes. At the FLP level each data stream is time sliced, obtaining several patches which are compressed by fast processing and packed in sub TFs. The sub TFs are sent to the EPN farm and then aggregated into global TFs. Each TF has a full set of information regarding a given time interval. A global compression of around $\times14$ is achieved in the process.}
+\caption{Sketch representing the acquisition flow with two detectors, A and B. The detector data samples are retrieved by the read-out logic in a continuous fashion, with the addition of heartbeat triggers interleaving for time stamping purposes. At the FLP level each data stream is time sliced, obtaining several patches which are compressed by fast processing and packed in sub TFs. The sub TFs are sent to the EPN farm and then aggregated into global TFs. Each TF has a full set of information regarding a given time interval. A global compression of around $\times14$ is achieved in the process. From \cite{Buncic:2011297}}
 \label{fig:O2_TF}
 \end{center}
 \end{figure}
@@ -144,7 +144,7 @@ For this reason the detectors raw data flows are interleaved with an heartbeat c
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=0.75\linewidth]{Chapters/O2/Figs/Compression_2.pdf}
-\caption{Computing infrastructure layers with quoted required input and output bandwidths. An overall factor of compression of $\approx14$ is to be achieved in the process. The network topology is not yet defined by the $O^2$ Technical Design Report since the technology growth is fast enough to require a shorter term planning later during the upgrade.}
+\caption{Computing infrastructure layers with quoted required input and output bandwidths. An overall factor of compression of $\approx14$ is to be achieved in the process. The network topology is not yet defined by the $O^2$ Technical Design Report since the technology growth is fast enough to require a shorter term planning later during the upgrade. From \cite{Buncic:2011297}}
 \label{fig:O2_Compression}
 \end{center}
 \end{figure}
@@ -267,7 +267,7 @@ Finally, at the EPN level, the combination of MID data with data coming from oth
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=0.9\linewidth]{Chapters/O2/Figs/CRU.pdf}
-\caption{Detailed sketch of a generic Common Readout Unit (CRU). The Front End Electronics (FEE) are connected to the CRU through 24 embedded GBT links. The green boxes are connected to the Central trigger Processor (CTP) and deliver timing information to time tag the raw data flow, performed by the detector specific logic. The raw data is translated in a binary format which can be processed by the FLP CPUs. The ouput of the CRU is performed by a standard PCI Express link.}
+\caption{Detailed sketch of a generic Common Readout Unit (CRU). The Front End Electronics (FEE) are connected to the CRU through 24 embedded GBT links. The green boxes are connected to the Central trigger Processor (CTP) and deliver timing information to time tag the raw data flow, performed by the detector specific logic. The raw data is translated in a binary format which can be processed by the FLP CPUs. The ouput of the CRU is performed by a standard PCI Express link. From \cite{Buncic:2011297}}
 \label{fig:O2_CRU}
 \end{center}
 \end{figure}
